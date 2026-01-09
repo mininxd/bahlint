@@ -3,7 +3,7 @@ import FlameIcon, { FlameStatic } from "./FlameIcon";
 
 const Hero: FC = () => {
 	const [copied, setCopied] = useState(false);
-	const installCommand = "npm i bahlint@latest";
+	const installCommand = "npx bahlint@latest . --fix";
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(installCommand);
 		setCopied(true);
@@ -66,6 +66,9 @@ const Hero: FC = () => {
 					className="animate-float-up mb-8"
 					style={{ animationDelay: "0.55s" }}
 				>
+					<div className="divider text-sm text-base-content/40">
+						Quick Run & Fix
+					</div>
 					<div
 						onClick={copyToClipboard}
 						className="inline-flex items-center gap-3 bg-base-200 hover:bg-base-300 border border-base-content/10 rounded-xl px-5 py-3 cursor-pointer transition-all duration-200 group hover:border-primary/30"

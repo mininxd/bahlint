@@ -62,9 +62,7 @@ const InstallSection: FC = () => {
 		}
 	};
 
-	const runCmd = [
-	  "npx bahlint . --fix"
-	  ]
+	const runCmd = ["npx bahlint . --fix"];
 
 	// Raw text lines (what you want to display)
 	const configLines = [
@@ -157,7 +155,7 @@ const InstallSection: FC = () => {
 
 						<div className="relative">
 							<div className="mockup-code bg-base-100 border border-base-content/10">
-							{runCmd.map((line, i) => (
+								{runCmd.map((line, i) => (
 									<pre key={i} data-prefix={String("$")}>
 										<code
 											dangerouslySetInnerHTML={{
@@ -169,7 +167,9 @@ const InstallSection: FC = () => {
 							</div>
 
 							<button
-								onClick={() => copyToClipboard(runCmd.toString(), "run")}
+								onClick={() =>
+									copyToClipboard(runCmd.toString(), "run")
+								}
 								className="btn btn-sm btn-ghost absolute top-3 right-3"
 								aria-label="Copy command"
 								type="button"
