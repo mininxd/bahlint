@@ -194,7 +194,7 @@ const InstallSection: FC = () => {
 								</pre>
 								<pre>
 									<code className="text-success">
-										✓ 2 problems auto-fixed
+										✓ Auto-fixed 3 problems in 1 file(s)
 									</code>
 								</pre>
 								<pre>
