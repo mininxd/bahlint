@@ -195,6 +195,11 @@ const InstallSection: FC = () => {
 								<pre>
 									<code className="text-success">
 										✓ Auto-fixed 3 problems in 1 file(s)
+									<ul>
+									<li className="pl-4 text-gray-400"> - index.js</li>
+									<li className="pl-4 text-gray-400"> - server.js</li>
+									<li className="pl-4 text-gray-400"> - component.js</li>
+									</ul>	
 									</code>
 								</pre>
 								<pre>

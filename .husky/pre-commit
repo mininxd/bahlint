@@ -1,0 +1,2 @@
+npx bahlint@latest . --fix
+npx prettier . --write
