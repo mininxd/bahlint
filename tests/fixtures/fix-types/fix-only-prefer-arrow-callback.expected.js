@@ -4,4 +4,4 @@
 
 func(() => {
     return true;
-})
+});

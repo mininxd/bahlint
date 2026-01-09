@@ -1,1 +1,1 @@
-console.log('bar'); // eslint-disable-line
+console.log('bar');  

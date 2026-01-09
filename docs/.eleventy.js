@@ -303,7 +303,7 @@ module.exports = function (eleventyConfig) {
 	//------------------------------------------------------------------------------
 
 	eleventyConfig.addNunjucksShortcode("link", function (url) {
-		// eslint-disable-next-line no-invalid-this -- Eleventy API
+		 
 		const urlData = this.ctx.further_reading_links[url];
 
 		if (!urlData) {
@@ -531,7 +531,7 @@ module.exports = function (eleventyConfig) {
 		const fullSrc = getSRC();
 
 		// generate images
-		Image(fullSrc, options); // eslint-disable-line new-cap -- `Image` is a function
+		Image(fullSrc, options);  
 
 		const imageAttributes = {
 			alt,

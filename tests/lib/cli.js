@@ -96,7 +96,7 @@ describe("cli", () => {
 			 * exceeds the default test timeout, so raise it just for this hook.
 			 * Mocha uses `this` to set timeouts on an individual hook level.
 			 */
-			this.timeout(60 * 1000); // eslint-disable-line no-invalid-this -- Mocha API
+			this.timeout(60 * 1000);  
 			fixtureDir = `${os.tmpdir()}/eslint/fixtures`;
 			sh.mkdir("-p", fixtureDir);
 			sh.cp("-r", "./tests/fixtures/.", fixtureDir);

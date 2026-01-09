@@ -134,7 +134,7 @@ describe("Linter with FlatConfigArray", () => {
 
 		it("should throw an error if an inactive flag whose feature has been abandoned is used", () => {
 			assert.throws(() => {
-				// eslint-disable-next-line no-new -- needed for test
+				 
 				new Linter({
 					configType: "flat",
 					flags: ["test_only_abandoned"],
@@ -144,7 +144,7 @@ describe("Linter with FlatConfigArray", () => {
 
 		it("should throw an error if an unknown flag is present", () => {
 			assert.throws(() => {
-				// eslint-disable-next-line no-new -- needed for test
+				 
 				new Linter({ configType: "flat", flags: ["x_unknown"] });
 			}, /Unknown flag 'x_unknown'/u);
 		});
@@ -967,7 +967,7 @@ describe("Linter with FlatConfigArray", () => {
 
 						it("eslint-scope should use the visitorKeys (so 'childVisitorKeys.ClassDeclaration' includes 'experimentalDecorators')", () => {
 							assert.deepStrictEqual(
-								// eslint-disable-next-line no-underscore-dangle -- ScopeManager API
+								 
 								scopeManager.__options.childVisitorKeys
 									.ClassDeclaration,
 								[
@@ -7271,7 +7271,7 @@ let c; // var a = "test2";
 						"eslint-disable-next-line eqeqeq",
 						"eslint-enable eqeqeq",
 					]) {
-						// eslint-disable-next-line no-loop-func -- No closures
+						 
 						it(`should warn '/* ${directive} */' if 'noInlineConfig' was given.`, () => {
 							const messages = linter.verify(
 								`/* ${directive} */`,
@@ -7301,7 +7301,7 @@ let c; // var a = "test2";
 						"eslint-disable-line eqeqeq",
 						"eslint-disable-next-line eqeqeq",
 					]) {
-						// eslint-disable-next-line no-loop-func -- No closures
+						 
 						it(`should warn '// ${directive}' if 'noInlineConfig' was given.`, () => {
 							const messages = linter.verify(`// ${directive}`, {
 								linterOptions: {
@@ -9088,7 +9088,7 @@ let c; // var a = "test2";
 					];
 
 					for (const { code, output } of tests) {
-						// eslint-disable-next-line no-loop-func -- `linter` is getting updated in beforeEach()
+						 
 						it(code, () => {
 							assert.strictEqual(
 								linter.verifyAndFix(code, config).output,
@@ -9113,7 +9113,7 @@ let c; // var a = "test2";
 								),
 							},
 						]) {
-							// eslint-disable-next-line no-loop-func -- `linter` is getting updated in beforeEach()
+							 
 							it(testcaseForLiteral.code, () => {
 								assert.strictEqual(
 									linter.verifyAndFix(

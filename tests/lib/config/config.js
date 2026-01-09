@@ -960,7 +960,7 @@ describe("Config", () => {
 		it("should skip __proto__ in rules", () => {
 			const rules = { "test-rule": ["error"] };
 
-			/* eslint-disable-next-line no-proto -- Testing __proto__ behavior */
+			 
 			rules.__proto__ = ["error"];
 
 			config.validateRulesConfig(rules);

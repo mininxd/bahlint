@@ -13,20 +13,20 @@
 * WTFPL https://github.com/stevemao/left-pad/blob/aff6d744155a70b81f09effb8185a1564f348462/COPYING
 */
 
-module.exports = (leftpad)
+module.exports = leftpad;
 
-   function leftpad(str, len, ch){
-  str = ("" + str);
+function leftpad (str, len, ch) {
+  str = '' + str;
 
-         var i = -1 ;
+  var i = -1;
 
-  ch || (ch = " ");
-  len = (len - str  [  "length"])
+  ch || (ch = ' ');
+  len = len - str.length;
 
 
-                   while (++i < len) {
-                  str = ch + str;
-						}
+  while (++i < len) {
+    str = ch + str;
+  }
 
   return str;
 }

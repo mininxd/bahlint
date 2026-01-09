@@ -3,6 +3,6 @@
 /* eslint prefer-arrow-callback: "error" */
 "use strict";
 
-func(function() {
+func(() => {
     return true;
 });

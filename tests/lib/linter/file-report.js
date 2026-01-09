@@ -1493,7 +1493,7 @@ describe("FileReport", () => {
 				[],
 			]) {
 				assert.throws(
-					// eslint-disable-next-line no-loop-func -- Using arrow functions
+					 
 					() =>
 						fileReport.addRuleMessage("foo-rule", 2, {
 							node,
@@ -1504,7 +1504,7 @@ describe("FileReport", () => {
 				);
 
 				assert.throws(
-					// eslint-disable-next-line no-loop-func -- Using arrow functions
+					 
 					() =>
 						fileReport.addRuleMessage("foo-rule", 2, {
 							node,

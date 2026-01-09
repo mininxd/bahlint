@@ -1,4 +1,4 @@
-/* eslint-disable no-undefined -- `null` and `undefined` are different in options */
+ 
 
 "use strict";
 
@@ -123,4 +123,4 @@ describe("deepMerge", () => {
 	}
 });
 
-/* eslint-enable no-undefined -- `null` and `undefined` are different in options */
+ 

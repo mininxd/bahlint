@@ -2183,7 +2183,7 @@ describe("ast-utils", () => {
 					},
 					nodeB: {
 						type: "Literal",
-						value: /(?:)/, // eslint-disable-line require-unicode-regexp, regexp/no-empty-group -- Checking non-Unicode regex
+						value: /(?:)/, // eslint-disable-line regexp/no-empty-group -- Checking non-Unicode regex
 						regex: { pattern: "(?:)", flags: "" },
 					},
 					expected: false,

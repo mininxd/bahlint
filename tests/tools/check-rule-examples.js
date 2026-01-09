@@ -58,7 +58,7 @@ describe("check-rule-examples", () => {
 			assert.strictEqual(code, 1);
 			assert.strictEqual(stdout, "");
 
-			/* eslint-disable no-control-regex -- escaping control characters */
+			 
 
 			const normalizedStderr = stderr
 
@@ -71,7 +71,7 @@ describe("check-rule-examples", () => {
 				// Remove multiple whitespace before rule name in lint errors
 				.replaceAll(/\s+(?=\S*no-restricted-syntax\S*\n)/gu, " ");
 
-			/* eslint-enable no-control-regex -- re-enable rule */
+			 
 
 			const expectedStderr =
 				"\x1B[0m\n" +

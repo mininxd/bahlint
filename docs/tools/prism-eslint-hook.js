@@ -244,7 +244,7 @@ function installPrismESLintMarkerHook() {
 							);
 					} else {
 						token.content = [
-							// eslint-disable-next-line no-use-before-define -- Safe
+							 
 							...convertMarked({
 								tokens: token.content,
 								range,

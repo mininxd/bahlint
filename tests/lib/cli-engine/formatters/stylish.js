@@ -18,7 +18,7 @@ const assert = require("chai").assert,
 // Helpers
 //------------------------------------------------------------------------------
 
-// eslint-disable-next-line no-control-regex -- Needed to match ANSI escape code.
+ 
 const ansiEscapePattern = /\u001b\[/u;
 
 //------------------------------------------------------------------------------

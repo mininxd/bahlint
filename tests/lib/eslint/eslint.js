@@ -155,7 +155,7 @@ describe("ESLint", () => {
 		 * exceeds the default test timeout, so raise it just for this hook.
 		 * Mocha uses `this` to set timeouts on an individual hook level.
 		 */
-		this.timeout(60 * 1000); // eslint-disable-line no-invalid-this -- Mocha API
+		this.timeout(60 * 1000);  
 		shell.mkdir("-p", fixtureDir);
 		shell.cp("-r", "./tests/fixtures/.", fixtureDir);
 	});
@@ -245,7 +245,7 @@ describe("ESLint", () => {
 		it("should not modify baseConfig in the constructor", () => {
 			const customBaseConfig = { root: true };
 
-			new ESLint({ baseConfig: customBaseConfig }); // eslint-disable-line no-new -- Check for argument side effects
+			new ESLint({ baseConfig: customBaseConfig });  
 
 			assert.deepStrictEqual(customBaseConfig, { root: true });
 		});
@@ -392,7 +392,7 @@ describe("ESLint", () => {
 				"emitESLintIgnoreWarning",
 			);
 
-			// eslint-disable-next-line no-new -- for testing purpose only
+			 
 			new ESLint({ cwd });
 
 			assert(
@@ -15064,7 +15064,7 @@ describe("ESLint", () => {
 
 		it("should throw an error with an unsupported URL scheme", async () => {
 			await assert.rejects(
-				// eslint-disable-next-line no-script-url -- test for unsupported URL scheme
+				 
 				() => ESLint.fromOptionsModule(new URL("javascript:({ })")),
 				{ code: "ERR_UNSUPPORTED_ESM_URL_SCHEME", constructor: Error },
 			);

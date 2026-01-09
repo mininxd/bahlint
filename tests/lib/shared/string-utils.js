@@ -27,7 +27,7 @@ const {
  */
 function escapeControlCharacters(text) {
 	return text.replace(
-		/[\u0000-\u001F\u007F-\u009F]/gu, // eslint-disable-line no-control-regex -- intentionally including control characters
+		/[\u0000-\u001F\u007F-\u009F]/gu,  
 		c => `\\x${c.codePointAt(0).toString(16).padStart(2, "0")}`,
 	);
 }
