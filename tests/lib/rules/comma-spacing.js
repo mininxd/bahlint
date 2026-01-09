@@ -294,7 +294,7 @@ ruleTester.run("comma-spacing", rule, {
 			options: [{ before: false, after: false }],
 		},
 		{
-			code: 'var a; console.log(`${a}`, "a");',
+			code: "var a; console.log(`${a}`, \"a\");",
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{ code: "var [a, b] = [1, 2];", languageOptions: { ecmaVersion: 6 } },

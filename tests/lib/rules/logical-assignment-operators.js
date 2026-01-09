@@ -886,7 +886,7 @@ ruleTester.run("logical-assignment-operators", rule, {
 		{
 			code: [
 				"with (object) {",
-				'  "use strict";',
+				"  \"use strict\";",
 				"   a = a || b",
 				"}",
 			].join("\n"),
@@ -901,7 +901,7 @@ ruleTester.run("logical-assignment-operators", rule, {
 							data: { operator: "||=" },
 							output: [
 								"with (object) {",
-								'  "use strict";',
+								"  \"use strict\";",
 								"   a ||= b",
 								"}",
 							].join("\n"),

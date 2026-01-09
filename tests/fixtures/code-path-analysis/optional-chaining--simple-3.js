@@ -5,7 +5,7 @@ s1_2->s1_7;
 s1_3->s1_7->final;
 */
 
-obj?.aaa?.bbb?.(arg)
+obj?.aaa?.bbb?.(arg);
 
 /*DOT
 digraph {

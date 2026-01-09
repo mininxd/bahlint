@@ -188,7 +188,7 @@ ruleTester.run("no-useless-call", rule, {
 			],
 		},
 		{
-			code: 'abc.get("foo", 0).concat.apply(abc . get("foo",  0 ), [1, 2]);',
+			code: "abc.get(\"foo\", 0).concat.apply(abc . get(\"foo\",  0 ), [1, 2]);",
 			errors: [
 				{
 					messageId: "unnecessaryCall",

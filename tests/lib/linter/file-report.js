@@ -1493,7 +1493,7 @@ describe("FileReport", () => {
 				[],
 			]) {
 				assert.throws(
-					 
+
 					() =>
 						fileReport.addRuleMessage("foo-rule", 2, {
 							node,
@@ -1504,7 +1504,7 @@ describe("FileReport", () => {
 				);
 
 				assert.throws(
-					 
+
 					() =>
 						fileReport.addRuleMessage("foo-rule", 2, {
 							node,

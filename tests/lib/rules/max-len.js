@@ -132,19 +132,19 @@ ruleTester.run("max-len", rule, {
 			options: [29, 4, { ignoreStrings: true }],
 		},
 		{
-			code: 'var foo = veryLongIdentifier;\nvar bar = "this is a very long string";',
+			code: "var foo = veryLongIdentifier;\nvar bar = \"this is a very long string\";",
 			options: [29, 4, { ignoreStrings: true }],
 		},
 		{
-			code: 'var str = "this is a very long string\\\nwith continuation";',
+			code: "var str = \"this is a very long string\\\nwith continuation\";",
 			options: [29, 4, { ignoreStrings: true }],
 		},
 		{
-			code: 'var str = "this is a very long string\\\nwith continuation\\\nand with another very very long continuation\\\nand ending";',
+			code: "var str = \"this is a very long string\\\nwith continuation\\\nand with another very very long continuation\\\nand ending\";",
 			options: [29, 4, { ignoreStrings: true }],
 		},
 		{
-			code: 'var foo = <div className="this is a very long string"></div>;',
+			code: "var foo = <div className=\"this is a very long string\"></div>;",
 			options: [29, 4, { ignoreStrings: true }],
 			languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
 		},
@@ -799,7 +799,7 @@ ruleTester.run("max-len", rule, {
 			],
 		},
 		{
-			code: 'var foo = veryLongIdentifier;\nvar bar = "this is a very long string";',
+			code: "var foo = veryLongIdentifier;\nvar bar = \"this is a very long string\";",
 			options: [
 				29,
 				{ ignoreStrings: false, ignoreTemplateLiterals: true },

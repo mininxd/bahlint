@@ -185,11 +185,11 @@ ruleTester.run("no-trailing-spaces", rule, {
 		{
 			code:
 				"\n" +
-				'measAr.push("<dl></dl>",  \n' +
+				"measAr.push(\"<dl></dl>\",  \n" +
 				"         \" </dt><dd class ='pta-res'>\");",
 			output:
 				"\n" +
-				'measAr.push("<dl></dl>",\n' +
+				"measAr.push(\"<dl></dl>\",\n" +
 				"         \" </dt><dd class ='pta-res'>\");",
 			errors: [
 				{
@@ -199,10 +199,10 @@ ruleTester.run("no-trailing-spaces", rule, {
 		},
 		{
 			code:
-				'measAr.push("<dl></dl>",  \n' +
+				"measAr.push(\"<dl></dl>\",  \n" +
 				"         \" </dt><dd class ='pta-res'>\");",
 			output:
-				'measAr.push("<dl></dl>",\n' +
+				"measAr.push(\"<dl></dl>\",\n" +
 				"         \" </dt><dd class ='pta-res'>\");",
 			errors: [
 				{

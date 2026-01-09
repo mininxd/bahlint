@@ -36,15 +36,15 @@ ruleTester.run("no-unused-expressions", rule, {
 		},
 		"delete foo.bar",
 		"void new C",
-		'"use strict";',
-		'"directive one"; "directive two"; f();',
-		'function foo() {"use strict"; return true; }',
+		"\"use strict\";",
+		"\"directive one\"; \"directive two\"; f();",
+		"function foo() {\"use strict\"; return true; }",
 		{
-			code: 'var foo = () => {"use strict"; return true; }',
+			code: "var foo = () => {\"use strict\"; return true; }",
 			languageOptions: { ecmaVersion: 6 },
 		},
-		'function foo() {"directive one"; "directive two"; f(); }',
-		'function foo() { var foo = "use strict"; return true; }',
+		"function foo() {\"directive one\"; \"directive two\"; f(); }",
+		"function foo() { var foo = \"use strict\"; return true; }",
 		{
 			code: "function* foo(){ yield 0; }",
 			languageOptions: { ecmaVersion: 6 },
@@ -78,15 +78,15 @@ ruleTester.run("no-unused-expressions", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'import("foo")',
+			code: "import(\"foo\")",
 			languageOptions: { ecmaVersion: 11 },
 		},
 		{
-			code: 'func?.("foo")',
+			code: "func?.(\"foo\")",
 			languageOptions: { ecmaVersion: 11 },
 		},
 		{
-			code: 'obj?.foo("bar")',
+			code: "obj?.foo(\"bar\")",
 			languageOptions: { ecmaVersion: 11 },
 		},
 
@@ -114,39 +114,39 @@ ruleTester.run("no-unused-expressions", rule, {
 			languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
 		},
 		{
-			code: '"use strict";',
+			code: "\"use strict\";",
 			options: [{ ignoreDirectives: true }],
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 		},
 		{
-			code: '"directive one"; "directive two"; f();',
+			code: "\"directive one\"; \"directive two\"; f();",
 			options: [{ ignoreDirectives: true }],
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 		},
 		{
-			code: 'function foo() {"use strict"; return true; }',
+			code: "function foo() {\"use strict\"; return true; }",
 			options: [{ ignoreDirectives: true }],
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 		},
 		{
-			code: 'function foo() {"directive one"; "directive two"; f(); }',
+			code: "function foo() {\"directive one\"; \"directive two\"; f(); }",
 			options: [{ ignoreDirectives: true }],
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 		},
 		{
-			code: '"use strict";',
+			code: "\"use strict\";",
 			options: [{ ignoreDirectives: true }],
 		},
 		{
-			code: '"directive one"; "directive two"; f();',
+			code: "\"directive one\"; \"directive two\"; f();",
 			options: [{ ignoreDirectives: true }],
 		},
 		{
-			code: 'function foo() {"use strict"; return true; }',
+			code: "function foo() {\"use strict\"; return true; }",
 			options: [{ ignoreDirectives: true }],
 		},
 		{
-			code: 'function foo() {"directive one"; "directive two"; f(); }',
+			code: "function foo() {\"directive one\"; \"directive two\"; f(); }",
 			options: [{ ignoreDirectives: true }],
 		},
 	],
@@ -312,7 +312,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: '"directive one"; f(); "directive two";',
+			code: "\"directive one\"; f(); \"directive two\";",
 			errors: [
 				{
 					messageId: "unusedExpression",
@@ -320,7 +320,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: 'function foo() {"directive one"; f(); "directive two"; }',
+			code: "function foo() {\"directive one\"; f(); \"directive two\"; }",
 			errors: [
 				{
 					messageId: "unusedExpression",
@@ -328,7 +328,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: 'if (0) { "not a directive"; f(); }',
+			code: "if (0) { \"not a directive\"; f(); }",
 			errors: [
 				{
 					messageId: "unusedExpression",
@@ -336,7 +336,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: 'function foo() { var foo = true; "use strict"; }',
+			code: "function foo() { var foo = true; \"use strict\"; }",
 			errors: [
 				{
 					messageId: "unusedExpression",
@@ -344,7 +344,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: 'var foo = () => { var foo = true; "use strict"; }',
+			code: "var foo = () => { var foo = true; \"use strict\"; }",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -456,7 +456,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: '"use strict";',
+			code: "\"use strict\";",
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 			errors: [
 				{
@@ -465,7 +465,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: '"directive one"; "directive two"; f();',
+			code: "\"directive one\"; \"directive two\"; f();",
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 			errors: [
 				{
@@ -477,7 +477,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: 'function foo() {"use strict"; return true; }',
+			code: "function foo() {\"use strict\"; return true; }",
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 			errors: [
 				{
@@ -486,7 +486,7 @@ ruleTester.run("no-unused-expressions", rule, {
 			],
 		},
 		{
-			code: 'function foo() {"directive one"; "directive two"; f(); }',
+			code: "function foo() {\"directive one\"; \"directive two\"; f(); }",
 			languageOptions: { ecmaVersion: 3, sourceType: "script" },
 			errors: [
 				{

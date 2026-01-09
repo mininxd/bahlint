@@ -48,7 +48,7 @@ ruleTester.run("computed-property-spacing", rule, {
 
 		// always - objectLiteralComputedProperties
 		{
-			code: 'var x = {[ "a" ]: a}',
+			code: "var x = {[ \"a\" ]: a}",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -58,7 +58,7 @@ ruleTester.run("computed-property-spacing", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'var x = {[ "a" ]() {}}',
+			code: "var x = {[ \"a\" ]() {}}",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -98,7 +98,7 @@ ruleTester.run("computed-property-spacing", rule, {
 
 		// never - objectLiteralComputedProperties
 		{
-			code: 'var x = {["a"]: a}',
+			code: "var x = {[\"a\"]: a}",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -108,7 +108,7 @@ ruleTester.run("computed-property-spacing", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'var x = {["a"]() {}}',
+			code: "var x = {[\"a\"]() {}}",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 6 },
 		},

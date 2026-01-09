@@ -56,8 +56,8 @@ ruleTester.run("getter-return", rule, {
 		 * test object.defineProperty(s)
 		 * option: {allowImplicit: false}
 		 */
-		'Object.defineProperty(foo, "bar", { get: function () {return true;}});',
-		'Object.defineProperty(foo, "bar", { get: function () { ~function (){ return true; }();return true;}});',
+		"Object.defineProperty(foo, \"bar\", { get: function () {return true;}});",
+		"Object.defineProperty(foo, \"bar\", { get: function () { ~function (){ return true; }();return true;}});",
 		"Object.defineProperties(foo, { bar: { get: function () {return true;}} });",
 		"Object.defineProperties(foo, { bar: { get: function () { ~function (){ return true; }(); return true;}} });",
 
@@ -65,8 +65,8 @@ ruleTester.run("getter-return", rule, {
 		 * test reflect.defineProperty(s)
 		 * option: {allowImplicit: false}
 		 */
-		'Reflect.defineProperty(foo, "bar", { get: function () {return true;}});',
-		'Reflect.defineProperty(foo, "bar", { get: function () { ~function (){ return true; }();return true;}});',
+		"Reflect.defineProperty(foo, \"bar\", { get: function () {return true;}});",
+		"Reflect.defineProperty(foo, \"bar\", { get: function () { ~function (){ return true; }();return true;}});",
 
 		/*
 		 * test object.create(s)
@@ -78,11 +78,11 @@ ruleTester.run("getter-return", rule, {
 
 		// option: {allowImplicit: true}
 		{
-			code: 'Object.defineProperty(foo, "bar", { get: function () {return true;}});',
+			code: "Object.defineProperty(foo, \"bar\", { get: function () {return true;}});",
 			options,
 		},
 		{
-			code: 'Object.defineProperty(foo, "bar", { get: function (){return;}});',
+			code: "Object.defineProperty(foo, \"bar\", { get: function (){return;}});",
 			options,
 		},
 		{
@@ -94,7 +94,7 @@ ruleTester.run("getter-return", rule, {
 			options,
 		},
 		{
-			code: 'Reflect.defineProperty(foo, "bar", { get: function () {return true;}});',
+			code: "Reflect.defineProperty(foo, \"bar\", { get: function () {return true;}});",
 			options,
 		},
 
@@ -295,11 +295,11 @@ ruleTester.run("getter-return", rule, {
 			],
 		},
 		{
-			code: 'Object.defineProperty(foo, "bar", { get: function (){if(bar) {return true;}}});',
+			code: "Object.defineProperty(foo, \"bar\", { get: function (){if(bar) {return true;}}});",
 			errors: [{ messageId: "expectedAlways" }],
 		},
 		{
-			code: 'Object.defineProperty(foo, "bar", { get: function (){ ~function () { return true; }()}});',
+			code: "Object.defineProperty(foo, \"bar\", { get: function (){ ~function () { return true; }()}});",
 			errors: [{ messageId: "expected" }],
 		},
 
@@ -382,7 +382,7 @@ ruleTester.run("getter-return", rule, {
 			errors: [{ messageId: "expected" }],
 		},
 		{
-			code: 'Object.defineProperty(foo, "bar", { get: function (){}});',
+			code: "Object.defineProperty(foo, \"bar\", { get: function (){}});",
 			options,
 			errors: [{ messageId: "expected" }],
 		},
@@ -392,7 +392,7 @@ ruleTester.run("getter-return", rule, {
 			errors: [{ messageId: "expected" }],
 		},
 		{
-			code: 'Reflect.defineProperty(foo, "bar", { get: function (){}});',
+			code: "Reflect.defineProperty(foo, \"bar\", { get: function (){}});",
 			options,
 			errors: [{ messageId: "expected" }],
 		},

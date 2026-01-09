@@ -60,30 +60,30 @@ ruleTester.run("prefer-numeric-literals", rule, {
 			languageOptions: { ecmaVersion: 2020 },
 		},
 		{
-			code: 'class C { #parseInt; foo() { Number.#parseInt("111110111", 2); } }',
+			code: "class C { #parseInt; foo() { Number.#parseInt(\"111110111\", 2); } }",
 			languageOptions: { ecmaVersion: 2022 },
 		},
 	],
 	invalid: [
 		{
-			code: 'parseInt("111110111", 2) === 503;',
+			code: "parseInt(\"111110111\", 2) === 503;",
 			output: "0b111110111 === 503;",
 			errors: [{ message: "Use binary literals instead of parseInt()." }],
 		},
 		{
-			code: 'parseInt("767", 8) === 503;',
+			code: "parseInt(\"767\", 8) === 503;",
 			output: "0o767 === 503;",
 			errors: [{ message: "Use octal literals instead of parseInt()." }],
 		},
 		{
-			code: 'parseInt("1F7", 16) === 255;',
+			code: "parseInt(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{ message: "Use hexadecimal literals instead of parseInt()." },
 			],
 		},
 		{
-			code: 'Number.parseInt("111110111", 2) === 503;',
+			code: "Number.parseInt(\"111110111\", 2) === 503;",
 			output: "0b111110111 === 503;",
 			errors: [
 				{
@@ -93,14 +93,14 @@ ruleTester.run("prefer-numeric-literals", rule, {
 			],
 		},
 		{
-			code: 'Number.parseInt("767", 8) === 503;',
+			code: "Number.parseInt(\"767\", 8) === 503;",
 			output: "0o767 === 503;",
 			errors: [
 				{ message: "Use octal literals instead of Number.parseInt()." },
 			],
 		},
 		{
-			code: 'Number.parseInt("1F7", 16) === 255;',
+			code: "Number.parseInt(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{
@@ -409,14 +409,14 @@ ruleTester.run("prefer-numeric-literals", rule, {
 
 		// Optional chaining
 		{
-			code: 'parseInt?.("1F7", 16) === 255;',
+			code: "parseInt?.(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{ message: "Use hexadecimal literals instead of parseInt()." },
 			],
 		},
 		{
-			code: 'Number?.parseInt("1F7", 16) === 255;',
+			code: "Number?.parseInt(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{
@@ -426,7 +426,7 @@ ruleTester.run("prefer-numeric-literals", rule, {
 			],
 		},
 		{
-			code: 'Number?.parseInt?.("1F7", 16) === 255;',
+			code: "Number?.parseInt?.(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{
@@ -436,7 +436,7 @@ ruleTester.run("prefer-numeric-literals", rule, {
 			],
 		},
 		{
-			code: '(Number?.parseInt)("1F7", 16) === 255;',
+			code: "(Number?.parseInt)(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{
@@ -446,7 +446,7 @@ ruleTester.run("prefer-numeric-literals", rule, {
 			],
 		},
 		{
-			code: '(Number?.parseInt)?.("1F7", 16) === 255;',
+			code: "(Number?.parseInt)?.(\"1F7\", 16) === 255;",
 			output: "0x1F7 === 255;",
 			errors: [
 				{

@@ -43,14 +43,14 @@ module.exports = {
 							context.report({
 								node,
 								message:
-									'Value other than "bar" assigned to `const foo`. Unexpected value: {{ notBar }}.',
+									"Value other than \"bar\" assigned to `const foo`. Unexpected value: {{ notBar }}.",
 								data: {
 									notBar: node.init.value,
 								},
 								fix(fixer) {
 									return fixer.replaceText(
 										node.init,
-										'"bar"',
+										"\"bar\"",
 									);
 								},
 							});

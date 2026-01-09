@@ -45,7 +45,7 @@ ruleTester.run("no-sequences", rule, {
 		"var obj = {a: 1, b: 2};",
 		"var a = 1, b = 2;",
 		"var foo = (1, 2);",
-		'(0,eval)("foo()");',
+		"(0,eval)(\"foo()\");",
 		"for (i = 1, j = 2;; i++, j++);",
 		"foo(a, (b, c), d);",
 		"do {} while ((doSomething(), !!test));",
@@ -123,7 +123,7 @@ ruleTester.run("no-sequences", rule, {
 			errors: errors(13),
 		},
 		{
-			code: '(0,eval)("foo()");',
+			code: "(0,eval)(\"foo()\");",
 			options: [{ allowInParentheses: false }],
 			errors: errors(3),
 		},

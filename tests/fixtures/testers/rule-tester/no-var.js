@@ -27,7 +27,7 @@ module.exports = {
                         fix: function(fixer) {
                             return fixer.remove(sourceCode.getFirstToken(node));
                         }
-                    })
+                    });
                 }
             }
         };

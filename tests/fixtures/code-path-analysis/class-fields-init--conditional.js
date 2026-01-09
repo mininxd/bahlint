@@ -6,8 +6,7 @@ s2_1->s2_3->s2_4->final;
 initial->s1_1->final;
 */
 
-
-class Foo { a = b ? c : d }
+class Foo { a = b ? c : d; }
 
 /*DOT
 digraph {

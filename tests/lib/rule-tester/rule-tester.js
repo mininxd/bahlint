@@ -369,7 +369,6 @@ describe("RuleTester", () => {
 				before(() => {
 					originalGlobalIt = global.it;
 
-					 
 					it = () => {};
 
 					/*
@@ -382,7 +381,7 @@ describe("RuleTester", () => {
 					RuleTester.it = void 0;
 				});
 				after(() => {
-					 
+
 					it = originalGlobalIt;
 					RuleTester.describe = originalRuleTesterDescribe;
 					RuleTester.it = originalRuleTesterIt;
@@ -1980,10 +1979,10 @@ describe("RuleTester", () => {
 				"no-empty-keys",
 				jsonPlugin.rules["no-empty-keys"],
 				{
-					valid: ['{"foo": 1, "bar": 2}'],
+					valid: ["{\"foo\": 1, \"bar\": 2}"],
 					invalid: [
 						{
-							code: '{"": 1}',
+							code: "{\"\": 1}",
 							errors: [{ messageId: "emptyKey" }],
 						},
 					],
@@ -2875,7 +2874,7 @@ describe("RuleTester", () => {
 					],
 				},
 			);
-		}, `Assertion options can not use 'requireMessage: "messageId"' if rule under test doesn't define 'meta.messages'.`);
+		}, "Assertion options can not use 'requireMessage: \"messageId\"' if rule under test doesn't define 'meta.messages'.");
 	});
 
 	it("should not fail if 'requireData' is set, but the rule does not define messageIds", () => {
@@ -3394,7 +3393,7 @@ describe("RuleTester", () => {
 						],
 					},
 				);
-			}, 'Error Suggestion at index 0: The "output" property is required.');
+			}, "Error Suggestion at index 0: The \"output\" property is required.");
 		});
 
 		it("should support explicitly expecting no suggestions", () => {
@@ -3472,7 +3471,7 @@ describe("RuleTester", () => {
 						],
 					},
 				);
-			}, 'Error should have suggestions on error with message: "Bad var."');
+			}, "Error should have suggestions on error with message: \"Bad var.\"");
 		});
 
 		it("should support specifying only the amount of suggestions", () => {
@@ -4295,7 +4294,7 @@ describe("RuleTester", () => {
 			return assertion;
 		});
 
-		it('should use the "name" property if set to a non-empty string', () => {
+		it("should use the \"name\" property if set to a non-empty string", () => {
 			const assertion = assertEmitted(
 				ruleTesterTestEmitter,
 				"it",
@@ -4321,7 +4320,7 @@ describe("RuleTester", () => {
 			return assertion;
 		});
 
-		it('should use the "name" property if set to a non-empty string for valid cases too', () => {
+		it("should use the \"name\" property if set to a non-empty string for valid cases too", () => {
 			const assertion = assertEmitted(
 				ruleTesterTestEmitter,
 				"it",
@@ -4345,7 +4344,7 @@ describe("RuleTester", () => {
 			return assertion;
 		});
 
-		it('should use the test code as the name if the "name" property is set to an empty string', () => {
+		it("should use the test code as the name if the \"name\" property is set to an empty string", () => {
 			const assertion = assertEmitted(
 				ruleTesterTestEmitter,
 				"it",
@@ -4371,7 +4370,7 @@ describe("RuleTester", () => {
 			return assertion;
 		});
 
-		it('should throw if "name" property is not a string', () => {
+		it("should throw if \"name\" property is not a string", () => {
 			assert.throws(() => {
 				ruleTester.run(
 					"foo",
@@ -4395,7 +4394,7 @@ describe("RuleTester", () => {
 			}, /Optional test case property 'name' must be a string/u);
 		});
 
-		it('should throw if "code" property is not a string', () => {
+		it("should throw if \"code\" property is not a string", () => {
 			assert.throws(() => {
 				ruleTester.run(
 					"foo",
@@ -4430,7 +4429,7 @@ describe("RuleTester", () => {
 			}, /Test case must specify a string value for 'code'/u);
 		});
 
-		it('should throw if "code" property is missing', () => {
+		it("should throw if \"code\" property is missing", () => {
 			assert.throws(() => {
 				ruleTester.run(
 					"foo",
@@ -4490,7 +4489,7 @@ describe("RuleTester", () => {
 	});
 
 	describe("type checking", () => {
-		it('should throw if "only" property is not a boolean', () => {
+		it("should throw if \"only\" property is not a boolean", () => {
 			// "only" has to be falsy as itOnly is not mocked for all test cases
 			assert.throws(() => {
 				ruleTester.run(
@@ -4515,7 +4514,7 @@ describe("RuleTester", () => {
 			}, /Optional test case property 'only' must be a boolean/u);
 		});
 
-		it('should throw if "filename" property is not a string', () => {
+		it("should throw if \"filename\" property is not a string", () => {
 			assert.throws(() => {
 				ruleTester.run(
 					"foo",

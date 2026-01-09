@@ -5,7 +5,7 @@ initial->s2_1->final;
 initial->s1_1->final;
 */
 
-class Foo { a = b() }
+class Foo { a = b(); }
 
 /*DOT
 digraph {

@@ -4,7 +4,7 @@
 `
 {
   await using x = makeDisposable();
-}`
+}`;
 // obtained from https://typescript-eslint.io/play/#ts=5.4.3&showAST=es&fileType=.tsx&code=FAb2AJwQwdyhLALuArgZ3gOwObgB7gC84AtlANYCmAIvGgA4D2aUARgDaUAUAlANzAAvkA&eslintrc=N4KABGBEBOCuA2BTAzpAXGYBfEWg&tsconfig=N4KABGBEDGD2C2AHAlgGwKYCcDyiAuysAdgM6QBcYoEEkJemy0eAcgK6qoDCAFutAGsylBm3TgwAXxCSgA&tokens=false
 
 exports.parse = () => ({
@@ -327,4 +327,4 @@ exports.parse = () => ({
     }
   },
   "parent": null
-})
+});

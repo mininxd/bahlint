@@ -1,4 +1,4 @@
 
 /*eslint-env node*/
 
-console.log('bar');
+console.log("bar");

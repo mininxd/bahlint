@@ -152,4 +152,4 @@ exports.parse = () => ({
         }
     ],
     comments: []
-})
+});

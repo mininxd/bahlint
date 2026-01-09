@@ -1,4 +1,4 @@
-var msg = 'hi'
-if (msg == 'hi') {
+var msg = "hi";
+if (msg == "hi") {
 
 }

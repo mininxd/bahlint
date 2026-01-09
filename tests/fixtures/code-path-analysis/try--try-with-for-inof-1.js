@@ -7,7 +7,7 @@ s1_6->s1_8->final;
 */
 
 try {
-    for (let x of xs) {
+    for (const x of xs) {
     }
 } catch (err) {
 }

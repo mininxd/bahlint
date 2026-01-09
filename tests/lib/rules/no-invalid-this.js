@@ -183,14 +183,14 @@ const patterns = [
 		invalid: [USE_STRICT, IMPLIED_STRICT, MODULES],
 	},
 	{
-		code: 'function foo() { "use strict"; console.log(this); z(x => console.log(x, this)); }',
+		code: "function foo() { \"use strict\"; console.log(this); z(x => console.log(x, this)); }",
 		languageOptions: { ecmaVersion: 6 },
 		errors,
 		valid: [],
 		invalid: [NORMAL, USE_STRICT, IMPLIED_STRICT, MODULES],
 	},
 	{
-		code: 'function Foo() { "use strict"; console.log(this); z(x => console.log(x, this)); }',
+		code: "function Foo() { \"use strict\"; console.log(this); z(x => console.log(x, this)); }",
 		languageOptions: { ecmaVersion: 6 },
 		options: [{ capIsConstructor: false }],
 		errors,
@@ -240,7 +240,7 @@ const patterns = [
 		invalid: [USE_STRICT, IMPLIED_STRICT, MODULES],
 	},
 	{
-		code: 'var obj = {foo: function() { "use strict"; return function() { console.log(this); z(x => console.log(x, this)); }; }};',
+		code: "var obj = {foo: function() { \"use strict\"; return function() { console.log(this); z(x => console.log(x, this)); }; }};",
 		languageOptions: { ecmaVersion: 6 },
 		errors,
 		valid: [],
@@ -254,7 +254,7 @@ const patterns = [
 		invalid: [USE_STRICT, IMPLIED_STRICT, MODULES],
 	},
 	{
-		code: 'obj.foo = function() { "use strict"; return function() { console.log(this); z(x => console.log(x, this)); }; };',
+		code: "obj.foo = function() { \"use strict\"; return function() { console.log(this); z(x => console.log(x, this)); }; };",
 		languageOptions: { ecmaVersion: 6 },
 		errors,
 		valid: [],
@@ -343,7 +343,7 @@ const patterns = [
 		invalid: [],
 	},
 	{
-		code: 'Object.defineProperty(obj, "foo", {value: function() { console.log(this); z(x => console.log(x, this)); }})',
+		code: "Object.defineProperty(obj, \"foo\", {value: function() { console.log(this); z(x => console.log(x, this)); }})",
 		languageOptions: { ecmaVersion: 6 },
 		valid: [NORMAL, USE_STRICT, IMPLIED_STRICT, MODULES],
 		invalid: [],

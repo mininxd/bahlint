@@ -409,32 +409,32 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'NaN === "abc";',
+			code: "NaN === \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: 'Number.isNaN("abc");',
+							output: "Number.isNaN(\"abc\");",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'NaN == "abc";',
+			code: "NaN == \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: 'Number.isNaN("abc");',
+							output: "Number.isNaN(\"abc\");",
 						},
 						{
 							messageId: "replaceWithCastingAndIsNaN",
-							output: 'Number.isNaN(Number("abc"));',
+							output: "Number.isNaN(Number(\"abc\"));",
 						},
 					],
 				},
@@ -473,39 +473,39 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'NaN !== "abc";',
+			code: "NaN !== \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: '!Number.isNaN("abc");',
+							output: "!Number.isNaN(\"abc\");",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'NaN != "abc";',
+			code: "NaN != \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: '!Number.isNaN("abc");',
+							output: "!Number.isNaN(\"abc\");",
 						},
 						{
 							messageId: "replaceWithCastingAndIsNaN",
-							output: '!Number.isNaN(Number("abc"));',
+							output: "!Number.isNaN(Number(\"abc\"));",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'NaN < "abc";',
+			code: "NaN < \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -514,7 +514,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" < NaN;',
+			code: "\"abc\" < NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -523,7 +523,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'NaN > "abc";',
+			code: "NaN > \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -532,7 +532,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" > NaN;',
+			code: "\"abc\" > NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -541,7 +541,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'NaN <= "abc";',
+			code: "NaN <= \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -550,7 +550,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" <= NaN;',
+			code: "\"abc\" <= NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -559,7 +559,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'NaN >= "abc";',
+			code: "NaN >= \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -568,7 +568,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" >= NaN;',
+			code: "\"abc\" >= NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -609,32 +609,32 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'Number.NaN === "abc";',
+			code: "Number.NaN === \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: 'Number.isNaN("abc");',
+							output: "Number.isNaN(\"abc\");",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'Number.NaN == "abc";',
+			code: "Number.NaN == \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: 'Number.isNaN("abc");',
+							output: "Number.isNaN(\"abc\");",
 						},
 						{
 							messageId: "replaceWithCastingAndIsNaN",
-							output: 'Number.isNaN(Number("abc"));',
+							output: "Number.isNaN(Number(\"abc\"));",
 						},
 					],
 				},
@@ -673,39 +673,39 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'Number.NaN !== "abc";',
+			code: "Number.NaN !== \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: '!Number.isNaN("abc");',
+							output: "!Number.isNaN(\"abc\");",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'Number.NaN != "abc";',
+			code: "Number.NaN != \"abc\";",
 			errors: [
 				{
 					...comparisonError,
 					suggestions: [
 						{
 							messageId: "replaceWithIsNaN",
-							output: '!Number.isNaN("abc");',
+							output: "!Number.isNaN(\"abc\");",
 						},
 						{
 							messageId: "replaceWithCastingAndIsNaN",
-							output: '!Number.isNaN(Number("abc"));',
+							output: "!Number.isNaN(Number(\"abc\"));",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'Number.NaN < "abc";',
+			code: "Number.NaN < \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -714,7 +714,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" < Number.NaN;',
+			code: "\"abc\" < Number.NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -723,7 +723,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'Number.NaN > "abc";',
+			code: "Number.NaN > \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -732,7 +732,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" > Number.NaN;',
+			code: "\"abc\" > Number.NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -741,7 +741,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'Number.NaN <= "abc";',
+			code: "Number.NaN <= \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -750,7 +750,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" <= Number.NaN;',
+			code: "\"abc\" <= Number.NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -759,7 +759,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: 'Number.NaN >= "abc";',
+			code: "Number.NaN >= \"abc\";",
 			errors: [
 				{
 					...comparisonError,
@@ -768,7 +768,7 @@ ruleTester.run("use-isnan", rule, {
 			],
 		},
 		{
-			code: '"abc" >= Number.NaN;',
+			code: "\"abc\" >= Number.NaN;",
 			errors: [
 				{
 					...comparisonError,
@@ -1273,7 +1273,7 @@ ruleTester.run("use-isnan", rule, {
 						{
 							messageId: "replaceWithFindIndex",
 							data: { methodName: "findIndex" },
-							output: 'foo["findIndex"](Number.isNaN)',
+							output: "foo[\"findIndex\"](Number.isNaN)",
 						},
 					],
 				},
@@ -1290,7 +1290,7 @@ ruleTester.run("use-isnan", rule, {
 						{
 							messageId: "replaceWithFindIndex",
 							data: { methodName: "findIndex" },
-							output: 'foo["findIndex"](Number.isNaN)',
+							output: "foo[\"findIndex\"](Number.isNaN)",
 						},
 					],
 				},
@@ -1307,7 +1307,7 @@ ruleTester.run("use-isnan", rule, {
 						{
 							messageId: "replaceWithFindIndex",
 							data: { methodName: "findLastIndex" },
-							output: 'foo["findLastIndex"](Number.isNaN)',
+							output: "foo[\"findLastIndex\"](Number.isNaN)",
 						},
 					],
 				},
@@ -1446,7 +1446,7 @@ ruleTester.run("use-isnan", rule, {
 						{
 							messageId: "replaceWithFindIndex",
 							data: { methodName: "findIndex" },
-							output: 'foo["findIndex"](Number.isNaN)',
+							output: "foo[\"findIndex\"](Number.isNaN)",
 						},
 					],
 				},
@@ -1463,7 +1463,7 @@ ruleTester.run("use-isnan", rule, {
 						{
 							messageId: "replaceWithFindIndex",
 							data: { methodName: "findLastIndex" },
-							output: 'foo["findLastIndex"](Number.isNaN)',
+							output: "foo[\"findLastIndex\"](Number.isNaN)",
 						},
 					],
 				},

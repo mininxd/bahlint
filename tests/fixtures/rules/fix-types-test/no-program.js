@@ -4,9 +4,9 @@ module.exports = {
     fixable: "code",
 
     create(context) {
-        
+
         return {
-            
+
             "Program": function(node) {
                 context.report({
                     node,
@@ -18,5 +18,5 @@ module.exports = {
             }
         };
     }
-    
-}
+
+};

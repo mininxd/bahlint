@@ -41,7 +41,7 @@ ruleTester.run("array-callback-return", rule, {
 		"foo.forEach(function(x) { if (a === b) { return;} var a=0; })",
 		"foo.forEach(function(x) { if (a === b) { return x;} var a=0; })",
 		"foo.bar().forEach(function(x) { return; })",
-		'["foo","bar","baz"].forEach(function(x) { return x; })',
+		"[\"foo\",\"bar\",\"baz\"].forEach(function(x) { return x; })",
 		{
 			code: "foo.forEach(x => { var a=0; })",
 			languageOptions: { ecmaVersion: 6 },
@@ -676,7 +676,7 @@ ruleTester.run("array-callback-return", rule, {
 			],
 		},
 		{
-			code: 'foo["every"](function() {})',
+			code: "foo[\"every\"](function() {})",
 			errors: [
 				{
 					messageId: "expectedInside",
@@ -688,7 +688,7 @@ ruleTester.run("array-callback-return", rule, {
 			],
 		},
 		{
-			code: 'foo["every"](function foo() {})',
+			code: "foo[\"every\"](function foo() {})",
 			errors: [
 				{
 					messageId: "expectedInside",
@@ -1071,7 +1071,7 @@ ruleTester.run("array-callback-return", rule, {
 			],
 		},
 		{
-			code: '["foo","bar"].sort(function foo() {})',
+			code: "[\"foo\",\"bar\"].sort(function foo() {})",
 			options: allowImplicitOptions,
 			errors: [
 				{
@@ -1084,7 +1084,7 @@ ruleTester.run("array-callback-return", rule, {
 			],
 		},
 		{
-			code: '["foo","bar"].toSorted(function foo() {})',
+			code: "[\"foo\",\"bar\"].toSorted(function foo() {})",
 			options: allowImplicitOptions,
 			errors: [
 				{
@@ -1205,7 +1205,7 @@ ruleTester.run("array-callback-return", rule, {
 			],
 		},
 		{
-			code: '["foo","bar"].forEach(x => ++x)',
+			code: "[\"foo\",\"bar\"].forEach(x => ++x)",
 			options: checkForEachOptions,
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
@@ -1217,7 +1217,7 @@ ruleTester.run("array-callback-return", rule, {
 					},
 					suggestions: [
 						{
-							output: '["foo","bar"].forEach(x => {++x})',
+							output: "[\"foo\",\"bar\"].forEach(x => {++x})",
 							messageId: "wrapBraces",
 						},
 					],
@@ -1310,7 +1310,7 @@ ruleTester.run("array-callback-return", rule, {
 			],
 		},
 		{
-			code: '["foo","bar"].forEach(function bar(x) { return x;})',
+			code: "[\"foo\",\"bar\"].forEach(function bar(x) { return x;})",
 			options: checkForEachOptions,
 			errors: [
 				{

@@ -118,8 +118,8 @@ ruleTester.run("no-nonoctal-decimal-escape", rule, {
 			errors: [error("\\9", 2, "'9'", "'\\\\9'")],
 		},
 		{
-			code: '"\\8"',
-			errors: [error("\\8", 2, '"8"', '"\\\\8"')],
+			code: "\"\\8\"",
+			errors: [error("\\8", 2, "\"8\"", "\"\\\\8\"")],
 		},
 		{
 			code: "'f\\9'",

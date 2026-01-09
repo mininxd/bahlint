@@ -4,7 +4,7 @@ initial->s1_1->s1_2->s1_3->s1_4->s1_2->s1_4->s1_5->final;
 do {
     foo();
     continue;
-} while (a)
+} while (a);
 
 /*DOT
 digraph {

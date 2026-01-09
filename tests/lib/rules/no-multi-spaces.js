@@ -65,7 +65,7 @@ ruleTester.run("no-multi-spaces", rule, {
 		"var a,/* b,*/c;",
 		"var foo = [1,/* 2,*/3];",
 		"var bar = {a: 1,/* b: 2*/c: 3};",
-		'var foo = "hello     world";',
+		"var foo = \"hello     world\";",
 		"function foo() {\n    return;\n}",
 		"function foo() {\n    if (foo) {\n        return;\n    }\n}",
 		{

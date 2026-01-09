@@ -27,7 +27,7 @@ ruleTester.run("no-unexpected-multiline", rule, {
 		"var a = b\nvoid (x || y).doSomething()",
 		"var a = b;\n[1, 2, 3].forEach(console.log)",
 		"var a = b\nvoid [1, 2, 3].forEach(console.log)",
-		'"abc\\\n(123)"',
+		"\"abc\\\n(123)\"",
 		"var a = (\n(123)\n)",
 		"f(\n(x)\n)",
 		"(\nfunction () {}\n)[1]",

@@ -1,7 +1,7 @@
 let foo;
 export default [
     {
-        files: ['*.mjs'],
+        files: ["*.mjs"],
         rules: {
             "no-unused-vars": "error"
         }

@@ -26,7 +26,7 @@ ruleTester.run("no-restricted-syntax", rule, {
 			code: "foo += 42;",
 			options: ["VariableDeclaration", "FunctionExpression"],
 		},
-		{ code: "foo;", options: ['Identifier[name="bar"]'] },
+		{ code: "foo;", options: ["Identifier[name=\"bar\"]"] },
 		{
 			code: "() => 5",
 			options: ["ArrowFunctionExpression > BlockStatement"],
@@ -109,7 +109,7 @@ ruleTester.run("no-restricted-syntax", rule, {
 		},
 		{
 			code: "bar;",
-			options: ['Identifier[name="bar"]'],
+			options: ["Identifier[name=\"bar\"]"],
 			errors: [
 				{
 					messageId: "restrictedSyntax",
@@ -122,7 +122,7 @@ ruleTester.run("no-restricted-syntax", rule, {
 		},
 		{
 			code: "bar;",
-			options: ["Identifier", 'Identifier[name="bar"]'],
+			options: ["Identifier", "Identifier[name=\"bar\"]"],
 			errors: [
 				{
 					messageId: "restrictedSyntax",

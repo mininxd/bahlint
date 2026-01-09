@@ -133,7 +133,7 @@ ruleTester.run("no-unused-vars", rule, {
 			options: ["all"],
 		},
 		{ code: "var a=10;", options: ["local"] },
-		{ code: 'var min = "min"; Math[min];', options: ["all"] },
+		{ code: "var min = \"min\"; Math[min];", options: ["all"] },
 		{ code: "Foo.bar = function(baz) { return baz; };", options: ["all"] },
 		"myFunc(function foo() {}.bind(this))",
 		"myFunc(function foo(){}.toString())",
@@ -171,7 +171,7 @@ ruleTester.run("no-unused-vars", rule, {
 		"(function z() { z(); })();",
 		{ code: " ", languageOptions: { globals: { a: true } } },
 		{
-			code: 'var who = "Paul";\nmodule.exports = `Hello ${who}!`;',
+			code: "var who = \"Paul\";\nmodule.exports = `Hello ${who}!`;",
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
@@ -195,7 +195,7 @@ ruleTester.run("no-unused-vars", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'const foo = "hello!";function bar(foobar = foo) {  foobar.replace(/!$/, " world!");}\nbar();',
+			code: "const foo = \"hello!\";function bar(foobar = foo) {  foobar.replace(/!$/, \" world!\");}\nbar();",
 			languageOptions: { ecmaVersion: 6 },
 		},
 		"function Foo(){}; var x = new Foo(); x.foo()",
@@ -561,7 +561,7 @@ ruleTester.run("no-unused-vars", rule, {
 		[
 			"var unregisterFooWatcher;",
 			"// ...",
-			'unregisterFooWatcher = $scope.$watch( "foo", function() {',
+			"unregisterFooWatcher = $scope.$watch( \"foo\", function() {",
 			"    // ...some code..",
 			"    unregisterFooWatcher();",
 			"});",
@@ -666,7 +666,7 @@ ruleTester.run("no-unused-vars", rule, {
 
 		// export * as ns from "source"
 		{
-			code: 'export * as ns from "source"',
+			code: "export * as ns from \"source\"",
 			languageOptions: { ecmaVersion: 2020, sourceType: "module" },
 		},
 
@@ -1221,12 +1221,12 @@ ruleTester.run("no-unused-vars", rule, {
 			],
 		},
 		{
-			code: 'import x from "y";',
+			code: "import x from \"y\";",
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 			errors: [
 				definedError("x", [
 					{
-						output: 'import "y";',
+						output: "import \"y\";",
 						messageId: "removeVar",
 						data: { varName: "x" },
 					},

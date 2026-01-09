@@ -96,7 +96,7 @@ describe("cli", () => {
 			 * exceeds the default test timeout, so raise it just for this hook.
 			 * Mocha uses `this` to set timeouts on an individual hook level.
 			 */
-			this.timeout(60 * 1000);  
+			this.timeout(60 * 1000);
 			fixtureDir = `${os.tmpdir()}/eslint/fixtures`;
 			sh.mkdir("-p", fixtureDir);
 			sh.cp("-r", "./tests/fixtures/.", fixtureDir);
@@ -114,7 +114,7 @@ describe("cli", () => {
 		});
 
 		describe("execute()", () => {
-			it(`should return error when text with incorrect quotes is passed as argument`, async () => {
+			it("should return error when text with incorrect quotes is passed as argument", async () => {
 				const configFile = getFixturePath(
 					"configurations",
 					"quotes-error.js",
@@ -127,7 +127,7 @@ describe("cli", () => {
 				assert.strictEqual(result, 1);
 			});
 
-			it(`should not print debug info when passed the empty string as text`, async () => {
+			it("should not print debug info when passed the empty string as text", async () => {
 				const result = await cli.execute(
 					[
 						"argv0",
@@ -144,7 +144,7 @@ describe("cli", () => {
 				assert.isTrue(log.info.notCalled);
 			});
 
-			it(`should exit with console error when passed unsupported arguments`, async () => {
+			it("should exit with console error when passed unsupported arguments", async () => {
 				const filePath = getFixturePath("files");
 				const result = await cli.execute(
 					`--blah --another ${filePath}`,
@@ -165,7 +165,7 @@ describe("cli", () => {
 				process.cwd = originalCwd;
 			});
 
-			it(`should exit with an error status (1)`, async () => {
+			it("should exit with an error status (1)", async () => {
 				const configPath = getFixturePath(
 					"configurations",
 					"quotes-error.js",
@@ -190,17 +190,17 @@ describe("cli", () => {
 				process.cwd = originalCwd;
 			});
 
-			it(`should load the local config file`, async () => {
+			it("should load the local config file", async () => {
 				await cli.execute("cli/passing.js --no-ignore");
 			});
 
-			it(`should load the local config file with glob pattern`, async () => {
+			it("should load the local config file with glob pattern", async () => {
 				await cli.execute("cli/pass*.js --no-ignore");
 			});
 
 			// only works on Windows
 			if (os.platform() === "win32") {
-				it(`should load the local config file with Windows slashes glob pattern`, async () => {
+				it("should load the local config file with Windows slashes glob pattern", async () => {
 					await cli.execute("cli\\pass*.js --no-ignore");
 				});
 			}
@@ -208,7 +208,7 @@ describe("cli", () => {
 
 		describe("Formatters", () => {
 			describe("when given a valid built-in formatter name", () => {
-				it(`should execute without any errors`, async () => {
+				it("should execute without any errors", async () => {
 					const filePath = getFixturePath("passing.js");
 					const exit = await cli.execute(
 						`--no-config-lookup -f json ${filePath}`,
@@ -229,7 +229,7 @@ describe("cli", () => {
 					process.cwd = originalCwd;
 				});
 
-				it(`should execute without any errors`, async () => {
+				it("should execute without any errors", async () => {
 					const filePath = getFixturePath("passing.js");
 					const exit = await cli.execute(
 						`--no-ignore -f json-with-metadata ${filePath} --no-config-lookup`,
@@ -299,7 +299,7 @@ describe("cli", () => {
 				describe("and there are too many warnings", () => {
 					it("should provide `maxWarningsExceeded` metadata to the formatter", async () => {
 						const exit = await cli.execute(
-							`--no-ignore -f json-with-metadata --max-warnings 1 --rule 'quotes: warn' --no-config-lookup`,
+							"--no-ignore -f json-with-metadata --max-warnings 1 --rule 'quotes: warn' --no-config-lookup",
 							"'hello' + 'world';",
 						);
 
@@ -345,7 +345,7 @@ describe("cli", () => {
 					process.cwd = originalCwd;
 				});
 
-				it(`should execute with error:`, async () => {
+				it("should execute with error:", async () => {
 					const filePath = getFixturePath("passing.js");
 					const exit = await cli.execute(
 						`-f fakeformatter ${filePath} --no-config-lookup`,
@@ -366,7 +366,7 @@ describe("cli", () => {
 					process.cwd = originalCwd;
 				});
 
-				it(`should execute without any errors`, async () => {
+				it("should execute without any errors", async () => {
 					const formatterPath = getFixturePath(
 						"formatters",
 						"simple.js",
@@ -391,7 +391,7 @@ describe("cli", () => {
 					process.cwd = originalCwd;
 				});
 
-				it(`should execute with error`, async () => {
+				it("should execute with error", async () => {
 					const formatterPath = getFixturePath(
 						"formatters",
 						"file-does-not-exist.js",
@@ -416,7 +416,7 @@ describe("cli", () => {
 					process.cwd = originalCwd;
 				});
 
-				it(`should execute without any errors`, async () => {
+				it("should execute without any errors", async () => {
 					const formatterPath = getFixturePath(
 						"formatters",
 						"async.js",
@@ -447,7 +447,7 @@ describe("cli", () => {
 			});
 
 			describe("when executing a file with a lint error", () => {
-				it(`should exit with error`, async () => {
+				it("should exit with error", async () => {
 					const filePath = getFixturePath("undef.js");
 					const code = `--no-ignore --rule no-undef:2 ${filePath}`;
 
@@ -458,7 +458,7 @@ describe("cli", () => {
 			});
 
 			describe("when using --fix-type without --fix or --fix-dry-run", () => {
-				it(`should exit with error`, async () => {
+				it("should exit with error", async () => {
 					const filePath = getFixturePath("passing.js");
 					const code = `--fix-type suggestion ${filePath}`;
 
@@ -469,7 +469,7 @@ describe("cli", () => {
 			});
 
 			describe("when executing a file with a syntax error", () => {
-				it(`should exit with error`, async () => {
+				it("should exit with error", async () => {
 					const filePath = getFixturePath("syntax-error.js");
 					const exit = await cli.execute(`--no-ignore ${filePath}`);
 
@@ -489,7 +489,7 @@ describe("cli", () => {
 				process.cwd = originalCwd;
 			});
 
-			it(`should not print the results from previous execution`, async () => {
+			it("should not print the results from previous execution", async () => {
 				const filePath = getFixturePath("missing-semicolon.js");
 				const passingPath = getFixturePath("passing.js");
 
@@ -505,14 +505,14 @@ describe("cli", () => {
 		});
 
 		describe("when executing with version flag", () => {
-			it(`should print out current version`, async () => {
+			it("should print out current version", async () => {
 				assert.strictEqual(await cli.execute("-v"), 0);
 				assert.strictEqual(log.info.callCount, 1);
 			});
 		});
 
 		describe("when executing with env-info flag", () => {
-			it(`should print out environment information`, async () => {
+			it("should print out environment information", async () => {
 				assert.strictEqual(await cli.execute("--env-info"), 0);
 				assert.strictEqual(log.info.callCount, 1);
 			});
@@ -528,7 +528,7 @@ describe("cli", () => {
 					RuntimeInfo.environment = sinon.stub();
 				});
 
-				it(`should print error message and return error code`, async () => {
+				it("should print error message and return error code", async () => {
 					assert.strictEqual(await cli.execute("--env-info"), 2);
 					assert.strictEqual(log.error.callCount, 1);
 				});
@@ -536,14 +536,14 @@ describe("cli", () => {
 		});
 
 		describe("when executing with help flag", () => {
-			it(`should print out help`, async () => {
+			it("should print out help", async () => {
 				assert.strictEqual(await cli.execute("-h"), 0);
 				assert.strictEqual(log.info.callCount, 1);
 			});
 		});
 
 		describe("when executing a file with a shebang", () => {
-			it(`should execute without error`, async () => {
+			it("should execute without error", async () => {
 				const filePath = getFixturePath("shebang.js");
 				const exit = await cli.execute(
 					`--no-config-lookup --no-ignore ${filePath}`,
@@ -565,7 +565,7 @@ describe("cli", () => {
 			});
 
 			describe("when given a config file and a directory of files", () => {
-				it(`should load and execute without error`, async () => {
+				it("should load and execute without error", async () => {
 					const configPath = getFixturePath(
 						"configurations",
 						"semi-error.js",
@@ -579,7 +579,7 @@ describe("cli", () => {
 			});
 
 			describe("when executing with global flag", () => {
-				it(`should default defined variables to read-only`, async () => {
+				it("should default defined variables to read-only", async () => {
 					const filePath = getFixturePath("undef.js");
 					const exit = await cli.execute(
 						`--global baz,bat --no-ignore --rule no-global-assign:2 ${filePath}`,
@@ -589,7 +589,7 @@ describe("cli", () => {
 					assert.strictEqual(exit, 1);
 				});
 
-				it(`should allow defining writable global variables`, async () => {
+				it("should allow defining writable global variables", async () => {
 					const filePath = getFixturePath("undef.js");
 					const exit = await cli.execute(
 						`--global baz:false,bat:true --no-ignore ${filePath}`,
@@ -599,7 +599,7 @@ describe("cli", () => {
 					assert.strictEqual(exit, 0);
 				});
 
-				it(`should allow defining variables with multiple flags`, async () => {
+				it("should allow defining variables with multiple flags", async () => {
 					const filePath = getFixturePath("undef.js");
 					const exit = await cli.execute(
 						`--global baz --global bat:true --no-ignore ${filePath}`,
@@ -611,7 +611,7 @@ describe("cli", () => {
 			});
 
 			describe("when supplied with rule flag and severity level set to error", () => {
-				it(`should exit with an error status (2)`, async () => {
+				it("should exit with an error status (2)", async () => {
 					const filePath = getFixturePath("single-quoted.js");
 					const code = `--no-ignore --rule 'quotes: [2, double]' ${filePath}`;
 					const exitStatus = await cli.execute(code);
@@ -621,7 +621,7 @@ describe("cli", () => {
 			});
 
 			describe("when the quiet option is enabled", () => {
-				it(`should only print error`, async () => {
+				it("should only print error", async () => {
 					const filePath = getFixturePath("single-quoted.js");
 					const cliArgs = `--no-ignore --quiet -f stylish --rule 'quotes: [2, double]' --rule 'no-undef: 1' ${filePath}`;
 
@@ -634,7 +634,7 @@ describe("cli", () => {
 					assert.include(formattedOutput, "(1 error, 0 warnings)");
 				});
 
-				it(`should print nothing if there are no errors`, async () => {
+				it("should print nothing if there are no errors", async () => {
 					const filePath = getFixturePath("single-quoted.js");
 					const cliArgs = `--no-ignore --quiet -f stylish --rule 'quotes: [1, double]' --rule 'no-undef: 1' ${filePath}`;
 
@@ -643,7 +643,7 @@ describe("cli", () => {
 					sinon.assert.notCalled(log.info);
 				});
 
-				it(`should not run rules set to 'warn'`, async () => {
+				it("should not run rules set to 'warn'", async () => {
 					const filePath = getFixturePath("single-quoted.js");
 					const configPath = getFixturePath(
 						"eslint.config-rule-throws.js",
@@ -655,7 +655,7 @@ describe("cli", () => {
 					assert.strictEqual(exit, 0);
 				});
 
-				it(`should run rules set to 'warn' while maxWarnings is set`, async () => {
+				it("should run rules set to 'warn' while maxWarnings is set", async () => {
 					const filePath = getFixturePath("single-quoted.js");
 					const configPath = getFixturePath(
 						"eslint.config-rule-throws.js",
@@ -670,7 +670,7 @@ describe("cli", () => {
 
 			describe("no-error-on-unmatched-pattern flag", () => {
 				describe("when executing without no-error-on-unmatched-pattern flag", () => {
-					it(`should throw an error on unmatched glob pattern`, async () => {
+					it("should throw an error on unmatched glob pattern", async () => {
 						let filePath = getFixturePath("unmatched-patterns");
 						const globPattern = "unmatched*.js";
 
@@ -690,7 +690,7 @@ describe("cli", () => {
 				});
 
 				describe("when executing with no-error-on-unmatched-pattern flag", () => {
-					it(`should not throw an error on unmatched node glob syntax patterns`, async () => {
+					it("should not throw an error on unmatched node glob syntax patterns", async () => {
 						const filePath = getFixturePath("unmatched-patterns");
 						const exit = await cli.execute(
 							`--no-error-on-unmatched-pattern "${filePath}/unmatched*.js"`,
@@ -701,7 +701,7 @@ describe("cli", () => {
 				});
 
 				describe("when executing with no-error-on-unmatched-pattern flag and multiple patterns", () => {
-					it(`should not throw an error on multiple unmatched node glob syntax patterns`, async () => {
+					it("should not throw an error on multiple unmatched node glob syntax patterns", async () => {
 						const filePath = getFixturePath(
 							"unmatched-patterns/js3",
 						);
@@ -712,7 +712,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should still throw an error on when a matched pattern has lint errors`, async () => {
+					it("should still throw an error on when a matched pattern has lint errors", async () => {
 						const filePath = getFixturePath("unmatched-patterns");
 						const exit = await cli.execute(
 							`--no-ignore --no-error-on-unmatched-pattern ${filePath}/unmatched1*.js ${filePath}/failing.js`,
@@ -725,7 +725,7 @@ describe("cli", () => {
 
 			describe("Parser Options", () => {
 				describe("when given parser options", () => {
-					it(`should exit with error if parser options are invalid`, async () => {
+					it("should exit with error if parser options are invalid", async () => {
 						const filePath = getFixturePath("passing.js");
 						const exit = await cli.execute(
 							`--no-ignore --parser-options test111 ${filePath}`,
@@ -734,7 +734,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 2);
 					});
 
-					it(`should exit with no error if parser is valid`, async () => {
+					it("should exit with no error if parser is valid", async () => {
 						const filePath = getFixturePath("passing.js");
 						const exit = await cli.execute(
 							`--no-ignore --parser-options=ecmaVersion:6 ${filePath}`,
@@ -743,7 +743,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should exit with an error on ecmaVersion 7 feature in ecmaVersion 6`, async () => {
+					it("should exit with an error on ecmaVersion 7 feature in ecmaVersion 6", async () => {
 						const filePath = getFixturePath("passing-es7.js");
 						const exit = await cli.execute(
 							`--no-ignore --parser-options=ecmaVersion:6 ${filePath}`,
@@ -752,7 +752,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 1);
 					});
 
-					it(`should exit with no error on ecmaVersion 7 feature in ecmaVersion 7`, async () => {
+					it("should exit with no error on ecmaVersion 7 feature in ecmaVersion 7", async () => {
 						const filePath = getFixturePath("passing-es7.js");
 						const exit = await cli.execute(
 							`--no-ignore --parser-options=ecmaVersion:7 ${filePath}`,
@@ -761,7 +761,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should exit with no error on ecmaVersion 7 feature with config ecmaVersion 6 and command line ecmaVersion 7`, async () => {
+					it("should exit with no error on ecmaVersion 7 feature with config ecmaVersion 6 and command line ecmaVersion 7", async () => {
 						const configPath = getFixturePath(
 							"configurations",
 							"es6.js",
@@ -786,7 +786,7 @@ describe("cli", () => {
 					);
 				});
 
-				it(`should not change exit code if warning count under threshold`, async () => {
+				it("should not change exit code if warning count under threshold", async () => {
 					const exitCode = await cli.execute(
 						`--no-ignore --max-warnings 10 ${filePath} -c ${configFilePath}`,
 					);
@@ -794,7 +794,7 @@ describe("cli", () => {
 					assert.strictEqual(exitCode, 0);
 				});
 
-				it(`should exit with exit code 1 if warning count exceeds threshold`, async () => {
+				it("should exit with exit code 1 if warning count exceeds threshold", async () => {
 					const exitCode = await cli.execute(
 						`--no-ignore --max-warnings 5 ${filePath} -c ${configFilePath}`,
 					);
@@ -807,7 +807,7 @@ describe("cli", () => {
 					);
 				});
 
-				it(`should exit with exit code 1 without printing warnings if the quiet option is enabled and warning count exceeds threshold`, async () => {
+				it("should exit with exit code 1 without printing warnings if the quiet option is enabled and warning count exceeds threshold", async () => {
 					const exitCode = await cli.execute(
 						`--no-ignore --quiet --max-warnings 5 ${filePath} -c ${configFilePath}`,
 					);
@@ -821,7 +821,7 @@ describe("cli", () => {
 					assert.ok(log.info.notCalled); // didn't print warnings
 				});
 
-				it(`should not change exit code if warning count equals threshold`, async () => {
+				it("should not change exit code if warning count equals threshold", async () => {
 					const exitCode = await cli.execute(
 						`--no-ignore --max-warnings 6 ${filePath} -c ${configFilePath}`,
 					);
@@ -829,7 +829,7 @@ describe("cli", () => {
 					assert.strictEqual(exitCode, 0);
 				});
 
-				it(`should not change exit code if flag is not specified and there are warnings`, async () => {
+				it("should not change exit code if flag is not specified and there are warnings", async () => {
 					const exitCode = await cli.execute(
 						`-c ${configFilePath} ${filePath}`,
 					);
@@ -839,7 +839,7 @@ describe("cli", () => {
 			});
 
 			describe("when given the exit-on-fatal-error flag", () => {
-				it(`should not change exit code if no fatal errors are reported`, async () => {
+				it("should not change exit code if no fatal errors are reported", async () => {
 					const filePath = getFixturePath(
 						"exit-on-fatal-error",
 						"no-fatal-error.js",
@@ -851,7 +851,7 @@ describe("cli", () => {
 					assert.strictEqual(exitCode, 0);
 				});
 
-				it(`should exit with exit code 1 if no fatal errors are found, but rule violations are found`, async () => {
+				it("should exit with exit code 1 if no fatal errors are found, but rule violations are found", async () => {
 					const filePath = getFixturePath(
 						"exit-on-fatal-error",
 						"no-fatal-error-rule-violation.js",
@@ -863,7 +863,7 @@ describe("cli", () => {
 					assert.strictEqual(exitCode, 1);
 				});
 
-				it(`should exit with exit code 2 if fatal error is found`, async () => {
+				it("should exit with exit code 2 if fatal error is found", async () => {
 					const filePath = getFixturePath(
 						"exit-on-fatal-error",
 						"fatal-error.js",
@@ -875,7 +875,7 @@ describe("cli", () => {
 					assert.strictEqual(exitCode, 2);
 				});
 
-				it(`should exit with exit code 2 if fatal error is found in any file`, async () => {
+				it("should exit with exit code 2 if fatal error is found in any file", async () => {
 					const filePath = getFixturePath("exit-on-fatal-error");
 					const exitCode = await cli.execute(
 						`--no-ignore --exit-on-fatal-error ${filePath}`,
@@ -887,7 +887,7 @@ describe("cli", () => {
 
 			describe("Ignores", () => {
 				describe("when given a directory with eslint excluded files in the directory", () => {
-					it(`should throw an error and not process any files`, async () => {
+					it("should throw an error and not process any files", async () => {
 						const options = `--config ${getFixturePath("eslint.config-with-ignores.js")}`;
 						const filePath = getFixturePath("cli");
 						const expectedMessage = `All files matched by '${filePath.replace(/\\/gu, "/")}' are ignored.`;
@@ -899,7 +899,7 @@ describe("cli", () => {
 				});
 
 				describe("when given a file in excluded files list", () => {
-					it(`should not process the file`, async () => {
+					it("should not process the file", async () => {
 						const options = `--config ${getFixturePath("eslint.config-with-ignores.js")}`;
 						const filePath = getFixturePath("passing.js");
 						const exit = await cli.execute(
@@ -911,7 +911,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should process the file when forced`, async () => {
+					it("should process the file when forced", async () => {
 						const options = `--config ${getFixturePath("eslint.config-with-ignores.js")}`;
 						const filePath = getFixturePath("passing.js");
 						const exit = await cli.execute(
@@ -923,7 +923,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should suppress the warning if --no-warn-ignored is passed`, async () => {
+					it("should suppress the warning if --no-warn-ignored is passed", async () => {
 						const options = `--config ${getFixturePath("eslint.config-with-ignores.js")}`;
 						const filePath = getFixturePath("passing.js");
 						const exit = await cli.execute(
@@ -934,14 +934,14 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should not lint anything when no files are passed if --pass-on-no-patterns is passed`, async () => {
+					it("should not lint anything when no files are passed if --pass-on-no-patterns is passed", async () => {
 						const exit = await cli.execute("--pass-on-no-patterns");
 
 						assert.isFalse(log.info.called);
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should suppress the warning if --no-warn-ignored is passed and an ignored file is passed via stdin`, async () => {
+					it("should suppress the warning if --no-warn-ignored is passed and an ignored file is passed via stdin", async () => {
 						const options = `--config ${getFixturePath("eslint.config-with-ignores.js")}`;
 						const filePath = getFixturePath("passing.js");
 						const exit = await cli.execute(
@@ -955,7 +955,7 @@ describe("cli", () => {
 				});
 
 				describe("when given a pattern to ignore", () => {
-					it(`should not process any files`, async () => {
+					it("should not process any files", async () => {
 						const ignoredFile = getFixturePath(
 							"cli/syntax-error.js",
 						);
@@ -969,7 +969,7 @@ describe("cli", () => {
 						assert.strictEqual(exit, 0);
 					});
 
-					it(`should interpret pattern that contains a slash as relative to cwd`, async () => {
+					it("should interpret pattern that contains a slash as relative to cwd", async () => {
 						process.cwd = () =>
 							getFixturePath(
 								"cli/ignore-pattern-relative/subdir",
@@ -994,7 +994,7 @@ describe("cli", () => {
 						);
 					});
 
-					it(`should interpret pattern that doesn't contain a slash as relative to cwd`, async () => {
+					it("should interpret pattern that doesn't contain a slash as relative to cwd", async () => {
 						process.cwd = () =>
 							getFixturePath(
 								"cli/ignore-pattern-relative/subdir/subsubdir",
@@ -1035,7 +1035,7 @@ describe("cli", () => {
 		});
 
 		describe("when given a parser name", () => {
-			it(`should exit with a fatal error if parser is invalid`, async () => {
+			it("should exit with a fatal error if parser is invalid", async () => {
 				const filePath = getFixturePath("passing.js");
 
 				await stdAssert.rejects(
@@ -1047,7 +1047,7 @@ describe("cli", () => {
 				);
 			});
 
-			it(`should exit with no error if parser is valid`, async () => {
+			it("should exit with no error if parser is valid", async () => {
 				const filePath = getFixturePath("passing.js");
 				const exit = await cli.execute(
 					`--no-config-lookup --no-ignore --parser espree ${filePath}`,
@@ -1062,7 +1062,7 @@ describe("cli", () => {
 				sh.rm("-rf", "tests/output");
 			});
 
-			it(`should write the file and create dirs if they don't exist`, async () => {
+			it("should write the file and create dirs if they don't exist", async () => {
 				const filePath = getFixturePath("single-quoted.js");
 				const code = `--no-config-lookup --rule 'quotes: [1, double]' --o tests/output/eslint-output.txt ${filePath}`;
 
@@ -1076,7 +1076,7 @@ describe("cli", () => {
 			});
 
 			// https://github.com/eslint/eslint/issues/17660
-			it(`should write the file and create dirs if they don't exist even when output is empty`, async () => {
+			it("should write the file and create dirs if they don't exist even when output is empty", async () => {
 				const filePath = getFixturePath("single-quoted.js");
 				const code = `--no-config-lookup --rule 'quotes: [1, single]' --o tests/output/eslint-output.txt ${filePath}`;
 
@@ -1091,7 +1091,7 @@ describe("cli", () => {
 				assert.isTrue(log.info.notCalled);
 			});
 
-			it(`should return an error if the path is a directory`, async () => {
+			it("should return an error if the path is a directory", async () => {
 				const filePath = getFixturePath("single-quoted.js");
 				const code = `--no-config-lookup --rule 'quotes: [1, double]' --o tests/output ${filePath}`;
 
@@ -1104,7 +1104,7 @@ describe("cli", () => {
 				assert.isTrue(log.error.calledOnce);
 			});
 
-			it(`should return an error if the path could not be written to`, async () => {
+			it("should return an error if the path could not be written to", async () => {
 				const filePath = getFixturePath("single-quoted.js");
 				const code = `--no-config-lookup --rule 'quotes: [1, double]' --o tests/output/eslint-output.txt ${filePath}`;
 
@@ -1125,7 +1125,7 @@ describe("cli", () => {
 				sinon.verifyAndRestore();
 			});
 
-			it(`should pass allowInlineConfig:false to ESLint when --no-inline-config is used`, async () => {
+			it("should pass allowInlineConfig:false to ESLint when --no-inline-config is used", async () => {
 				// create a fake ESLint class to test with
 				const fakeESLint = sinon
 					.mock()
@@ -1162,7 +1162,7 @@ describe("cli", () => {
 				await localCLI.execute("--no-inline-config .");
 			});
 
-			it(`should not error and allowInlineConfig should be true by default`, async () => {
+			it("should not error and allowInlineConfig should be true by default", async () => {
 				// create a fake ESLint class to test with
 				const fakeESLint = sinon
 					.mock()
@@ -1196,7 +1196,7 @@ describe("cli", () => {
 				sinon.verifyAndRestore();
 			});
 
-			it(`should pass fix:true to ESLint when executing on files`, async () => {
+			it("should pass fix:true to ESLint when executing on files", async () => {
 				// create a fake ESLint class to test with
 				const fakeESLint = sinon
 					.mock()
@@ -1222,7 +1222,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 0);
 			});
 
-			it(`should rewrite files when in fix mode`, async () => {
+			it("should rewrite files when in fix mode", async () => {
 				const report = [
 					{
 						filePath: "./foo.js",
@@ -1263,7 +1263,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 1);
 			});
 
-			it(`should provide fix predicate and rewrite files when in fix mode and quiet mode`, async () => {
+			it("should provide fix predicate and rewrite files when in fix mode and quiet mode", async () => {
 				const report = [
 					{
 						filePath: "./foo.js",
@@ -1305,7 +1305,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 0);
 			});
 
-			it(`should not call ESLint and return 2 when executing on text`, async () => {
+			it("should not call ESLint and return 2 when executing on text", async () => {
 				// create a fake ESLint class to test with
 				const fakeESLint = sinon.mock().never();
 
@@ -1330,7 +1330,7 @@ describe("cli", () => {
 				sinon.verifyAndRestore();
 			});
 
-			it(`should pass fix:true to ESLint when executing on files`, async () => {
+			it("should pass fix:true to ESLint when executing on files", async () => {
 				// create a fake ESLint class to test with
 				const fakeESLint = sinon
 					.mock()
@@ -1356,7 +1356,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 0);
 			});
 
-			it(`should pass fixTypes to ESLint when --fix-type is passed`, async () => {
+			it("should pass fixTypes to ESLint when --fix-type is passed", async () => {
 				const expectedESLintOptions = {
 					fix: true,
 					fixTypes: ["suggestion"],
@@ -1389,7 +1389,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 0);
 			});
 
-			it(`should not rewrite files when in fix-dry-run mode`, async () => {
+			it("should not rewrite files when in fix-dry-run mode", async () => {
 				const report = [
 					{
 						filePath: "./foo.js",
@@ -1430,7 +1430,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 1);
 			});
 
-			it(`should provide fix predicate when in fix-dry-run mode and quiet mode`, async () => {
+			it("should provide fix predicate when in fix-dry-run mode and quiet mode", async () => {
 				const report = [
 					{
 						filePath: "./foo.js",
@@ -1474,7 +1474,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 0);
 			});
 
-			it(`should allow executing on text`, async () => {
+			it("should allow executing on text", async () => {
 				const report = [
 					{
 						filePath: "./foo.js",
@@ -1518,7 +1518,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 1);
 			});
 
-			it(`should not call ESLint and return 2 when used with --fix`, async () => {
+			it("should not call ESLint and return 2 when used with --fix", async () => {
 				// create a fake ESLint class to test with
 				const fakeESLint = sinon.mock().never();
 
@@ -1547,7 +1547,7 @@ describe("cli", () => {
 				process.cwd = originalCwd;
 			});
 
-			it(`should print out the configuration`, async () => {
+			it("should print out the configuration", async () => {
 				const filePath = getFixturePath("xxx.js");
 
 				const exitCode = await cli.execute(
@@ -1558,7 +1558,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 0);
 			});
 
-			it(`should error if any positional file arguments are passed`, async () => {
+			it("should error if any positional file arguments are passed", async () => {
 				const filePath1 = getFixturePath("files", "bar.js");
 				const filePath2 = getFixturePath("files", "foo.js");
 
@@ -1571,7 +1571,7 @@ describe("cli", () => {
 				assert.strictEqual(exitCode, 2);
 			});
 
-			it(`should error out when executing on text`, async () => {
+			it("should error out when executing on text", async () => {
 				const exitCode = await cli.execute(
 					"--print-config=myFile.js",
 					"foo = bar;",
@@ -1586,7 +1586,7 @@ describe("cli", () => {
 		describe("when passing --report-unused-disable-directives", () => {
 			it("errors when --report-unused-disable-directives", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives --rule "'no-console': 'error'"`,
+					"--no-config-lookup --report-unused-disable-directives --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1617,7 +1617,7 @@ describe("cli", () => {
 
 			it("errors when --report-unused-disable-directives-severity error", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity error --rule "'no-console': 'error'"`,
+					"--no-config-lookup --report-unused-disable-directives-severity error --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1648,7 +1648,7 @@ describe("cli", () => {
 
 			it("errors when --report-unused-disable-directives-severity 2", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity 2 --rule "'no-console': 'error'"`,
+					"--no-config-lookup --report-unused-disable-directives-severity 2 --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1679,7 +1679,7 @@ describe("cli", () => {
 
 			it("warns when --report-unused-disable-directives-severity warn", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity warn --rule "'no-console': 'error'""`,
+					"--no-config-lookup --report-unused-disable-directives-severity warn --rule \"'no-console': 'error'\"\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1710,7 +1710,7 @@ describe("cli", () => {
 
 			it("warns when --report-unused-disable-directives-severity 1", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity 1 --rule "'no-console': 'error'"`,
+					"--no-config-lookup --report-unused-disable-directives-severity 1 --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1741,7 +1741,7 @@ describe("cli", () => {
 
 			it("does not report when --report-unused-disable-directives-severity off", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity off --rule "'no-console': 'error'"`,
+					"--no-config-lookup --report-unused-disable-directives-severity off --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1760,7 +1760,7 @@ describe("cli", () => {
 
 			it("does not report when --report-unused-disable-directives-severity 0", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity 0 --rule "'no-console': 'error'"`,
+					"--no-config-lookup --report-unused-disable-directives-severity 0 --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1779,7 +1779,7 @@ describe("cli", () => {
 
 			it("fails when passing invalid string for --report-unused-disable-directives-severity", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives-severity foo`,
+					"--no-config-lookup --report-unused-disable-directives-severity foo",
 				);
 
 				assert.strictEqual(
@@ -1804,7 +1804,7 @@ describe("cli", () => {
 
 			it("fails when passing both --report-unused-disable-directives and --report-unused-disable-directives-severity", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --report-unused-disable-directives --report-unused-disable-directives-severity warn`,
+					"--no-config-lookup --report-unused-disable-directives --report-unused-disable-directives-severity warn",
 				);
 
 				assert.strictEqual(
@@ -1829,7 +1829,7 @@ describe("cli", () => {
 
 			it("warns by default", async () => {
 				const exitCode = await cli.execute(
-					`--no-config-lookup --rule "'no-console': 'error'"`,
+					"--no-config-lookup --rule \"'no-console': 'error'\"",
 					"foo(); // eslint-disable-line no-console",
 				);
 
@@ -1961,7 +1961,7 @@ describe("cli", () => {
 
 				await stdAssert.rejects(cli.execute(code), {
 					message:
-						'"eslint-plugin-no-default-export" cannot be used with the `--plugin` option because its default module does not provide a `default` export',
+						"\"eslint-plugin-no-default-export\" cannot be used with the `--plugin` option because its default module does not provide a `default` export",
 				});
 			});
 		});
@@ -2357,7 +2357,7 @@ describe("cli", () => {
 				);
 			});
 
-			it('should fail when passing --ext ""', async () => {
+			it("should fail when passing --ext \"\"", async () => {
 				// When passing "" on command line, its corresponding item in process.argv[] is an empty string
 				const exitCode = await cli.execute([
 					"argv0",
@@ -2429,7 +2429,7 @@ describe("cli", () => {
 				await stdAssert.rejects(
 					() =>
 						cli.execute(
-							'--stdin --stdin-filename /foo.js"',
+							"--stdin --stdin-filename /foo.js\"",
 							"var foo = 'bar';",
 							true,
 						),
@@ -2476,7 +2476,7 @@ describe("cli", () => {
 			});
 
 			it("should not accept an empty value", async () => {
-				const exitCode = await cli.execute('--concurrency=""');
+				const exitCode = await cli.execute("--concurrency=\"\"");
 
 				assert.strictEqual(
 					log.info.callCount,

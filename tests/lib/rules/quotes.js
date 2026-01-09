@@ -25,12 +25,12 @@ const ruleTester = new RuleTester({
 
 ruleTester.run("quotes", rule, {
 	valid: [
-		'var foo = "bar";',
+		"var foo = \"bar\";",
 		{ code: "var foo = 'bar';", options: ["single"] },
-		{ code: 'var foo = "bar";', options: ["double"] },
+		{ code: "var foo = \"bar\";", options: ["double"] },
 		{ code: "var foo = 1;", options: ["single"] },
 		{ code: "var foo = 1;", options: ["double"] },
-		{ code: 'var foo = "\'";', options: ["single", { avoidEscape: true }] },
+		{ code: "var foo = \"'\";", options: ["single", { avoidEscape: true }] },
 		{ code: "var foo = '\"';", options: ["double", { avoidEscape: true }] },
 		{
 			code: "var foo = <>Hello world</>;",
@@ -73,7 +73,7 @@ ruleTester.run("quotes", rule, {
 			},
 		},
 		{
-			code: 'var foo = <div id="foo"></div>;',
+			code: "var foo = <div id=\"foo\"></div>;",
 			options: ["single"],
 			languageOptions: {
 				ecmaVersion: 6,
@@ -107,17 +107,17 @@ ruleTester.run("quotes", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'var foo = `bar "baz"`;',
+			code: "var foo = `bar \"baz\"`;",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{ code: "var foo = 1;", options: ["backtick"] },
 		{
-			code: 'var foo = "a string containing `backtick` quotes";',
+			code: "var foo = \"a string containing `backtick` quotes\";",
 			options: ["backtick", { avoidEscape: true }],
 		},
 		{
-			code: 'var foo = <div id="foo"></div>;',
+			code: "var foo = <div id=\"foo\"></div>;",
 			options: ["backtick"],
 			languageOptions: {
 				ecmaVersion: 6,
@@ -133,7 +133,7 @@ ruleTester.run("quotes", rule, {
 			},
 		},
 		{
-			code: 'class C { "f"; "m"() {} }',
+			code: "class C { \"f\"; \"m\"() {} }",
 			options: ["double"],
 			languageOptions: { ecmaVersion: 2022 },
 		},
@@ -209,17 +209,17 @@ ruleTester.run("quotes", rule, {
 
 		// `backtick` should not warn the directive prologues.
 		{
-			code: '"use strict"; var foo = `backtick`;',
+			code: "\"use strict\"; var foo = `backtick`;",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: '"use strict"; \'use strong\'; "use asm"; var foo = `backtick`;',
+			code: "\"use strict\"; 'use strong'; \"use asm\"; var foo = `backtick`;",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'function foo() { "use strict"; "use strong"; "use asm"; var foo = `backtick`; }',
+			code: "function foo() { \"use strict\"; \"use strong\"; \"use asm\"; var foo = `backtick`; }",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -229,7 +229,7 @@ ruleTester.run("quotes", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: '(() => { "use strict"; "use strong"; "use asm"; var foo = `backtick`; })();',
+			code: "(() => { \"use strict\"; \"use strong\"; \"use asm\"; var foo = `backtick`; })();",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -318,7 +318,7 @@ ruleTester.run("quotes", rule, {
 	invalid: [
 		{
 			code: "var foo = 'bar';",
-			output: 'var foo = "bar";',
+			output: "var foo = \"bar\";",
 			errors: [
 				{
 					messageId: "wrongQuotes",
@@ -327,7 +327,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var foo = "bar";',
+			code: "var foo = \"bar\";",
 			output: "var foo = 'bar';",
 			options: ["single"],
 			errors: [
@@ -353,7 +353,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = 'don\\'t';",
-			output: 'var foo = "don\'t";',
+			output: "var foo = \"don't\";",
 			errors: [
 				{
 					messageId: "wrongQuotes",
@@ -362,7 +362,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var msg = "Plugin \'" + name + "\' not found"',
+			code: "var msg = \"Plugin '\" + name + \"' not found\"",
 			output: "var msg = 'Plugin \\'' + name + '\\' not found'",
 			options: ["single"],
 			errors: [
@@ -380,7 +380,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = 'bar';",
-			output: 'var foo = "bar";',
+			output: "var foo = \"bar\";",
 			options: ["double"],
 			errors: [
 				{
@@ -391,7 +391,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = `bar`;",
-			output: 'var foo = "bar";',
+			output: "var foo = \"bar\";",
 			options: ["double"],
 			languageOptions: {
 				ecmaVersion: 6,
@@ -404,7 +404,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var foo = "bar";',
+			code: "var foo = \"bar\";",
 			output: "var foo = 'bar';",
 			options: ["single", { avoidEscape: true }],
 			errors: [
@@ -416,7 +416,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = 'bar';",
-			output: 'var foo = "bar";',
+			output: "var foo = \"bar\";",
 			options: ["double", { avoidEscape: true }],
 			errors: [
 				{
@@ -427,7 +427,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = '\\\\';",
-			output: 'var foo = "\\\\";',
+			output: "var foo = \"\\\\\";",
 			options: ["double", { avoidEscape: true }],
 			errors: [
 				{
@@ -437,7 +437,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var foo = "bar";',
+			code: "var foo = \"bar\";",
 			output: "var foo = 'bar';",
 			options: ["single", { allowTemplateLiterals: true }],
 			errors: [
@@ -449,7 +449,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = 'bar';",
-			output: 'var foo = "bar";',
+			output: "var foo = \"bar\";",
 			options: ["double", { allowTemplateLiterals: true }],
 			errors: [
 				{
@@ -483,7 +483,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var foo = "bar";',
+			code: "var foo = \"bar\";",
 			output: "var foo = `bar`;",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 2015 },
@@ -495,7 +495,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var foo = "bar";',
+			code: "var foo = \"bar\";",
 			output: "var foo = `bar`;",
 			options: ["backtick", { avoidEscape: true }],
 			languageOptions: { ecmaVersion: 2015 },
@@ -521,7 +521,7 @@ ruleTester.run("quotes", rule, {
 
 		// "use strict" is *not* a directive prologue in these statements so is subject to the rule
 		{
-			code: 'var foo = `backtick`; "use strict";',
+			code: "var foo = `backtick`; \"use strict\";",
 			output: "var foo = `backtick`; `use strict`;",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
@@ -533,7 +533,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: '{ "use strict"; var foo = `backtick`; }',
+			code: "{ \"use strict\"; var foo = `backtick`; }",
 			output: "{ `use strict`; var foo = `backtick`; }",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
@@ -545,7 +545,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'if (1) { "use strict"; var foo = `backtick`; }',
+			code: "if (1) { \"use strict\"; var foo = `backtick`; }",
 			output: "if (1) { `use strict`; var foo = `backtick`; }",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
@@ -593,7 +593,7 @@ ruleTester.run("quotes", rule, {
 
 		// https://github.com/eslint/eslint/issues/7084
 		{
-			code: '<div blah={"blah"} />',
+			code: "<div blah={\"blah\"} />",
 			output: "<div blah={'blah'} />",
 			options: ["single"],
 			languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
@@ -606,7 +606,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "<div blah={'blah'} />",
-			output: '<div blah={"blah"} />',
+			output: "<div blah={\"blah\"} />",
 			options: ["double"],
 			languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
 			errors: [
@@ -703,7 +703,7 @@ ruleTester.run("quotes", rule, {
 		// https://github.com/eslint/eslint/issues/7646
 		{
 			code: "var foo = `foo\\nbar`;",
-			output: 'var foo = "foo\\nbar";',
+			output: "var foo = \"foo\\nbar\";",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -714,7 +714,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = `foo\\\nbar`;", // 1 backslash followed by a newline
-			output: 'var foo = "foo\\\nbar";',
+			output: "var foo = \"foo\\\nbar\";",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -725,7 +725,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = `foo\\\\\\\nbar`;", // 3 backslashes followed by a newline
-			output: 'var foo = "foo\\\\\\\nbar";',
+			output: "var foo = \"foo\\\\\\\nbar\";",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -736,7 +736,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "````",
-			output: '""``',
+			output: "\"\"``",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -750,7 +750,7 @@ ruleTester.run("quotes", rule, {
 
 		// Strings containing octal escape sequences. Don't autofix to backticks.
 		{
-			code: 'var foo = "\\1"',
+			code: "var foo = \"\\1\"",
 			output: "var foo = '\\1'",
 			options: ["single"],
 			errors: [
@@ -762,7 +762,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "var foo = '\\1'",
-			output: 'var foo = "\\1"',
+			output: "var foo = \"\\1\"",
 			options: ["double"],
 			errors: [
 				{
@@ -796,7 +796,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\1"',
+			code: "var foo = \"\\1\"",
 			output: null,
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 6 },
@@ -883,7 +883,7 @@ ruleTester.run("quotes", rule, {
 		// class members
 		{
 			code: "class C { 'foo'; }",
-			output: 'class C { "foo"; }',
+			output: "class C { \"foo\"; }",
 			options: ["double"],
 			languageOptions: { ecmaVersion: 2022 },
 			errors: [
@@ -895,7 +895,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "class C { 'foo'() {} }",
-			output: 'class C { "foo"() {} }',
+			output: "class C { \"foo\"() {} }",
 			options: ["double"],
 			languageOptions: { ecmaVersion: 2022 },
 			errors: [
@@ -906,7 +906,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'class C { "foo"; }',
+			code: "class C { \"foo\"; }",
 			output: "class C { 'foo'; }",
 			options: ["single"],
 			languageOptions: { ecmaVersion: 2022 },
@@ -918,7 +918,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'class C { "foo"() {} }',
+			code: "class C { \"foo\"() {} }",
 			output: "class C { 'foo'() {} }",
 			options: ["single"],
 			languageOptions: { ecmaVersion: 2022 },
@@ -930,7 +930,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'class C { ["foo"]; }',
+			code: "class C { [\"foo\"]; }",
 			output: "class C { [`foo`]; }",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 2022 },
@@ -942,7 +942,7 @@ ruleTester.run("quotes", rule, {
 			],
 		},
 		{
-			code: 'class C { foo = "foo"; }',
+			code: "class C { foo = \"foo\"; }",
 			output: "class C { foo = `foo`; }",
 			options: ["backtick"],
 			languageOptions: { ecmaVersion: 2022 },
@@ -957,7 +957,7 @@ ruleTester.run("quotes", rule, {
 		// https://github.com/eslint/eslint/pull/17022
 		{
 			code: "() => { foo(); (`use strict`); }",
-			output: '() => { foo(); ("use strict"); }',
+			output: "() => { foo(); (\"use strict\"); }",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -984,7 +984,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "; 'use asm';",
-			output: '; "use asm";',
+			output: "; \"use asm\";",
 			errors: [
 				{
 					messageId: "wrongQuotes",
@@ -994,7 +994,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "{ `foobar`; }",
-			output: '{ "foobar"; }',
+			output: "{ \"foobar\"; }",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
@@ -1005,7 +1005,7 @@ ruleTester.run("quotes", rule, {
 		},
 		{
 			code: "foo(() => `bar`);",
-			output: 'foo(() => "bar");',
+			output: "foo(() => \"bar\");",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{

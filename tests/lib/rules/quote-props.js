@@ -22,7 +22,7 @@ ruleTester.run("quote-props", rule, {
 	valid: [
 		"({ '0': 0 })",
 		"({ 'a': 0 })",
-		'({ "a": 0 })',
+		"({ \"a\": 0 })",
 		"({ 'null': 0 })",
 		"({ 'true': 0 })",
 		"({ 'a-b': 0 })",
@@ -219,7 +219,7 @@ ruleTester.run("quote-props", rule, {
 	invalid: [
 		{
 			code: "({ a: 0 })",
-			output: '({ "a": 0 })',
+			output: "({ \"a\": 0 })",
 			errors: [
 				{
 					messageId: "unquotedPropertyFound",
@@ -388,7 +388,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({ while: 0, b: 0 })",
-			output: '({ "while": 0, "b": 0 })',
+			output: "({ \"while\": 0, \"b\": 0 })",
 			options: ["consistent-as-needed", { keywords: true }],
 			errors: [
 				{
@@ -427,13 +427,13 @@ ruleTester.run("quote-props", rule, {
 				"({\n" +
 				"  /* a */ 'prop1' /* b */ : /* c */ value1 /* d */ ,\n" +
 				"  /* e */ prop2 /* f */ : /* g */ value2 /* h */,\n" +
-				'  /* i */ "prop3" /* j */ : /* k */ value3 /* l */\n' +
+				"  /* i */ \"prop3\" /* j */ : /* k */ value3 /* l */\n" +
 				"})",
 			output:
 				"({\n" +
 				"  /* a */ 'prop1' /* b */ : /* c */ value1 /* d */ ,\n" +
-				'  /* e */ "prop2" /* f */ : /* g */ value2 /* h */,\n' +
-				'  /* i */ "prop3" /* j */ : /* k */ value3 /* l */\n' +
+				"  /* e */ \"prop2\" /* f */ : /* g */ value2 /* h */,\n" +
+				"  /* i */ \"prop3\" /* j */ : /* k */ value3 /* l */\n" +
 				"})",
 			options: ["consistent"],
 			errors: [
@@ -446,9 +446,9 @@ ruleTester.run("quote-props", rule, {
 		{
 			code:
 				"({\n" +
-				'  /* a */ "foo" /* b */ : /* c */ value1 /* d */ ,\n' +
-				'  /* e */ "bar" /* f */ : /* g */ value2 /* h */,\n' +
-				'  /* i */ "baz" /* j */ : /* k */ value3 /* l */\n' +
+				"  /* a */ \"foo\" /* b */ : /* c */ value1 /* d */ ,\n" +
+				"  /* e */ \"bar\" /* f */ : /* g */ value2 /* h */,\n" +
+				"  /* i */ \"baz\" /* j */ : /* k */ value3 /* l */\n" +
 				"})",
 			output:
 				"({\n" +
@@ -493,7 +493,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({while: 0})",
-			output: '({"while": 0})',
+			output: "({\"while\": 0})",
 			options: ["as-needed", { keywords: true }],
 			errors: [
 				{
@@ -515,7 +515,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({1: 1})",
-			output: '({"1": 1})',
+			output: "({\"1\": 1})",
 			options: ["as-needed", { numbers: true }],
 			errors: [
 				{
@@ -526,7 +526,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({1: 1})",
-			output: '({"1": 1})',
+			output: "({\"1\": 1})",
 			options: ["always", { numbers: false }],
 			errors: [
 				{
@@ -537,7 +537,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({0x123: 1})",
-			output: '({"291": 1})', // 0x123 === 291
+			output: "({\"291\": 1})", // 0x123 === 291
 			options: ["always"],
 			errors: [
 				{
@@ -548,7 +548,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({1e2: 1})",
-			output: '({"100": 1})',
+			output: "({\"100\": 1})",
 			options: ["always", { numbers: false }],
 			errors: [
 				{
@@ -559,7 +559,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({5.: 1})",
-			output: '({"5": 1})',
+			output: "({\"5\": 1})",
 			options: ["always", { numbers: false }],
 			errors: [
 				{
@@ -570,7 +570,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({ 1n: 1 })",
-			output: '({ "1": 1 })',
+			output: "({ \"1\": 1 })",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
@@ -582,7 +582,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({ 1n: 1 })",
-			output: '({ "1": 1 })',
+			output: "({ \"1\": 1 })",
 			options: ["as-needed", { numbers: true }],
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
@@ -594,7 +594,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({ 1_0: 1 })",
-			output: '({ "10": 1 })',
+			output: "({ \"10\": 1 })",
 			options: ["as-needed", { numbers: true }],
 			languageOptions: { ecmaVersion: 2021 },
 			errors: [
@@ -606,7 +606,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({ 1_2.3_4e0_2: 1 })",
-			output: '({ "1234": 1 })',
+			output: "({ \"1234\": 1 })",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2021 },
 			errors: [
@@ -618,7 +618,7 @@ ruleTester.run("quote-props", rule, {
 		},
 		{
 			code: "({ 0b1_000: 1 })",
-			output: '({ "8": 1 })',
+			output: "({ \"8\": 1 })",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2021 },
 			errors: [

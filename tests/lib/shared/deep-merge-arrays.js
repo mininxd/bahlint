@@ -1,4 +1,3 @@
- 
 
 "use strict";
 
@@ -123,4 +122,3 @@ describe("deepMerge", () => {
 	}
 });
 
- 

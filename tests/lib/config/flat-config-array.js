@@ -1242,7 +1242,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Cannot redefine plugin "a".',
+					"Cannot redefine plugin \"a\".",
 				);
 			});
 
@@ -1255,7 +1255,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Key "a": Expected an object.',
+					"Key \"a\": Expected an object.",
 				);
 			});
 		});
@@ -1381,7 +1381,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Unexpected key "foo" found.',
+					"Unexpected key \"foo\" found.",
 				);
 			});
 
@@ -1586,7 +1586,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Unexpected key "foo" found.',
+					"Unexpected key \"foo\" found.",
 				);
 			});
 
@@ -1829,7 +1829,7 @@ describe("FlatConfigArray", () => {
 								},
 							},
 						],
-						'Expected "script", "module", or "commonjs".',
+						"Expected \"script\", \"module\", or \"commonjs\".",
 					);
 				});
 
@@ -1934,7 +1934,7 @@ describe("FlatConfigArray", () => {
 								},
 							},
 						],
-						'Key "foo": Expected "readonly", "writable", or "off".',
+						"Key \"foo\": Expected \"readonly\", \"writable\", or \"off\".",
 					);
 				});
 
@@ -2124,7 +2124,7 @@ describe("FlatConfigArray", () => {
 								},
 							},
 						],
-						'Key "languageOptions": Key "parser": Expected object with parse() or parseForESLint() method.',
+						"Key \"languageOptions\": Key \"parser\": Expected object with parse() or parseForESLint() method.",
 					);
 				});
 
@@ -2138,7 +2138,7 @@ describe("FlatConfigArray", () => {
 								},
 							},
 						],
-						'Key "languageOptions": Key "parser": Expected object with parse() or parseForESLint() method.',
+						"Key \"languageOptions\": Key \"parser\": Expected object with parse() or parseForESLint() method.",
 					);
 				});
 
@@ -2152,7 +2152,7 @@ describe("FlatConfigArray", () => {
 								},
 							},
 						],
-						'Key "languageOptions": Key "parser": Expected object with parse() or parseForESLint() method.',
+						"Key \"languageOptions\": Key \"parser\": Expected object with parse() or parseForESLint() method.",
 					);
 				});
 
@@ -2166,7 +2166,7 @@ describe("FlatConfigArray", () => {
 								},
 							},
 						],
-						'Key "languageOptions": Key "parser": Expected object with parse() or parseForESLint() method.',
+						"Key \"languageOptions\": Key \"parser\": Expected object with parse() or parseForESLint() method.",
 					);
 				});
 
@@ -2483,7 +2483,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Key "rules": Key "foo": Expected severity of "off", 0, "warn", 1, "error", or 2.',
+					"Key \"rules\": Key \"foo\": Expected severity of \"off\", 0, \"warn\", 1, \"error\", or 2.",
 				);
 			});
 
@@ -2496,7 +2496,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Key "rules": Key "foo": Expected severity of "off", 0, "warn", 1, "error", or 2.',
+					"Key \"rules\": Key \"foo\": Expected severity of \"off\", 0, \"warn\", 1, \"error\", or 2.",
 				);
 			});
 
@@ -2509,7 +2509,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Key "rules": Key "foo": Expected severity of "off", 0, "warn", 1, "error", or 2.',
+					"Key \"rules\": Key \"foo\": Expected severity of \"off\", 0, \"warn\", 1, \"error\", or 2.",
 				);
 			});
 
@@ -2522,7 +2522,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Key "rules": Key "foo": Expected severity of "off", 0, "warn", 1, "error", or 2.',
+					"Key \"rules\": Key \"foo\": Expected severity of \"off\", 0, \"warn\", 1, \"error\", or 2.",
 				);
 			});
 
@@ -2980,7 +2980,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Unexpected property "destruct". Expected properties: "destructuring", "ignoreReadBeforeAssign"',
+					"Unexpected property \"destruct\". Expected properties: \"destructuring\", \"ignoreReadBeforeAssign\"",
 				);
 
 				await assertInvalidConfig(
@@ -2994,7 +2994,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Unexpected property "obj". Expected properties: "VariableDeclarator", "AssignmentExpression"',
+					"Unexpected property \"obj\". Expected properties: \"VariableDeclarator\", \"AssignmentExpression\"",
 				);
 
 				await assertInvalidConfig(
@@ -3008,7 +3008,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Unexpected property "obj". Expected properties: "array", "object"',
+					"Unexpected property \"obj\". Expected properties: \"array\", \"object\"",
 				);
 
 				await assertInvalidConfig(
@@ -3023,7 +3023,7 @@ describe("FlatConfigArray", () => {
 							},
 						},
 					],
-					'Unexpected property "enforceRenamedProperties". Expected properties: "enforceForRenamedProperties"',
+					"Unexpected property \"enforceRenamedProperties\". Expected properties: \"enforceForRenamedProperties\"",
 				);
 			});
 		});
@@ -3060,7 +3060,7 @@ describe("FlatConfigArray", () => {
 							plugins: ["foo"],
 						},
 					],
-					'Key "plugins": This appears to be in eslintrc format (array of strings) rather than flat config format (object).',
+					"Key \"plugins\": This appears to be in eslintrc format (array of strings) rather than flat config format (object).",
 				);
 			});
 		});

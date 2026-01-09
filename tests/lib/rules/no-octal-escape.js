@@ -25,8 +25,8 @@ const ruleTester = new RuleTester({
 
 ruleTester.run("no-octal-escape", rule, {
 	valid: [
-		'var foo = "\\x51";',
-		'var foo = "foo \\\\251 bar";',
+		"var foo = \"\\x51\";",
+		"var foo = \"foo \\\\251 bar\";",
 		"var foo = /([abc]) \\1/g;",
 		"var foo = '\\0';",
 		"'\\0'",
@@ -62,7 +62,7 @@ ruleTester.run("no-octal-escape", rule, {
 	],
 	invalid: [
 		{
-			code: 'var foo = "foo \\01 bar";',
+			code: "var foo = \"foo \\01 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -71,7 +71,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\000 bar";',
+			code: "var foo = \"foo \\000 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -80,7 +80,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\377 bar";',
+			code: "var foo = \"foo \\377 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -89,7 +89,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\378 bar";',
+			code: "var foo = \"foo \\378 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -98,7 +98,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\37a bar";',
+			code: "var foo = \"foo \\37a bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -107,7 +107,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\381 bar";',
+			code: "var foo = \"foo \\381 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -116,7 +116,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\3a1 bar";',
+			code: "var foo = \"foo \\3a1 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -125,7 +125,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\251 bar";',
+			code: "var foo = \"foo \\251 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -134,7 +134,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\258 bar";',
+			code: "var foo = \"foo \\258 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -143,7 +143,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\25a bar";',
+			code: "var foo = \"foo \\25a bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -152,7 +152,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\3s51";',
+			code: "var foo = \"\\3s51\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -161,7 +161,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\77";',
+			code: "var foo = \"\\77\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -170,7 +170,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\78";',
+			code: "var foo = \"\\78\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -179,7 +179,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\5a";',
+			code: "var foo = \"\\5a\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -188,7 +188,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\751";',
+			code: "var foo = \"\\751\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -197,7 +197,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "foo \\400 bar";',
+			code: "var foo = \"foo \\400 bar\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -207,7 +207,7 @@ ruleTester.run("no-octal-escape", rule, {
 		},
 
 		{
-			code: 'var foo = "\\t\\1";',
+			code: "var foo = \"\\t\\1\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",
@@ -216,7 +216,7 @@ ruleTester.run("no-octal-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\\\\\751";',
+			code: "var foo = \"\\\\\\751\";",
 			errors: [
 				{
 					messageId: "octalEscapeSequence",

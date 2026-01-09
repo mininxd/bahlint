@@ -489,22 +489,22 @@ ruleTester.run("no-implied-eval", rule, {
 
 	invalid: [
 		{
-			code: 'setTimeout("x = 1;");',
+			code: "setTimeout(\"x = 1;\");",
 			languageOptions: { globals: globals.browser },
 			errors: [expectedError],
 		},
 		{
-			code: 'setTimeout("x = 1;", 100);',
+			code: "setTimeout(\"x = 1;\", 100);",
 			languageOptions: { globals: globals.browser },
 			errors: [expectedError],
 		},
 		{
-			code: 'setInterval("x = 1;");',
+			code: "setInterval(\"x = 1;\");",
 			languageOptions: { globals: globals.browser },
 			errors: [expectedError],
 		},
 		{
-			code: 'execScript("x = 1;");',
+			code: "execScript(\"x = 1;\");",
 			languageOptions: { globals: { execScript: false } },
 			errors: [
 				{

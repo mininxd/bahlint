@@ -419,7 +419,7 @@ ruleTester.run("prefer-named-capture-group", rule, {
 			],
 		},
 		{
-			code: 'new RegExp("foo" + "(a)" + "(b)");',
+			code: "new RegExp(\"foo\" + \"(a)\" + \"(b)\");",
 			errors: [
 				{
 					messageId: "required",
@@ -434,7 +434,7 @@ ruleTester.run("prefer-named-capture-group", rule, {
 			],
 		},
 		{
-			code: 'new RegExp("foo" + "(?:a)" + "(b)");',
+			code: "new RegExp(\"foo\" + \"(?:a)\" + \"(b)\");",
 			errors: [
 				{
 					messageId: "required",

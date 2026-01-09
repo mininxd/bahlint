@@ -20,14 +20,14 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("radix", rule, {
 	valid: [
-		'parseInt("10", 10);',
-		'parseInt("10", 2);',
-		'parseInt("10", 36);',
-		'parseInt("10", 0x10);',
-		'parseInt("10", 1.6e1);',
-		'parseInt("10", 10.0);',
-		'parseInt("10", foo);',
-		'Number.parseInt("10", foo);',
+		"parseInt(\"10\", 10);",
+		"parseInt(\"10\", 2);",
+		"parseInt(\"10\", 36);",
+		"parseInt(\"10\", 0x10);",
+		"parseInt(\"10\", 1.6e1);",
+		"parseInt(\"10\", 10.0);",
+		"parseInt(\"10\", foo);",
+		"Number.parseInt(\"10\", foo);",
 		"parseInt",
 		"Number.foo();",
 		"Number[parseInt]();",
@@ -55,27 +55,27 @@ ruleTester.run("radix", rule, {
 
 		// Deprecated options "always" and "as-needed" should work the same as the default behavior of this rule
 		{
-			code: 'parseInt("10", 10);',
+			code: "parseInt(\"10\", 10);",
 			options: ["always"],
 		},
 		{
-			code: 'parseInt("10", 10);',
+			code: "parseInt(\"10\", 10);",
 			options: ["as-needed"],
 		},
 		{
-			code: 'parseInt("10", 8);',
+			code: "parseInt(\"10\", 8);",
 			options: ["always"],
 		},
 		{
-			code: 'parseInt("10", 8);',
+			code: "parseInt(\"10\", 8);",
 			options: ["as-needed"],
 		},
 		{
-			code: 'parseInt("10", foo);',
+			code: "parseInt(\"10\", foo);",
 			options: ["always"],
 		},
 		{
-			code: 'parseInt("10", foo);',
+			code: "parseInt(\"10\", foo);",
 			options: ["as-needed"],
 		},
 	],
@@ -90,21 +90,21 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10");',
+			code: "parseInt(\"10\");",
 			errors: [
 				{
 					messageId: "missingRadix",
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt("10", 10);',
+							output: "parseInt(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'parseInt("10",);', // Function parameter with trailing comma
+			code: "parseInt(\"10\",);", // Function parameter with trailing comma
 			languageOptions: { ecmaVersion: 2017 },
 			errors: [
 				{
@@ -112,28 +112,28 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt("10", 10,);',
+							output: "parseInt(\"10\", 10,);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'parseInt((0, "10"));', // Sequence expression (no trailing comma).
+			code: "parseInt((0, \"10\"));", // Sequence expression (no trailing comma).
 			errors: [
 				{
 					messageId: "missingRadix",
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt((0, "10"), 10);',
+							output: "parseInt((0, \"10\"), 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'parseInt((0, "10"),);', // Sequence expression (with trailing comma).
+			code: "parseInt((0, \"10\"),);", // Sequence expression (with trailing comma).
 			languageOptions: { ecmaVersion: 2017 },
 			errors: [
 				{
@@ -141,14 +141,14 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt((0, "10"), 10,);',
+							output: "parseInt((0, \"10\"), 10,);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'parseInt("10", null);',
+			code: "parseInt(\"10\", null);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -156,7 +156,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", undefined);',
+			code: "parseInt(\"10\", undefined);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -164,7 +164,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", true);',
+			code: "parseInt(\"10\", true);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -172,7 +172,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", "foo");',
+			code: "parseInt(\"10\", \"foo\");",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -180,7 +180,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", "123");',
+			code: "parseInt(\"10\", \"123\");",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -188,7 +188,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", 1);',
+			code: "parseInt(\"10\", 1);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -196,7 +196,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", 37);',
+			code: "parseInt(\"10\", 37);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -204,7 +204,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", 10.5);',
+			code: "parseInt(\"10\", 10.5);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -220,21 +220,21 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'Number.parseInt("10");',
+			code: "Number.parseInt(\"10\");",
 			errors: [
 				{
 					messageId: "missingRadix",
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'Number.parseInt("10", 10);',
+							output: "Number.parseInt(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'Number.parseInt("10", 1);',
+			code: "Number.parseInt(\"10\", 1);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -242,7 +242,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'Number.parseInt("10", 37);',
+			code: "Number.parseInt(\"10\", 37);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -250,7 +250,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'Number.parseInt("10", 10.5);',
+			code: "Number.parseInt(\"10\", 10.5);",
 			errors: [
 				{
 					messageId: "invalidRadix",
@@ -260,7 +260,7 @@ ruleTester.run("radix", rule, {
 
 		// Optional chaining
 		{
-			code: 'parseInt?.("10");',
+			code: "parseInt?.(\"10\");",
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
 				{
@@ -268,14 +268,14 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt?.("10", 10);',
+							output: "parseInt?.(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'Number.parseInt?.("10");',
+			code: "Number.parseInt?.(\"10\");",
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
 				{
@@ -283,14 +283,14 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'Number.parseInt?.("10", 10);',
+							output: "Number.parseInt?.(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'Number?.parseInt("10");',
+			code: "Number?.parseInt(\"10\");",
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
 				{
@@ -298,14 +298,14 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'Number?.parseInt("10", 10);',
+							output: "Number?.parseInt(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: '(Number?.parseInt)("10");',
+			code: "(Number?.parseInt)(\"10\");",
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
 				{
@@ -313,7 +313,7 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: '(Number?.parseInt)("10", 10);',
+							output: "(Number?.parseInt)(\"10\", 10);",
 						},
 					],
 				},
@@ -340,7 +340,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10");',
+			code: "parseInt(\"10\");",
 			options: ["always"],
 			errors: [
 				{
@@ -348,14 +348,14 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt("10", 10);',
+							output: "parseInt(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'parseInt("10");',
+			code: "parseInt(\"10\");",
 			options: ["as-needed"],
 			errors: [
 				{
@@ -363,14 +363,14 @@ ruleTester.run("radix", rule, {
 					suggestions: [
 						{
 							messageId: "addRadixParameter10",
-							output: 'parseInt("10", 10);',
+							output: "parseInt(\"10\", 10);",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'parseInt("10", 1);',
+			code: "parseInt(\"10\", 1);",
 			options: ["always"],
 			errors: [
 				{
@@ -379,7 +379,7 @@ ruleTester.run("radix", rule, {
 			],
 		},
 		{
-			code: 'parseInt("10", 1);',
+			code: "parseInt(\"10\", 1);",
 			options: ["as-needed"],
 			errors: [
 				{

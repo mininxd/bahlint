@@ -215,7 +215,7 @@ ruleTester.run("no-dupe-keys", rule, {
 			],
 		},
 		{
-			code: 'var x = { "z": 1, z: 2 };',
+			code: "var x = { \"z\": 1, z: 2 };",
 			errors: [
 				{
 					messageId: "unexpected",

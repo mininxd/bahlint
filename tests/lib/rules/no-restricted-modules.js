@@ -20,27 +20,27 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("no-restricted-modules", rule, {
 	valid: [
-		{ code: 'require("fs")', options: ["crypto"] },
-		{ code: 'require("path")', options: ["crypto", "stream", "os"] },
-		'require("fs ")',
+		{ code: "require(\"fs\")", options: ["crypto"] },
+		{ code: "require(\"path\")", options: ["crypto", "stream", "os"] },
+		"require(\"fs \")",
 		{ code: "require(2)", options: ["crypto"] },
 		{ code: "require(foo)", options: ["crypto"] },
 		{ code: "var foo = bar('crypto');", options: ["crypto"] },
-		{ code: 'require("foo/bar");', options: ["foo"] },
+		{ code: "require(\"foo/bar\");", options: ["foo"] },
 		{
-			code: 'var withPaths = require("foo/bar");',
+			code: "var withPaths = require(\"foo/bar\");",
 			options: [{ paths: ["foo", "bar"] }],
 		},
 		{
-			code: 'var withPatterns = require("foo/bar");',
+			code: "var withPatterns = require(\"foo/bar\");",
 			options: [{ patterns: ["foo/c*"] }],
 		},
 		{
-			code: 'var withPatternsAndPaths = require("foo/bar");',
+			code: "var withPatternsAndPaths = require(\"foo/bar\");",
 			options: [{ paths: ["foo"], patterns: ["foo/c*"] }],
 		},
 		{
-			code: 'var withGitignores = require("foo/bar");',
+			code: "var withGitignores = require(\"foo/bar\");",
 			options: [{ paths: ["foo"], patterns: ["foo/*", "!foo/bar"] }],
 		},
 		{
@@ -84,7 +84,7 @@ ruleTester.run("no-restricted-modules", rule, {
 	],
 	invalid: [
 		{
-			code: 'require("fs")',
+			code: "require(\"fs\")",
 			options: ["fs"],
 			errors: [
 				{
@@ -94,7 +94,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'require("os ")',
+			code: "require(\"os \")",
 			options: ["fs", "crypto ", "stream", "os"],
 			errors: [
 				{
@@ -104,7 +104,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'require("foo/bar");',
+			code: "require(\"foo/bar\");",
 			options: ["foo/bar"],
 			errors: [
 				{
@@ -114,7 +114,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withPaths = require("foo/bar");',
+			code: "var withPaths = require(\"foo/bar\");",
 			options: [{ paths: ["foo/bar"] }],
 			errors: [
 				{
@@ -124,7 +124,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withPatterns = require("foo/bar");',
+			code: "var withPatterns = require(\"foo/bar\");",
 			options: [{ patterns: ["foo/*"] }],
 			errors: [
 				{
@@ -134,7 +134,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withPatternsAndPaths = require("foo/bar");',
+			code: "var withPatternsAndPaths = require(\"foo/bar\");",
 			options: [{ patterns: ["foo/*"], paths: ["foo"] }],
 			errors: [
 				{
@@ -144,7 +144,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withGitignores = require("foo/bar");',
+			code: "var withGitignores = require(\"foo/bar\");",
 			options: [{ patterns: ["foo/*", "!foo/baz"], paths: ["foo"] }],
 			errors: [
 				{
@@ -154,7 +154,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withGitignores = require("foo");',
+			code: "var withGitignores = require(\"foo\");",
 			options: [
 				{
 					name: "foo",
@@ -172,7 +172,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withGitignores = require("bar");',
+			code: "var withGitignores = require(\"bar\");",
 			options: [
 				"foo",
 				{
@@ -192,7 +192,7 @@ ruleTester.run("no-restricted-modules", rule, {
 			],
 		},
 		{
-			code: 'var withGitignores = require("foo");',
+			code: "var withGitignores = require(\"foo\");",
 			options: [
 				{
 					paths: [

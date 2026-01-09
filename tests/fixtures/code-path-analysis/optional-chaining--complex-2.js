@@ -7,7 +7,7 @@ s1_9->s1_11->s1_13;
 s1_16->final;
 */
 
-(obj?.[cond ? k1 : k2]?.[k3 || k4]?.(a1 && a2, b1 ?? b2)).foo(arg)
+(obj?.[cond ? k1 : k2]?.[k3 || k4]?.(a1 && a2, b1 ?? b2)).foo(arg);
 
 /*DOT
 digraph {

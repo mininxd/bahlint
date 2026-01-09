@@ -20,7 +20,7 @@ const skipPatterns = [
 	"/docs/latest",
 	"/docs/next",
 	"/docs/v8.x",
-	'src="null"',
+	"src=\"null\"",
 ];
 
 /**

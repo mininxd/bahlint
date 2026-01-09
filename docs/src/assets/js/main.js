@@ -3,7 +3,7 @@
 	const tocBody = document.querySelector(".docs-aside #js-toc-panel");
 	const options = {
 		root: null,
-		rootMargin: `0px 0px -90% 0px`,
+		rootMargin: "0px 0px -90% 0px",
 		threshold: 1.0,
 	};
 	const activeClassName = "active";
@@ -52,14 +52,14 @@
 	// media query change
 	function WidthChange(mq) {
 		if (mq.matches && toc_trigger) {
-			let text = toc_trigger.innerText;
-			let headingButton = document.createElement("button");
+			const text = toc_trigger.innerText;
+			const headingButton = document.createElement("button");
 			headingButton.setAttribute("aria-expanded", "false");
 			headingButton.innerText = text;
 			toc_trigger.innerHTML = "";
 
 			toc_trigger.appendChild(headingButton);
-			headingButton.innerHTML += `<svg class="toc-trigger-icon" width="12" height="8" aria-hidden="true" focusable="false" viewBox="0 0 12 8"><g fill="none"><path fill="currentColor" d="M1.41.59l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z"/><path d="M-6-8h24v24h-24z"/></g></svg>`;
+			headingButton.innerHTML += "<svg class=\"toc-trigger-icon\" width=\"12\" height=\"8\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 12 8\"><g fill=\"none\"><path fill=\"currentColor\" d=\"M1.41.59l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z\"/><path d=\"M-6-8h24v24h-24z\"/></g></svg>";
 
 			toc.setAttribute("data-open", "false");
 			toc_trigger.setAttribute("aria-expanded", "false");
@@ -216,7 +216,7 @@ var util = {
 (function (w, doc, undefined) {
 	var CollapsibleIndexOptions = {
 		allCollapsed: false,
-		icon: '<svg class="index-icon" width="12" height="8" aria-hidden="true" focusable="false" viewBox="0 0 12 8"><g fill="none"><path fill="currentColor" d="M1.41.59l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z"/><path d="M-6-8h24v24h-24z"/></g></svg>',
+		icon: "<svg class=\"index-icon\" width=\"12\" height=\"8\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 12 8\"><g fill=\"none\"><path fill=\"currentColor\" d=\"M1.41.59l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z\"/><path d=\"M-6-8h24v24h-24z\"/></g></svg>",
 	};
 	var CollapsibleIndex = function (inst, options) {
 		var _options = Object.assign(CollapsibleIndexOptions, options);
@@ -257,7 +257,7 @@ var util = {
 
 		var setupindexPanels = function (indexPanels) {
 			Array.from(indexPanels).forEach(function (item, index) {
-				let $this = item;
+				const $this = item;
 
 				$this.setAttribute("id", accID + "__list-" + index);
 				$this.setAttribute(

@@ -23,6 +23,6 @@ module.exports = {
                     fix: fixer => fixer.remove(node)
                 });
             }
-        }
+        };
     }
 };

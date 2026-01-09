@@ -22,22 +22,22 @@ const ruleTester = new RuleTester({
 
 ruleTester.run("no-restricted-imports", rule, {
 	valid: [
-		'import os from "os";',
-		{ code: 'import os from "os";', options: ["osx"] },
-		{ code: 'import fs from "fs";', options: ["crypto"] },
+		"import os from \"os\";",
+		{ code: "import os from \"os\";", options: ["osx"] },
+		{ code: "import fs from \"fs\";", options: ["crypto"] },
 		{
-			code: 'import path from "path";',
+			code: "import path from \"path\";",
 			options: ["crypto", "stream", "os"],
 		},
-		'import async from "async";',
-		{ code: 'import "foo"', options: ["crypto"] },
-		{ code: 'import "foo/bar";', options: ["foo"] },
+		"import async from \"async\";",
+		{ code: "import \"foo\"", options: ["crypto"] },
+		{ code: "import \"foo/bar\";", options: ["foo"] },
 		{
-			code: 'import withPaths from "foo/bar";',
+			code: "import withPaths from \"foo/bar\";",
 			options: [{ paths: ["foo", "bar"] }],
 		},
 		{
-			code: 'import withPatterns from "foo/bar";',
+			code: "import withPatterns from \"foo/bar\";",
 			options: [{ patterns: ["foo/c*"] }],
 		},
 		{ code: "import foo from 'foo';", options: ["../foo"] },
@@ -66,15 +66,15 @@ ruleTester.run("no-restricted-imports", rule, {
 			options: [{ patterns: ["notFoo"] }],
 		},
 		{
-			code: 'import withPatternsAndPaths from "foo/bar";',
+			code: "import withPatternsAndPaths from \"foo/bar\";",
 			options: [{ paths: ["foo"], patterns: ["foo/c*"] }],
 		},
 		{
-			code: 'import withGitignores from "foo/bar";',
+			code: "import withGitignores from \"foo/bar\";",
 			options: [{ patterns: ["foo/*", "!foo/bar"] }],
 		},
 		{
-			code: 'import withPatterns from "foo/bar";',
+			code: "import withPatterns from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -101,7 +101,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject from "foo";',
+			code: "import AllowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -114,7 +114,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import DisallowedObject from "foo";',
+			code: "import DisallowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -127,7 +127,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as DisallowedObject from "foo";',
+			code: "import * as DisallowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -142,7 +142,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject } from "foo";',
+			code: "import { AllowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -198,7 +198,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { DisallowedObject } from "foo";',
+			code: "import { DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -213,7 +213,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject as DisallowedObject } from "foo";',
+			code: "import { AllowedObject as DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -243,7 +243,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, AllowedObjectTwo } from "foo";',
+			code: "import { AllowedObject, AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -258,7 +258,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, AllowedObjectTwo  as DisallowedObject } from "foo";',
+			code: "import { AllowedObject, AllowedObjectTwo  as DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -273,7 +273,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObjectThree, { AllowedObject as AllowedObjectTwo } from "foo";',
+			code: "import AllowedObjectThree, { AllowedObject as AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -288,7 +288,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject, { AllowedObjectTwo as DisallowedObject } from "foo";',
+			code: "import AllowedObject, { AllowedObjectTwo as DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -303,7 +303,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject, { AllowedObjectTwo as DisallowedObject } from "foo";',
+			code: "import AllowedObject, { AllowedObjectTwo as DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -321,7 +321,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject, * as DisallowedObject from "foo";',
+			code: "import AllowedObject, * as DisallowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -336,7 +336,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import "foo";',
+			code: "import \"foo\";",
 			options: [
 				{
 					paths: [
@@ -354,17 +354,17 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import {\nAllowedObject,\nDisallowedObject, // eslint-disable-line\n} from "foo";',
+			code: "import {\nAllowedObject,\nDisallowedObject, // eslint-disable-line\n} from \"foo\";",
 			options: [
 				{ paths: [{ name: "foo", importNames: ["DisallowedObject"] }] },
 			],
 		},
 		{
-			code: 'export * from "foo";',
+			code: "export * from \"foo\";",
 			options: ["bar"],
 		},
 		{
-			code: 'export * from "foo";',
+			code: "export * from \"foo\";",
 			options: [
 				{
 					name: "bar",
@@ -559,7 +559,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject } from "foo";',
+			code: "import { AllowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -639,7 +639,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/bar";',
+			code: "import withPatterns from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -694,7 +694,7 @@ ruleTester.run("no-restricted-imports", rule, {
 	],
 	invalid: [
 		{
-			code: 'import "fs"',
+			code: "import \"fs\"",
 			options: ["fs"],
 			errors: [
 				{
@@ -706,7 +706,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import os from "os ";',
+			code: "import os from \"os \";",
 			options: ["fs", "crypto ", "stream", "os"],
 			errors: [
 				{
@@ -718,7 +718,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import "foo/bar";',
+			code: "import \"foo/bar\";",
 			options: ["foo/bar"],
 			errors: [
 				{
@@ -730,7 +730,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPaths from "foo/bar";',
+			code: "import withPaths from \"foo/bar\";",
 			options: [{ paths: ["foo/bar"] }],
 			errors: [
 				{
@@ -742,7 +742,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/bar";',
+			code: "import withPatterns from \"foo/bar\";",
 			options: [{ patterns: ["foo"] }],
 			errors: [
 				{
@@ -755,7 +755,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/bar";',
+			code: "import withPatterns from \"foo/bar\";",
 			options: [{ patterns: ["bar"] }],
 			errors: [
 				{
@@ -768,7 +768,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/baz";',
+			code: "import withPatterns from \"foo/baz\";",
 			options: [
 				{
 					patterns: [
@@ -790,7 +790,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/baz";',
+			code: "import withPatterns from \"foo/baz\";",
 			options: [
 				{
 					patterns: [
@@ -812,7 +812,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/bar";',
+			code: "import withPatterns from \"foo/bar\";",
 			options: [{ patterns: [{ group: ["foo/bar"] }] }],
 			errors: [
 				{
@@ -838,7 +838,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withGitignores from "foo/bar";',
+			code: "import withGitignores from \"foo/bar\";",
 			options: [{ patterns: ["foo/*", "!foo/baz"] }],
 			errors: [
 				{
@@ -851,7 +851,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export * from "fs";',
+			code: "export * from \"fs\";",
 			options: ["fs"],
 			errors: [
 				{
@@ -863,7 +863,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export * as ns from "fs";',
+			code: "export * as ns from \"fs\";",
 			options: ["fs"],
 			errors: [
 				{
@@ -875,7 +875,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export {a} from "fs";',
+			code: "export {a} from \"fs\";",
 			options: ["fs"],
 			errors: [
 				{
@@ -887,7 +887,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export {foo as b} from "fs";',
+			code: "export {foo as b} from \"fs\";",
 			options: [
 				{
 					paths: [
@@ -1002,7 +1002,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export * as ns from "fs";',
+			code: "export * as ns from \"fs\";",
 			options: [
 				{
 					paths: [
@@ -1025,7 +1025,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withGitignores from "foo";',
+			code: "import withGitignores from \"foo\";",
 			options: [
 				{
 					name: "foo",
@@ -1043,7 +1043,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withGitignores from "bar";',
+			code: "import withGitignores from \"bar\";",
 			options: [
 				"foo",
 				{
@@ -1063,7 +1063,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withGitignores from "foo";',
+			code: "import withGitignores from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1085,7 +1085,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import DisallowedObject from "foo";',
+			code: "import DisallowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1109,7 +1109,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as All from "foo";',
+			code: "import * as All from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1133,7 +1133,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export * from "foo";',
+			code: "export * from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1157,7 +1157,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'export * from "foo";',
+			code: "export * from \"foo\";",
 			options: [
 				{
 					name: "foo",
@@ -1175,7 +1175,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { DisallowedObject } from "foo";',
+			code: "import { DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1199,7 +1199,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { DisallowedObject as AllowedObject } from "foo";',
+			code: "import { DisallowedObject as AllowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1289,7 +1289,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject } from "foo";',
+			code: "import { AllowedObject, DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1313,7 +1313,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject as AllowedObjectTwo } from "foo";',
+			code: "import { AllowedObject, DisallowedObject as AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1337,7 +1337,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject as AllowedObjectTwo } from "foo";',
+			code: "import { AllowedObject, DisallowedObject as AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1364,7 +1364,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject as AllowedObjectTwo } from "foo";',
+			code: "import { AllowedObject, DisallowedObject as AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1391,7 +1391,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import DisallowedObject, { AllowedObject as AllowedObjectTwo } from "foo";',
+			code: "import DisallowedObject, { AllowedObject as AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1415,7 +1415,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject, { DisallowedObject as AllowedObjectTwo } from "foo";',
+			code: "import AllowedObject, { DisallowedObject as AllowedObjectTwo } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1439,7 +1439,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject, * as AllowedObjectTwo from "foo";',
+			code: "import AllowedObject, * as AllowedObjectTwo from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1463,7 +1463,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import AllowedObject, * as AllowedObjectTwo from "foo";',
+			code: "import AllowedObject, * as AllowedObjectTwo from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1490,7 +1490,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { DisallowedObjectOne, DisallowedObjectTwo, AllowedObject } from "foo";',
+			code: "import { DisallowedObjectOne, DisallowedObjectTwo, AllowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1522,7 +1522,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { DisallowedObjectOne, DisallowedObjectTwo, AllowedObject } from "foo";',
+			code: "import { DisallowedObjectOne, DisallowedObjectTwo, AllowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -1556,7 +1556,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject as Bar } from "foo";',
+			code: "import { AllowedObject, DisallowedObject as Bar } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -2838,7 +2838,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject } from "foo";',
+			code: "import { AllowedObject, DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -2860,7 +2860,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject } from "foo";',
+			code: "import { AllowedObject, DisallowedObject } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -2884,7 +2884,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { GoodThing, BadThing } from "foo";',
+			code: "import { GoodThing, BadThing } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -2903,7 +2903,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { GoodThing, SomethingBad } from "foo";',
+			code: "import { GoodThing, SomethingBad } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -2923,7 +2923,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject } from "foo";',
+			code: "import { AllowedObject, DisallowedObject } from \"foo\";",
 			options: [
 				{
 					patterns: [
@@ -2945,7 +2945,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { AllowedObject, DisallowedObject } from "foo";',
+			code: "import { AllowedObject, DisallowedObject } from \"foo\";",
 			options: [
 				{
 					patterns: [
@@ -2969,7 +2969,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { foo, bar, baz, qux } from "foo-bar-baz";',
+			code: "import { foo, bar, baz, qux } from \"foo-bar-baz\";",
 			options: [
 				{
 					patterns: [
@@ -2991,7 +2991,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import { Allowed1, Disallowed, Allowed2 } from "foo";',
+			code: "import { Allowed1, Disallowed, Allowed2 } from \"foo\";",
 			options: [
 				{
 					patterns: [
@@ -3014,7 +3014,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo";',
+			code: "import * as AllowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -3036,7 +3036,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo";',
+			code: "import * as AllowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -3060,7 +3060,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo";',
+			code: "import * as AllowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -3085,7 +3085,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo";',
+			code: "import * as AllowedObject from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -3111,7 +3111,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo/bar";',
+			code: "import * as AllowedObject from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3133,7 +3133,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo/bar";',
+			code: "import * as AllowedObject from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3157,7 +3157,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllFooBar from "foo/bar";',
+			code: "import * as AllFooBar from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3185,7 +3185,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo/bar";',
+			code: "import * as AllowedObject from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3207,7 +3207,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as AllowedObject from "foo/bar";',
+			code: "import * as AllowedObject from \"foo/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3231,7 +3231,7 @@ ruleTester.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: 'import withPatterns from "foo/baz";',
+			code: "import withPatterns from \"foo/baz\";",
 			options: [
 				{
 					patterns: [
@@ -3679,7 +3679,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import { Bar, type Baz } from "import/private/bar";`,
+			code: "import { Bar, type Baz } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3695,7 +3695,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import type { Bar } from "import/private/bar";`,
+			code: "import type { Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3711,7 +3711,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import { Baz, type Bar } from "import/private/bar";`,
+			code: "import { Baz, type Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3727,7 +3727,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export { Baz, type Bar } from "import/private/bar";`,
+			code: "export { Baz, type Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3743,7 +3743,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import type { Bar } from "import/private/bar";`,
+			code: "import type { Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3759,7 +3759,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import { Foo, type Bar } from "import/private/bar";`,
+			code: "import { Foo, type Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3775,7 +3775,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export { Baz, type Bar } from "import/private/bar";`,
+			code: "export { Baz, type Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3791,7 +3791,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import { Foo, type Bar } from "import/private/bar";`,
+			code: "import { Foo, type Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3807,7 +3807,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export { Baz, type Bar } from "import/private/bar";`,
+			code: "export { Baz, type Bar } from \"import/private/bar\";",
 			options: [
 				{
 					patterns: [
@@ -3823,7 +3823,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export { bar, type baz } from "import-foo";`,
+			code: "export { bar, type baz } from \"import-foo\";",
 			options: [
 				{
 					paths: [
@@ -3923,7 +3923,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export type * from "foo";`,
+			code: "export type * from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -3936,7 +3936,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import type fs = require("fs");`,
+			code: "import type fs = require(\"fs\");",
 			options: [
 				{
 					patterns: [
@@ -3949,7 +3949,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export { type bar, baz } from "foo";`,
+			code: "export { type bar, baz } from \"foo\";",
 			options: [
 				{
 					paths: [
@@ -4537,7 +4537,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import type { bar } from "mod";`,
+			code: "import type { bar } from \"mod\";",
 			options: [
 				{
 					paths: [
@@ -4568,7 +4568,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `export type { bar } from "mod";`,
+			code: "export type { bar } from \"mod\";",
 			options: [
 				{
 					paths: [
@@ -4599,7 +4599,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import fs = require("fs");`,
+			code: "import fs = require(\"fs\");",
 			options: [
 				{
 					patterns: [
@@ -4659,7 +4659,7 @@ ruleTesterTypeScript.run("no-restricted-imports", rule, {
 			],
 		},
 		{
-			code: `import { baz } from "foo";`,
+			code: "import { baz } from \"foo\";",
 			options: [
 				{
 					paths: [

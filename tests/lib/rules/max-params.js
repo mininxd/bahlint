@@ -205,19 +205,19 @@ ruleTesterTypeScript.run("max-params", rule, {
 			options: [{ countVoidThis: true, max: 2 }],
 		},
 		{
-			code: `function testD(this: void, a) {}`,
+			code: "function testD(this: void, a) {}",
 			options: [{ max: 1 }],
 		},
 		{
-			code: `function testD(this: void, a) {}`,
+			code: "function testD(this: void, a) {}",
 			options: [{ countVoidThis: true, max: 2 }],
 		},
 		{
-			code: `const testE = function (this: void, a) {}`,
+			code: "const testE = function (this: void, a) {}",
 			options: [{ max: 1 }],
 		},
 		{
-			code: `const testE = function (this: void, a) {}`,
+			code: "const testE = function (this: void, a) {}",
 			options: [{ countVoidThis: true, max: 2 }],
 		},
 		{
@@ -233,11 +233,11 @@ ruleTesterTypeScript.run("max-params", rule, {
 			options: [{ max: 2 }],
 		},
 		{
-			code: `function foo(this: unknown[], a, b, c) {}`,
+			code: "function foo(this: unknown[], a, b, c) {}",
 			options: [{ max: 3, countThis: "never" }],
 		},
 		{
-			code: `function foo(this: void, a, b, c) {}`,
+			code: "function foo(this: void, a, b, c) {}",
 			options: [{ max: 3, countThis: "except-void" }],
 		},
 	],
@@ -286,32 +286,32 @@ ruleTesterTypeScript.run("max-params", rule, {
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `function testD(this: void, a) {}`,
+			code: "function testD(this: void, a) {}",
 			options: [{ countVoidThis: true, max: 1 }],
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `function testD(this: void, a) {}`,
+			code: "function testD(this: void, a) {}",
 			options: [{ countThis: "always", max: 1 }],
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `const testE = function (this: void, a) {}`,
+			code: "const testE = function (this: void, a) {}",
 			options: [{ countThis: "always", max: 1 }],
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `function testFunction(test: void, a: number) {}`,
+			code: "function testFunction(test: void, a: number) {}",
 			options: [{ countThis: "except-void", max: 1 }],
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `const testE = function (this: void, a) {}`,
+			code: "const testE = function (this: void, a) {}",
 			options: [{ countVoidThis: true, max: 1 }],
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `function testFunction(test: void, a: number) {}`,
+			code: "function testFunction(test: void, a: number) {}",
 			options: [{ countVoidThis: false, max: 1 }],
 			errors: [{ messageId: "exceed" }],
 		},
@@ -338,12 +338,12 @@ ruleTesterTypeScript.run("max-params", rule, {
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `function foo(this: unknown[], a, b, c) {}`,
+			code: "function foo(this: unknown[], a, b, c) {}",
 			options: [{ max: 3, countThis: "always" }],
 			errors: [{ messageId: "exceed" }],
 		},
 		{
-			code: `function foo(this: unknown[], a, b, c) {}`,
+			code: "function foo(this: unknown[], a, b, c) {}",
 			options: [{ max: 3, countThis: "except-void" }],
 			errors: [{ messageId: "exceed" }],
 		},

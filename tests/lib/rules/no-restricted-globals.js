@@ -855,7 +855,7 @@ ruleTester.run("no-restricted-globals", rule, {
 			],
 		},
 		{
-			code: 'window["foo"]',
+			code: "window[\"foo\"]",
 			options: [{ globals: ["foo"], checkGlobalObject: true }],
 			languageOptions: { globals: globals.browser },
 			errors: [
@@ -866,7 +866,7 @@ ruleTester.run("no-restricted-globals", rule, {
 			],
 		},
 		{
-			code: 'self["foo"]',
+			code: "self[\"foo\"]",
 			options: [{ globals: ["foo"], checkGlobalObject: true }],
 			languageOptions: { globals: globals.browser },
 			errors: [
@@ -877,7 +877,7 @@ ruleTester.run("no-restricted-globals", rule, {
 			],
 		},
 		{
-			code: 'globalThis["foo"]',
+			code: "globalThis[\"foo\"]",
 			options: [{ globals: ["foo"], checkGlobalObject: true }],
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [
@@ -888,7 +888,7 @@ ruleTester.run("no-restricted-globals", rule, {
 			],
 		},
 		{
-			code: 'myGlobal["foo"]',
+			code: "myGlobal[\"foo\"]",
 			options: [
 				{
 					globals: ["foo"],

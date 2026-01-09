@@ -237,12 +237,12 @@ exports.parseForESLint = () => ({
 		}
 	},
     visitorKeys: {
-        Document: ['definitions'],
-        ObjectTypeDefinition: ['interfaces', 'directives', 'fields'],
-        ObjectTypeExtension: ['interfaces', 'directives', 'fields'],
-        InputObjectTypeDefinition: ['directives', 'fields'],
-        InputValueDefinition: ['directives', 'fieldType'],
-        FieldDefinition: ['directives', 'fieldType', 'arguments'],
-        EnumTypeDefinition: ['directives', 'values']
+        Document: ["definitions"],
+        ObjectTypeDefinition: ["interfaces", "directives", "fields"],
+        ObjectTypeExtension: ["interfaces", "directives", "fields"],
+        InputObjectTypeDefinition: ["directives", "fields"],
+        InputValueDefinition: ["directives", "fieldType"],
+        FieldDefinition: ["directives", "fieldType", "arguments"],
+        EnumTypeDefinition: ["directives", "values"]
     }
 });

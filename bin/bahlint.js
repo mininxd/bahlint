@@ -142,11 +142,11 @@ ${getErrorMessage(error)}`;
 	process.on("unhandledRejection", onFatalError);
 
 	// Define ANSI color codes
-	const RED = '\x1b[31m';
-	const ORANGE = '\x1b[33m'; // or yellow
-	const GREEN = '\x1b[32m';
-	const GRAY = '\x1b[90m';
-	const RESET = '\x1b[0m'; // Reset to default color
+	const RED = "\x1b[31m";
+	const ORANGE = "\x1b[33m"; // or yellow
+	const GREEN = "\x1b[32m";
+	const GRAY = "\x1b[90m";
+	const RESET = "\x1b[0m"; // Reset to default color
 
 	// Show the custom startup message in red
 	const { version } = require("../package.json");
@@ -154,7 +154,7 @@ ${getErrorMessage(error)}`;
 
 	// Parse command line arguments to determine if we're running in fix mode
 	const args = process.argv.slice(2);
-	const isFixMode = args.includes('--fix') || args.some(arg => arg.startsWith('--fix='));
+	const isFixMode = args.includes("--fix") || args.some(arg => arg.startsWith("--fix="));
 
 	/*
 	 * Create ESLint instance with the provided options
@@ -173,7 +173,7 @@ ${getErrorMessage(error)}`;
 		eslintOptions.overrideConfigFile = configFilePath;
 	} else {
 		// Don't look for any external config files; use our built-in defaults
-		eslintOptions.useEslintrc = false;
+		eslintOptions.overrideConfigFile = true;
 		eslintOptions.overrideConfig = {
 			languageOptions: {
 				ecmaVersion: 2024,
@@ -201,9 +201,9 @@ ${getErrorMessage(error)}`;
 	const eslint = new ESLint(eslintOptions);
 
 	// Determine files to lint
-	let files = args.filter(arg => !arg.startsWith('-'));
+	let files = args.filter(arg => !arg.startsWith("-"));
 	if (files.length === 0) {
-		files = ['.']; // Default to current directory if no files specified
+		files = ["."]; // Default to current directory if no files specified
 	}
 
 	// Lint the files

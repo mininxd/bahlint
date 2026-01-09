@@ -76,9 +76,9 @@ function validateLanguageOptions(languageOptions, lineOffset, problems) {
 
 		if (ecmaVersion === "latest") {
 			ecmaVersionErrorMessage =
-				'"ecmaVersion": "latest" is the default and can be omitted.';
+				"\"ecmaVersion\": \"latest\" is the default and can be omitted.";
 		} else if (typeof ecmaVersion !== "number") {
-			ecmaVersionErrorMessage = '"ecmaVersion" must be a number.';
+			ecmaVersionErrorMessage = "\"ecmaVersion\" must be a number.";
 		} else if (!VALID_ECMA_VERSIONS.has(ecmaVersion)) {
 			ecmaVersionErrorMessage = `"ecmaVersion" must be one of ${[...VALID_ECMA_VERSIONS].join(", ")}.`;
 		}
@@ -91,7 +91,7 @@ function validateLanguageOptions(languageOptions, lineOffset, problems) {
 	if (languageOptions.sourceType === "module") {
 		problems.push(
 			createLintMessage(
-				'"sourceType": "module" is the default and can be omitted.',
+				"\"sourceType\": \"module\" is the default and can be omitted.",
 			),
 		);
 	}
@@ -99,7 +99,7 @@ function validateLanguageOptions(languageOptions, lineOffset, problems) {
 	if (languageOptions.parserOptions?.ecmaFeatures?.jsx === false) {
 		problems.push(
 			createLintMessage(
-				'"jsx": false is the default and can be omitted.',
+				"\"jsx\": false is the default and can be omitted.",
 			),
 		);
 	}

@@ -20,7 +20,7 @@ const ruleTester = new RuleTester();
 ruleTester.run("yoda", rule, {
 	valid: [
 		// "never" mode
-		{ code: 'if (value === "red") {}', options: ["never"] },
+		{ code: "if (value === \"red\") {}", options: ["never"] },
 		{ code: "if (value === value) {}", options: ["never"] },
 		{ code: "if (value != 5) {}", options: ["never"] },
 		{ code: "if (5 & foo) {}", options: ["never"] },
@@ -41,12 +41,12 @@ ruleTester.run("yoda", rule, {
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (`${""}` === `red`) {}',
+			code: "if (`${\"\"}` === `red`) {}",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (`${"red"}` === foo) {}',
+			code: "if (`${\"red\"}` === foo) {}",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 2015 },
 		},
@@ -56,13 +56,13 @@ ruleTester.run("yoda", rule, {
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (`b` > `a` && "b" > "a") {}',
+			code: "if (`b` > `a` && \"b\" > \"a\") {}",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 2015 },
 		},
 
 		// "always" mode
-		{ code: 'if ("blue" === value) {}', options: ["always"] },
+		{ code: "if (\"blue\" === value) {}", options: ["always"] },
 		{ code: "if (value === value) {}", options: ["always"] },
 		{ code: "if (4 != value) {}", options: ["always"] },
 		{ code: "if (foo & 4) {}", options: ["always"] },
@@ -83,12 +83,12 @@ ruleTester.run("yoda", rule, {
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (`red` === `${""}`) {}',
+			code: "if (`red` === `${\"\"}`) {}",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (foo === `${"red"}`) {}',
+			code: "if (foo === `${\"red\"}`) {}",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2015 },
 		},
@@ -98,14 +98,14 @@ ruleTester.run("yoda", rule, {
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (`b` > `a` && "b" > "a") {}',
+			code: "if (`b` > `a` && \"b\" > \"a\") {}",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2015 },
 		},
 
 		// Range exception
 		{
-			code: 'if ("a" < x && x < MAX ) {}',
+			code: "if (\"a\" < x && x < MAX ) {}",
 			options: ["never", { exceptRange: true }],
 		},
 		{
@@ -184,7 +184,7 @@ ruleTester.run("yoda", rule, {
 			options: ["never", { exceptRange: true }],
 		},
 		{
-			code: 'if (0 <= a.b && a["b"] <= 100) {}',
+			code: "if (0 <= a.b && a[\"b\"] <= 100) {}",
 			options: ["never", { exceptRange: true }],
 		},
 		{
@@ -248,7 +248,7 @@ ruleTester.run("yoda", rule, {
 			languageOptions: { ecmaVersion: 2015 },
 		},
 		{
-			code: 'if (0 <= x[`y`] && x["y"] <= 100) {}',
+			code: "if (0 <= x[`y`] && x[\"y\"] <= 100) {}",
 			options: ["never", { exceptRange: true }],
 			languageOptions: { ecmaVersion: 2015 },
 		},
@@ -329,8 +329,8 @@ ruleTester.run("yoda", rule, {
 			],
 		},
 		{
-			code: 'if ("red" == value) {}',
-			output: 'if (value == "red") {}',
+			code: "if (\"red\" == value) {}",
+			output: "if (value == \"red\") {}",
 			options: ["never"],
 			errors: [
 				{
@@ -385,8 +385,8 @@ ruleTester.run("yoda", rule, {
 			],
 		},
 		{
-			code: 'if ("red" <= value) {}',
-			output: 'if (value >= "red") {}',
+			code: "if (\"red\" <= value) {}",
+			output: "if (value >= \"red\") {}",
 			options: ["never"],
 			errors: [
 				{
@@ -420,8 +420,8 @@ ruleTester.run("yoda", rule, {
 			],
 		},
 		{
-			code: 'if (`red` <= `${"red"}`) {}',
-			output: 'if (`${"red"}` >= `red`) {}',
+			code: "if (`red` <= `${\"red\"}`) {}",
+			output: "if (`${\"red\"}` >= `red`) {}",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 2015 },
 			errors: [
@@ -476,8 +476,8 @@ ruleTester.run("yoda", rule, {
 			],
 		},
 		{
-			code: 'if (value == "red") {}',
-			output: 'if ("red" == value) {}',
+			code: "if (value == \"red\") {}",
+			output: "if (\"red\" == value) {}",
 			options: ["always"],
 			errors: [
 				{
@@ -522,8 +522,8 @@ ruleTester.run("yoda", rule, {
 			],
 		},
 		{
-			code: 'if (`${"red"}` <= `red`) {}',
-			output: 'if (`red` >= `${"red"}`) {}',
+			code: "if (`${\"red\"}` <= `red`) {}",
+			output: "if (`red` >= `${\"red\"}`) {}",
 			options: ["always"],
 			languageOptions: { ecmaVersion: 2015 },
 			errors: [

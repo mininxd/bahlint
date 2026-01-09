@@ -168,11 +168,11 @@ ruleTester.run("no-constant-binary-expression", rule, {
 			errors: [{ messageId: "constantShortCircuit" }],
 		},
 		{
-			code: '"hello" + name ?? ""',
+			code: "\"hello\" + name ?? \"\"",
 			errors: [{ messageId: "constantShortCircuit" }],
 		},
 		{
-			code: '[foo?.bar ?? ""] ?? []',
+			code: "[foo?.bar ?? \"\"] ?? []",
 			errors: [{ messageId: "constantShortCircuit" }],
 		},
 

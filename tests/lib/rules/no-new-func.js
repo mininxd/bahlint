@@ -20,8 +20,8 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("no-new-func", rule, {
 	valid: [
-		'var a = new _function("b", "c", "return b+c");',
-		'var a = _function("b", "c", "return b+c");',
+		"var a = new _function(\"b\", \"c\", \"return b+c\");",
+		"var a = _function(\"b\", \"c\", \"return b+c\");",
 		{
 			code: "class Function {}; new Function()",
 			languageOptions: {
@@ -46,7 +46,7 @@ ruleTester.run("no-new-func", rule, {
 	],
 	invalid: [
 		{
-			code: 'var a = new Function("b", "c", "return b+c");',
+			code: "var a = new Function(\"b\", \"c\", \"return b+c\");",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -54,7 +54,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = Function("b", "c", "return b+c");',
+			code: "var a = Function(\"b\", \"c\", \"return b+c\");",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -62,7 +62,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = Function.call(null, "b", "c", "return b+c");',
+			code: "var a = Function.call(null, \"b\", \"c\", \"return b+c\");",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -70,7 +70,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = Function.apply(null, ["b", "c", "return b+c"]);',
+			code: "var a = Function.apply(null, [\"b\", \"c\", \"return b+c\"]);",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -78,7 +78,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = Function.bind(null, "b", "c", "return b+c")();',
+			code: "var a = Function.bind(null, \"b\", \"c\", \"return b+c\")();",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -86,7 +86,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = Function.bind(null, "b", "c", "return b+c");',
+			code: "var a = Function.bind(null, \"b\", \"c\", \"return b+c\");",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -94,7 +94,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = Function["call"](null, "b", "c", "return b+c");',
+			code: "var a = Function[\"call\"](null, \"b\", \"c\", \"return b+c\");",
 			errors: [
 				{
 					messageId: "noFunctionConstructor",
@@ -102,7 +102,7 @@ ruleTester.run("no-new-func", rule, {
 			],
 		},
 		{
-			code: 'var a = (Function?.call)(null, "b", "c", "return b+c");',
+			code: "var a = (Function?.call)(null, \"b\", \"c\", \"return b+c\");",
 			languageOptions: { ecmaVersion: 2021 },
 			errors: [
 				{

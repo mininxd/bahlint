@@ -9,4 +9,4 @@ module.exports = {
         "no-unused-vars": 2,
         "example/example-rule": 1
     }
-}
+};

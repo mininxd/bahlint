@@ -4243,14 +4243,14 @@ ruleTester.run("indent", rule, {
 		// License: https://github.com/yannickcr/eslint-plugin-react/blob/7ca9841f22d599f447a27ef5b2a97def9229d6c8/LICENSE
 		//----------------------------------------------------------------------
 
-		'<Foo a="b" c="d"/>;',
+		"<Foo a=\"b\" c=\"d\"/>;",
 		unIndent`
             <Foo
                 a="b"
                 c="d"
             />;
         `,
-		'var foo = <Bar a="b" c="d"/>;',
+		"var foo = <Bar a=\"b\" c=\"d\"/>;",
 		unIndent`
             var foo = <Bar
                 a="b"
@@ -4289,7 +4289,7 @@ ruleTester.run("indent", rule, {
                 a="b"
                 c="d"/>;
         `,
-		'<a href="foo">bar</a>;',
+		"<a href=\"foo\">bar</a>;",
 		unIndent`
             <a href="foo">
                 bar
@@ -4394,7 +4394,7 @@ ruleTester.run("indent", rule, {
                 </a>
             );
         `,
-		'var foo = <a href="bar">baz</a>;',
+		"var foo = <a href=\"bar\">baz</a>;",
 		unIndent`
             <a>
                 {

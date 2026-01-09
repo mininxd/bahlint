@@ -91,7 +91,7 @@ module.exports.withPlaceholdersInData = {
                     context.report({
                         node,
                         messageId: "avoidFoo",
-                        data:      { name: '{{ placeholder }}' },
+                        data:      { name: "{{ placeholder }}" },
                     });
                 }
             }
@@ -113,7 +113,7 @@ module.exports.withSamePlaceholdersInData = {
                     context.report({
                         node,
                         messageId: "avoidFoo",
-                        data:      { name: '{{ name }}' },
+                        data:      { name: "{{ name }}" },
                     });
                 }
             }

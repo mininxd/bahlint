@@ -244,7 +244,7 @@ function installPrismESLintMarkerHook() {
 							);
 					} else {
 						token.content = [
-							 
+
 							...convertMarked({
 								tokens: token.content,
 								range,

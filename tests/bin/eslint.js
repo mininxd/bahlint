@@ -1323,7 +1323,7 @@ describe("bin/eslint.js", () => {
 			const outputAssertion = getOutput(child).then(output => {
 				assert.include(
 					output.stderr,
-					'Key "linterOptions": Key "reportUnusedDisableDirectives"',
+					"Key \"linterOptions\": Key \"reportUnusedDisableDirectives\"",
 				);
 			});
 

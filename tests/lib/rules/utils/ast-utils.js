@@ -424,7 +424,7 @@ describe("ast-utils", () => {
 			const code = [
 				"/* eslint-disable no-undef */",
 				"/*eslint-enable no-undef*/",
-				'/* eslint-env {"es6": true} */',
+				"/* eslint-env {\"es6\": true} */",
 				"/* eslint foo */",
 				"/*eslint bar*/",
 				"/*global foo*/",
@@ -2405,7 +2405,7 @@ describe("ast-utils", () => {
 		});
 
 		it("should return false if the node is not an ExpressionStatement", () => {
-			linter.verify('var foo = () => "use strict";', {
+			linter.verify("var foo = () => \"use strict\";", {
 				plugins: {
 					test: {
 						rules: {
@@ -2429,11 +2429,11 @@ describe("ast-utils", () => {
 		});
 
 		const expectedResults = [
-			['if (foo) { "use strict"; }', '"use strict";', false],
-			['{ "use strict"; }', '"use strict";', false],
+			["if (foo) { \"use strict\"; }", "\"use strict\";", false],
+			["{ \"use strict\"; }", "\"use strict\";", false],
 			[
-				'switch (foo) { case bar: "use strict"; }',
-				'"use strict";',
+				"switch (foo) { case bar: \"use strict\"; }",
+				"\"use strict\";",
 				false,
 			],
 			["foo; bar;", "foo;", true],
@@ -2441,7 +2441,7 @@ describe("ast-utils", () => {
 			["function foo() { bar; }", "bar;", true],
 			["var foo = function () { foo(); };", "foo();", true],
 			["var foo = () => { 'bar'; }", "'bar';", true],
-			['"use strict"', '"use strict"', true],
+			["\"use strict\"", "\"use strict\"", true],
 			["(`use strict`)", "(`use strict`)", true],
 		];
 
@@ -2489,7 +2489,7 @@ describe("ast-utils", () => {
 			"``": true,
 			"`foo`": true,
 			"`foo${bar}`": false,
-			'"foo"': false,
+			"\"foo\"": false,
 			"foo`bar`": false,
 		};
 
@@ -2507,27 +2507,27 @@ describe("ast-utils", () => {
 
 	describe("isDirective", () => {
 		const expectedResults = [
-			{ code: '"use strict";', expectedRetVal: true },
+			{ code: "\"use strict\";", expectedRetVal: true },
 			{
-				code: '"use strict"; "use asm";',
-				nodeText: '"use asm";',
+				code: "\"use strict\"; \"use asm\";",
+				nodeText: "\"use asm\";",
 				expectedRetVal: true,
 			},
 			{
-				code: 'const a = () => { "foo"; }',
-				nodeText: '"foo";',
+				code: "const a = () => { \"foo\"; }",
+				nodeText: "\"foo\";",
 				expectedRetVal: true,
 			},
-			{ code: '"";', expectedRetVal: true },
-			{ code: '{ "foo"; }', nodeText: '"foo";', expectedRetVal: false },
+			{ code: "\"\";", expectedRetVal: true },
+			{ code: "{ \"foo\"; }", nodeText: "\"foo\";", expectedRetVal: false },
 			{ code: "foo();", expectedRetVal: false },
-			{ code: '"foo" + "bar";', expectedRetVal: false },
+			{ code: "\"foo\" + \"bar\";", expectedRetVal: false },
 			{ code: "12345;", expectedRetVal: false },
 			{ code: "`foo`;", expectedRetVal: false },
 			{ code: "('foo');", expectedRetVal: false },
 			{
-				code: 'foo(); "use strict";',
-				nodeText: '"use strict";',
+				code: "foo(); \"use strict\";",
+				nodeText: "\"use strict\";",
 				expectedRetVal: false,
 			},
 		];

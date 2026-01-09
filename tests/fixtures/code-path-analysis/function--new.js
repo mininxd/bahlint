@@ -5,7 +5,7 @@ s2_1->s2_3->s2_4->final;
 /*expected
 initial->s1_1->final;
 */
-function Foo() { this.a = b ? c : d }; new Foo()
+function Foo() { this.a = b ? c : d; }; new Foo();
 
 /*DOT
 digraph {
@@ -19,7 +19,7 @@ digraph {
     initial->s2_1->s2_2->s2_4;
     s2_1->s2_3->s2_4->final;
 }
- 
+
 digraph {
     node[shape=box,style="rounded,filled",fillcolor=white];
     initial[label="",shape=circle,style=filled,fillcolor=black,width=0.25,height=0.25];

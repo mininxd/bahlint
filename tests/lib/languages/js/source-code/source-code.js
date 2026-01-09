@@ -240,7 +240,7 @@ describe("SourceCode", () => {
 				sourceCode = new SourceCode(SHEBANG_TEST_CODE, ast);
 			});
 
-			it('should change the type of the first comment to "Shebang"', () => {
+			it("should change the type of the first comment to \"Shebang\"", () => {
 				const firstToken = sourceCode.getAllComments()[0];
 
 				assert.strictEqual(firstToken.type, "Shebang");
@@ -298,7 +298,7 @@ describe("SourceCode", () => {
 			it("should not has BOM in `text` property.", () => {
 				assert.strictEqual(
 					sourceCode.text,
-					'"use strict";\n\nconsole.log("This file has [0xEF, 0xBB, 0xBF] as BOM.");\n',
+					"\"use strict\";\n\nconsole.log(\"This file has [0xEF, 0xBB, 0xBF] as BOM.\");\n",
 				);
 			});
 		});
@@ -1916,7 +1916,7 @@ describe("SourceCode", () => {
 
 		it("ImportDeclaration", () => {
 			const code =
-				'\n import "aaa";\n import * as a from "bbb";\n import b, {c, x as d} from "ccc";\n ';
+				"\n import \"aaa\";\n import * as a from \"bbb\";\n import b, {c, x as d} from \"ccc\";\n ";
 			const namesList = [[], ["a"], ["b", "c", "d"]];
 
 			verify(code, "ImportDeclaration", namesList);
@@ -1924,7 +1924,7 @@ describe("SourceCode", () => {
 
 		it("ImportSpecifier", () => {
 			const code =
-				'\n import "aaa";\n import * as a from "bbb";\n import b, {c, x as d} from "ccc";\n ';
+				"\n import \"aaa\";\n import * as a from \"bbb\";\n import b, {c, x as d} from \"ccc\";\n ";
 			const namesList = [["c"], ["d"]];
 
 			verify(code, "ImportSpecifier", namesList);
@@ -1932,7 +1932,7 @@ describe("SourceCode", () => {
 
 		it("ImportDefaultSpecifier", () => {
 			const code =
-				'\n import "aaa";\n import * as a from "bbb";\n import b, {c, x as d} from "ccc";\n ';
+				"\n import \"aaa\";\n import * as a from \"bbb\";\n import b, {c, x as d} from \"ccc\";\n ";
 			const namesList = [["b"]];
 
 			verify(code, "ImportDefaultSpecifier", namesList);
@@ -1940,7 +1940,7 @@ describe("SourceCode", () => {
 
 		it("ImportNamespaceSpecifier", () => {
 			const code =
-				'\n import "aaa";\n import * as a from "bbb";\n import b, {c, x as d} from "ccc";\n ';
+				"\n import \"aaa\";\n import * as a from \"bbb\";\n import b, {c, x as d} from \"ccc\";\n ";
 			const namesList = [["a"]];
 
 			verify(code, "ImportNamespaceSpecifier", namesList);
@@ -2456,7 +2456,7 @@ describe("SourceCode", () => {
 
 		it("should extract multiple rule configurations", () => {
 			const code =
-				'/*eslint some-rule: 2, other-rule: ["error", { skip: true }] */ var foo;';
+				"/*eslint some-rule: 2, other-rule: [\"error\", { skip: true }] */ var foo;";
 			const ast = espree.parse(code, DEFAULT_CONFIG);
 			const sourceCode = new SourceCode(code, ast);
 			const result = sourceCode.applyInlineConfig();
@@ -2471,7 +2471,7 @@ describe("SourceCode", () => {
 
 		it("should extract multiple comments into multiple configurations", () => {
 			const code =
-				'/*eslint some-rule: 2*/ /*eslint other-rule: ["error", { skip: true }] */ var foo;';
+				"/*eslint some-rule: 2*/ /*eslint other-rule: [\"error\", { skip: true }] */ var foo;";
 			const ast = espree.parse(code, DEFAULT_CONFIG);
 			const sourceCode = new SourceCode(code, ast);
 			const result = sourceCode.applyInlineConfig();

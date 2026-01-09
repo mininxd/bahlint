@@ -1,1 +1,1 @@
-let foo = "bar";
+const foo = "bar";

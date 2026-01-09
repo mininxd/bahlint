@@ -1,5 +1,5 @@
 // intentionally invalid JavaScript
 rules:
-  semi: error
-yoda: error
-  quotes: error
+  semi: error;
+yoda: error;
+  quotes: error;

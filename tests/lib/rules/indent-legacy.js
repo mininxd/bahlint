@@ -639,18 +639,18 @@ ruleTester.run("indent-legacy", rule, {
 		{
 			code:
 				"switch (x) {\n" +
-				'    case "foo":\n' +
+				"    case \"foo\":\n" +
 				"        a();\n" +
 				"        break;\n" +
-				'    case "bar":\n' +
+				"    case \"bar\":\n" +
 				"        switch (y) {\n" +
-				'            case "1":\n' +
+				"            case \"1\":\n" +
 				"                break;\n" +
-				'            case "2":\n' +
+				"            case \"2\":\n" +
 				"                a = 6;\n" +
 				"                break;\n" +
 				"        }\n" +
-				'    case "test":\n' +
+				"    case \"test\":\n" +
 				"        break;\n" +
 				"}",
 			options: [4, { SwitchCase: 1 }],
@@ -658,27 +658,27 @@ ruleTester.run("indent-legacy", rule, {
 		{
 			code:
 				"switch (x) {\n" +
-				'        case "foo":\n' +
+				"        case \"foo\":\n" +
 				"            a();\n" +
 				"            break;\n" +
-				'        case "bar":\n' +
+				"        case \"bar\":\n" +
 				"            switch (y) {\n" +
-				'                    case "1":\n' +
+				"                    case \"1\":\n" +
 				"                        break;\n" +
-				'                    case "2":\n' +
+				"                    case \"2\":\n" +
 				"                        a = 6;\n" +
 				"                        break;\n" +
 				"            }\n" +
-				'        case "test":\n' +
+				"        case \"test\":\n" +
 				"            break;\n" +
 				"}",
 			options: [4, { SwitchCase: 2 }],
 		},
 		"switch (a) {\n" +
-			'case "foo":\n' +
+			"case \"foo\":\n" +
 			"    a();\n" +
 			"    break;\n" +
-			'case "bar":\n' +
+			"case \"bar\":\n" +
 			"    switch(x){\n" +
 			"    case '1':\n" +
 			"        break;\n" +
@@ -688,10 +688,10 @@ ruleTester.run("indent-legacy", rule, {
 			"    }\n" +
 			"}",
 		"switch (a) {\n" +
-			'case "foo":\n' +
+			"case \"foo\":\n" +
 			"    a();\n" +
 			"    break;\n" +
-			'case "bar":\n' +
+			"case \"bar\":\n" +
 			"    if(x){\n" +
 			"        a = 2;\n" +
 			"    }\n" +
@@ -700,10 +700,10 @@ ruleTester.run("indent-legacy", rule, {
 			"    }\n" +
 			"}",
 		"switch (a) {\n" +
-			'case "foo":\n' +
+			"case \"foo\":\n" +
 			"    a();\n" +
 			"    break;\n" +
-			'case "bar":\n' +
+			"case \"bar\":\n" +
 			"    if(x){\n" +
 			"        a = 2;\n" +
 			"    }\n" +
@@ -711,30 +711,30 @@ ruleTester.run("indent-legacy", rule, {
 			"        a = 6;\n" +
 			"}",
 		"switch (a) {\n" +
-			'case "foo":\n' +
+			"case \"foo\":\n" +
 			"    a();\n" +
 			"    break;\n" +
-			'case "bar":\n' +
+			"case \"bar\":\n" +
 			"    a(); break;\n" +
-			'case "baz":\n' +
+			"case \"baz\":\n" +
 			"    a(); break;\n" +
 			"}",
 		"switch (0) {\n}",
 		"function foo() {\n" +
-			'    var a = "a";\n' +
+			"    var a = \"a\";\n" +
 			"    switch(a) {\n" +
-			'    case "a":\n' +
-			'        return "A";\n' +
-			'    case "b":\n' +
-			'        return "B";\n' +
+			"    case \"a\":\n" +
+			"        return \"A\";\n" +
+			"    case \"b\":\n" +
+			"        return \"B\";\n" +
 			"    }\n" +
 			"}\n" +
 			"foo();",
 		{
 			code:
 				"switch(value){\n" +
-				'    case "1":\n' +
-				'    case "2":\n' +
+				"    case \"1\":\n" +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
@@ -742,10 +742,10 @@ ruleTester.run("indent-legacy", rule, {
 				"        break;\n" +
 				"}\n" +
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"        a();\n" +
 				"        break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        break;\n" +
 				"    default:\n" +
 				"        break;\n" +
@@ -1962,10 +1962,10 @@ ruleTester.run("indent-legacy", rule, {
 		{
 			code:
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"        a();\n" +
 				"    break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"    break;\n" +
 				"    default:\n" +
@@ -1974,10 +1974,10 @@ ruleTester.run("indent-legacy", rule, {
 				"}",
 			output:
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"        a();\n" +
 				"        break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
@@ -2012,10 +2012,10 @@ ruleTester.run("indent-legacy", rule, {
 		{
 			code:
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"        a();\n" +
 				"        break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
@@ -2023,10 +2023,10 @@ ruleTester.run("indent-legacy", rule, {
 				"}",
 			output:
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"        a();\n" +
 				"        break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
@@ -2038,17 +2038,17 @@ ruleTester.run("indent-legacy", rule, {
 		{
 			code:
 				"switch(value){\n" +
-				'    case "1":\n' +
-				'    case "2":\n' +
+				"    case \"1\":\n" +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
 				"        break;\n" +
 				"}\n" +
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"    break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"    break;\n" +
 				"    default:\n" +
@@ -2057,17 +2057,17 @@ ruleTester.run("indent-legacy", rule, {
 				"}",
 			output:
 				"switch(value){\n" +
-				'    case "1":\n' +
-				'    case "2":\n' +
+				"    case \"1\":\n" +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
 				"        break;\n" +
 				"}\n" +
 				"switch(value){\n" +
-				'    case "1":\n' +
+				"    case \"1\":\n" +
 				"        break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        a();\n" +
 				"        break;\n" +
 				"    default:\n" +
@@ -2084,20 +2084,20 @@ ruleTester.run("indent-legacy", rule, {
 		{
 			code:
 				"switch(value){\n" +
-				'case "1":\n' +
+				"case \"1\":\n" +
 				"        a();\n" +
 				"        break;\n" +
-				'    case "2":\n' +
+				"    case \"2\":\n" +
 				"        break;\n" +
 				"    default:\n" +
 				"        break;\n" +
 				"}",
 			output:
 				"switch(value){\n" +
-				'case "1":\n' +
+				"case \"1\":\n" +
 				"    a();\n" +
 				"    break;\n" +
-				'case "2":\n' +
+				"case \"2\":\n" +
 				"    break;\n" +
 				"default:\n" +
 				"    break;\n" +

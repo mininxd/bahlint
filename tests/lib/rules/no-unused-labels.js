@@ -77,17 +77,17 @@ ruleTester.run("no-unused-labels", rule, {
 
 		// https://github.com/eslint/eslint/issues/16988
 		{
-			code: 'A: "use strict"',
+			code: "A: \"use strict\"",
 			output: null,
 			errors: [{ messageId: "unused" }],
 		},
 		{
-			code: '"use strict"; foo: "bar"',
+			code: "\"use strict\"; foo: \"bar\"",
 			output: null,
 			errors: [{ messageId: "unused" }],
 		},
 		{
-			code: 'A: ("use strict")', // Parentheses may be removed by another rule.
+			code: "A: (\"use strict\")", // Parentheses may be removed by another rule.
 			output: null,
 			errors: [{ messageId: "unused" }],
 		},

@@ -19,15 +19,15 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("no-path-concat", rule, {
 	valid: [
-		'var fullPath = dirname + "foo.js";',
-		'var fullPath = __dirname == "foo.js";',
+		"var fullPath = dirname + \"foo.js\";",
+		"var fullPath = __dirname == \"foo.js\";",
 		"if (fullPath === __dirname) {}",
 		"if (__dirname === fullPath) {}",
 	],
 
 	invalid: [
 		{
-			code: 'var fullPath = __dirname + "/foo.js";',
+			code: "var fullPath = __dirname + \"/foo.js\";",
 			errors: [
 				{
 					messageId: "usePathFunctions",
@@ -35,7 +35,7 @@ ruleTester.run("no-path-concat", rule, {
 			],
 		},
 		{
-			code: 'var fullPath = __filename + "/foo.js";',
+			code: "var fullPath = __filename + \"/foo.js\";",
 			errors: [
 				{
 					messageId: "usePathFunctions",
@@ -43,7 +43,7 @@ ruleTester.run("no-path-concat", rule, {
 			],
 		},
 		{
-			code: 'var fullPath = "/foo.js" + __filename;',
+			code: "var fullPath = \"/foo.js\" + __filename;",
 			errors: [
 				{
 					messageId: "usePathFunctions",
@@ -51,7 +51,7 @@ ruleTester.run("no-path-concat", rule, {
 			],
 		},
 		{
-			code: 'var fullPath = "/foo.js" + __dirname;',
+			code: "var fullPath = \"/foo.js\" + __dirname;",
 			errors: [
 				{
 					messageId: "usePathFunctions",

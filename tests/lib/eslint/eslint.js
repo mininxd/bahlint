@@ -155,7 +155,7 @@ describe("ESLint", () => {
 		 * exceeds the default test timeout, so raise it just for this hook.
 		 * Mocha uses `this` to set timeouts on an individual hook level.
 		 */
-		this.timeout(60 * 1000);  
+		this.timeout(60 * 1000);
 		shell.mkdir("-p", fixtureDir);
 		shell.cp("-r", "./tests/fixtures/.", fixtureDir);
 	});
@@ -245,7 +245,7 @@ describe("ESLint", () => {
 		it("should not modify baseConfig in the constructor", () => {
 			const customBaseConfig = { root: true };
 
-			new ESLint({ baseConfig: customBaseConfig });  
+			new ESLint({ baseConfig: customBaseConfig });
 
 			assert.deepStrictEqual(customBaseConfig, { root: true });
 		});
@@ -308,11 +308,11 @@ describe("ESLint", () => {
 							"- 'baseConfig' must be an object or null.",
 							"- 'cache' must be a boolean.",
 							"- 'cacheLocation' must be a non-empty string.",
-							'- \'concurrency\' must be a positive integer, "auto", or "off".',
+							"- 'concurrency' must be a positive integer, \"auto\", or \"off\".",
 							"- 'cwd' must be an absolute path.",
 							"- 'errorOnUnmatchedPattern' must be a boolean.",
 							"- 'fix' must be a boolean or a function.",
-							'- \'fixTypes\' must be an array of any of "directive", "problem", "suggestion", and "layout".',
+							"- 'fixTypes' must be an array of any of \"directive\", \"problem\", \"suggestion\", and \"layout\".",
 							"- 'globInputPaths' must be a boolean.",
 							"- 'ignore' must be a boolean.",
 							"- 'ignorePatterns' must be an array of non-empty strings or null.",
@@ -392,7 +392,6 @@ describe("ESLint", () => {
 				"emitESLintIgnoreWarning",
 			);
 
-			 
 			new ESLint({ cwd });
 
 			assert(
@@ -414,12 +413,12 @@ describe("ESLint", () => {
 					constructor: TypeError,
 					code: "ESLINT_UNCLONEABLE_OPTIONS",
 					message:
-						'The options "baseConfig", "fix", and "plugins" cannot be cloned. When concurrency is enabled, all options must be cloneable values (JSON values). Remove uncloneable options or use an options module.',
+						"The options \"baseConfig\", \"fix\", and \"plugins\" cannot be cloned. When concurrency is enabled, all options must be cloneable values (JSON values). Remove uncloneable options or use an options module.",
 				},
 			);
 		});
 
-		it('should throw if `concurrency` `"auto"` and uncloneable options are used together', () => {
+		it("should throw if `concurrency` `\"auto\"` and uncloneable options are used together", () => {
 			assert.throws(
 				() =>
 					new ESLint({
@@ -432,7 +431,7 @@ describe("ESLint", () => {
 					constructor: TypeError,
 					code: "ESLINT_UNCLONEABLE_OPTIONS",
 					message:
-						'The option "ruleFilter" cannot be cloned. When concurrency is enabled, all options must be cloneable values (JSON values). Remove uncloneable options or use an options module.',
+						"The option \"ruleFilter\" cannot be cloned. When concurrency is enabled, all options must be cloneable values (JSON values). Remove uncloneable options or use an options module.",
 				},
 			);
 		});
@@ -707,7 +706,7 @@ describe("ESLint", () => {
 			assert.strictEqual(results[0].messages[0].severity, 1);
 			assert.strictEqual(
 				results[0].messages[0].message,
-				'File ignored because of a matching ignore pattern. Use "--no-ignore" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.',
+				"File ignored because of a matching ignore pattern. Use \"--no-ignore\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.",
 			);
 			assert.strictEqual(results[0].messages[0].output, void 0);
 			assert.strictEqual(results[0].errorCount, 0);
@@ -836,7 +835,7 @@ describe("ESLint", () => {
 			assert.strictEqual(results[0].messages[0].severity, 1);
 			assert.strictEqual(
 				results[0].messages[0].message,
-				'File ignored because of a matching ignore pattern. Use "--no-ignore" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.',
+				"File ignored because of a matching ignore pattern. Use \"--no-ignore\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.",
 			);
 			assert.strictEqual(results[0].messages[0].output, void 0);
 			assert.strictEqual(results[0].errorCount, 0);
@@ -901,7 +900,7 @@ describe("ESLint", () => {
 			assert.strictEqual(results.length, 1);
 			assert.strictEqual(
 				results[0].messages[0].message,
-				'File ignored because of a matching ignore pattern. Use "--no-ignore" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.',
+				"File ignored because of a matching ignore pattern. Use \"--no-ignore\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.",
 			);
 		});
 
@@ -1191,7 +1190,7 @@ describe("ESLint", () => {
 				warnIgnored: true,
 			});
 			const expectedMsg =
-				'File ignored by default because it is located under the node_modules directory. Use ignore pattern "!**/node_modules/" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.';
+				"File ignored by default because it is located under the node_modules directory. Use ignore pattern \"!**/node_modules/\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.";
 
 			assert.strictEqual(results.length, 1);
 			assert.strictEqual(
@@ -1314,7 +1313,7 @@ describe("ESLint", () => {
 			eslint = new ESLint({
 				cwd: getFixturePath("promise-config"),
 			});
-			const results = await eslint.lintText('var foo = "bar";');
+			const results = await eslint.lintText("var foo = \"bar\";");
 
 			assert.strictEqual(results.length, 1);
 			assert.strictEqual(results[0].messages.length, 1);
@@ -1402,7 +1401,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts when we have \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -1424,7 +1423,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts when we have "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts when we have \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -1537,7 +1536,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.mts when we have "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.mts when we have \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"mts",
@@ -1559,7 +1558,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.mts config file when we have "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.mts config file when we have \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"mts",
@@ -1599,7 +1598,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.cts config file when we have \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"cts",
@@ -1621,7 +1620,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load .cts config file when we have "type": "module" in nearest `package.json`', async () => {
+				it("should load .cts config file when we have \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"cts",
@@ -1800,7 +1799,7 @@ describe("ESLint", () => {
 								[overrideConfigFile]: configFileContent,
 								"foo.js": "foo;",
 								"helper.ts":
-									'import type { Linter } from "eslint";\nexport type FlatConfig = Linter.Config;\n',
+									"import type { Linter } from \"eslint\";\nexport type FlatConfig = Linter.Config;\n",
 							},
 						});
 
@@ -1830,7 +1829,7 @@ describe("ESLint", () => {
 						"should load a TS config file when --experimental-transform-types is enabled",
 						async () => {
 							const configFileContent =
-								'import { ESLintNameSpace } from "./helper.ts";\nexport default [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }];\n';
+								"import { ESLintNameSpace } from \"./helper.ts\";\nexport default [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }];\n";
 
 							const teardown = createCustomTeardown({
 								cwd,
@@ -1838,7 +1837,7 @@ describe("ESLint", () => {
 									[overrideConfigFile]: configFileContent,
 									"foo.js": "foo;",
 									"helper.ts":
-										'export namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n',
+										"export namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n",
 								},
 							});
 
@@ -2022,7 +2021,7 @@ describe("ESLint", () => {
 				shell.rm("-r", workDir);
 			});
 
-			it(`should throw if eslint.config.js file is not present`, async () => {
+			it("should throw if eslint.config.js file is not present", async () => {
 				eslint = new ESLint({
 					cwd: workDir,
 				});
@@ -2859,7 +2858,7 @@ describe("ESLint", () => {
 				});
 				const results = await eslint.lintFiles(["node_modules/foo.js"]);
 				const expectedMsg =
-					'File ignored by default because it is located under the node_modules directory. Use ignore pattern "!**/node_modules/" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.';
+					"File ignored by default because it is located under the node_modules directory. Use ignore pattern \"!**/node_modules/\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.";
 
 				assert.strictEqual(results.length, 1);
 				assert.strictEqual(results[0].errorCount, 0);
@@ -2880,7 +2879,7 @@ describe("ESLint", () => {
 					"nested_node_modules/subdir/node_modules/text.js",
 				]);
 				const expectedMsg =
-					'File ignored by default because it is located under the node_modules directory. Use ignore pattern "!**/node_modules/" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.';
+					"File ignored by default because it is located under the node_modules directory. Use ignore pattern \"!**/node_modules/\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.";
 
 				assert.strictEqual(results.length, 1);
 				assert.strictEqual(results[0].errorCount, 0);
@@ -2893,7 +2892,7 @@ describe("ESLint", () => {
 				assert.strictEqual(results[0].suppressedMessages.length, 0);
 			});
 
-			it('should report on an ignored file with "node_modules" in its name', async () => {
+			it("should report on an ignored file with \"node_modules\" in its name", async () => {
 				eslint = new ESLint({
 					cwd: getFixturePath("cli-engine"),
 					ignorePatterns: ["*.js"],
@@ -2902,7 +2901,7 @@ describe("ESLint", () => {
 					"node_modules_cleaner.js",
 				]);
 				const expectedMsg =
-					'File ignored because of a matching ignore pattern. Use "--no-ignore" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.';
+					"File ignored because of a matching ignore pattern. Use \"--no-ignore\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.";
 
 				assert.strictEqual(results.length, 1);
 				assert.strictEqual(results[0].errorCount, 0);
@@ -3080,7 +3079,7 @@ describe("ESLint", () => {
 				assert.strictEqual(results[0].messages[0].severity, 1);
 				assert.strictEqual(
 					results[0].messages[0].message,
-					'File ignored because of a matching ignore pattern. Use "--no-ignore" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.',
+					"File ignored because of a matching ignore pattern. Use \"--no-ignore\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.",
 				);
 				assert.strictEqual(results[0].errorCount, 0);
 				assert.strictEqual(results[0].warningCount, 1);
@@ -3161,7 +3160,7 @@ describe("ESLint", () => {
 				assert.strictEqual(results[0].messages[0].severity, 1);
 				assert.strictEqual(
 					results[0].messages[0].message,
-					'File ignored because of a matching ignore pattern. Use "--no-ignore" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.',
+					"File ignored because of a matching ignore pattern. Use \"--no-ignore\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.",
 				);
 				assert.strictEqual(results[0].errorCount, 0);
 				assert.strictEqual(results[0].warningCount, 1);
@@ -4307,7 +4306,7 @@ describe("ESLint", () => {
 						fatalErrorCount: 0,
 						fixableErrorCount: 0,
 						fixableWarningCount: 0,
-						output: 'true ? "yes" : "no";\n',
+						output: "true ? \"yes\" : \"no\";\n",
 						usedDeprecatedRules: [
 							{
 								ruleId: "semi",
@@ -4396,7 +4395,7 @@ describe("ESLint", () => {
 						fatalErrorCount: 0,
 						fixableErrorCount: 0,
 						fixableWarningCount: 0,
-						output: 'var msg = "hi";\nif (msg == "hi") {\n\n}\n',
+						output: "var msg = \"hi\";\nif (msg == \"hi\") {\n\n}\n",
 						usedDeprecatedRules: [
 							{
 								ruleId: "semi",
@@ -4438,7 +4437,7 @@ describe("ESLint", () => {
 						fatalErrorCount: 0,
 						fixableErrorCount: 0,
 						fixableWarningCount: 0,
-						output: 'var msg = "hi" + foo;\n',
+						output: "var msg = \"hi\" + foo;\n",
 						usedDeprecatedRules: [
 							{
 								ruleId: "semi",
@@ -4718,7 +4717,7 @@ describe("ESLint", () => {
 					ignore: false,
 				});
 				const results = await eslint.lintText(
-					'function a() {console.log("Test");}',
+					"function a() {console.log(\"Test\");}",
 					{
 						filePath:
 							"tests/fixtures/processors/test/test-processor.txt",
@@ -4785,7 +4784,7 @@ describe("ESLint", () => {
 					ignore: false,
 				});
 				const results = await eslint.lintText(
-					'function a() {console.log("Test");}',
+					"function a() {console.log(\"Test\");}",
 					{
 						filePath:
 							"tests/fixtures/processors/test/test-processor.txt",
@@ -6158,7 +6157,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts when we have "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts when we have \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6184,7 +6183,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts when we have "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts when we have \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6210,7 +6209,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with ESM syntax and "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with ESM syntax and \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6254,7 +6253,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax and "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS syntax and \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6298,7 +6297,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax and "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS syntax and \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6342,7 +6341,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "module" in nearest `package.json` and top-level await syntax', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"module\" in nearest `package.json` and top-level await syntax", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6387,7 +6386,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "commonjs" in nearest `package.json` and top-level await syntax', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"commonjs\" in nearest `package.json` and top-level await syntax", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6432,7 +6431,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "module" in nearest `package.json` and top-level await syntax (named import)', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"module\" in nearest `package.json` and top-level await syntax (named import)", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6442,7 +6441,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { rules } = await import("./rules");\nmodule.exports = [{ rules }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { rules } = await import(\"./rules\");\nmodule.exports = [{ rules }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6481,7 +6480,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "commonjs" in nearest `package.json` and top-level await syntax (named import)', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"commonjs\" in nearest `package.json` and top-level await syntax (named import)", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6491,7 +6490,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { rules } = await import("./rules");\nmodule.exports = [{ rules }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { rules } = await import(\"./rules\");\nmodule.exports = [{ rules }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6530,7 +6529,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "module" in nearest `package.json` and top-level await syntax (import default)', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"module\" in nearest `package.json` and top-level await syntax (import default)", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6540,7 +6539,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { default: rules } = await import("./rules");\nmodule.exports = [{ rules }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { default: rules } = await import(\"./rules\");\nmodule.exports = [{ rules }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6579,7 +6578,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "commonjs" in nearest `package.json` and top-level await syntax (import default)', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"commonjs\" in nearest `package.json` and top-level await syntax (import default)", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6589,7 +6588,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { default: rules } = await import("./rules");\nmodule.exports = [{ rules }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { default: rules } = await import(\"./rules\");\nmodule.exports = [{ rules }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6628,7 +6627,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS syntax, "type": "module" in nearest `package.json` and top-level await syntax (default and named imports)', async () => {
+				it("should load eslint.config.ts with CJS syntax, \"type\": \"module\" in nearest `package.json` and top-level await syntax (default and named imports)", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6638,7 +6637,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { default: rules, Level } = await import("./rules");\n\nmodule.exports = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { default: rules, Level } = await import(\"./rules\");\n\nmodule.exports = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6678,7 +6677,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with TypeScript\'s CJS syntax (import and export assignment), "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with TypeScript's CJS syntax (import and export assignment), \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6687,13 +6686,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../helper";\nimport rulesModule = require("./rules");\nconst { rules, Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../helper\";\nimport rulesModule = require(\"./rules\");\nconst { rules, Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../helper";\nimport { Severity } from "../../../helper";\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport = { rules: { "no-undef": Severity.Error }, Level } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../helper\";\nimport { Severity } from \"../../../helper\";\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport = { rules: { \"no-undef\": Severity.Error }, Level } satisfies RulesRecord;",
 							"package.json": typeModule,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -6722,7 +6721,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with TypeScript\'s CJS syntax (import and export assignment), "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with TypeScript's CJS syntax (import and export assignment), \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6731,13 +6730,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../helper";\nimport rulesModule = require("./rules");\nconst { rules, Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../helper\";\nimport rulesModule = require(\"./rules\");\nconst { rules, Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../helper";\nimport { Severity } from "../../../helper";\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport = { rules: { "no-undef": Severity.Error }, Level } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../helper\";\nimport { Severity } from \"../../../helper\";\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport = { rules: { \"no-undef\": Severity.Error }, Level } satisfies RulesRecord;",
 							"package.json": typeCommonJS,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -6766,7 +6765,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with wildcard imports, "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with wildcard imports, \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6775,13 +6774,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../helper";\nimport * as rulesModule from "./rules";\nconst { default: rules ,Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../helper\";\nimport * as rulesModule from \"./rules\";\nconst { default: rules ,Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../helper";\nimport { Severity } from "../../../helper";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { "no-undef": Severity.Error } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../helper\";\nimport { Severity } from \"../../../helper\";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { \"no-undef\": Severity.Error } satisfies RulesRecord;",
 							"package.json": typeModule,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -6810,7 +6809,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with wildcard imports, "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with wildcard imports, \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6819,13 +6818,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../helper";\nimport * as rulesModule from "./rules";\nconst { default: rules ,Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../helper\";\nimport * as rulesModule from \"./rules\";\nconst { default: rules ,Level } = rulesModule;\nexport = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../helper";\nimport { Severity } from "../../../helper";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { "no-undef": Severity.Error } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../helper\";\nimport { Severity } from \"../../../helper\";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { \"no-undef\": Severity.Error } satisfies RulesRecord;",
 							"package.json": typeCommonJS,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -6854,7 +6853,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (import and module.exports), "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (import and module.exports), \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6864,7 +6863,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nimport rules, { Level } from "./rules";\nmodule.exports = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nimport rules, { Level } from \"./rules\";\nmodule.exports = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6904,7 +6903,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (import and module.exports), "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (import and module.exports), \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6914,7 +6913,7 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nimport rules, { Level } from "./rules";\nmodule.exports = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nimport rules, { Level } from \"./rules\";\nmodule.exports = [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
@@ -6954,7 +6953,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (require and export default), "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (require and export default), \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -6964,13 +6963,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { default: rules, Level } = require("./rules");\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { default: rules, Level } = require(\"./rules\");\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../../helper";\nimport { Severity } from "../../../../helper";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { "no-undef": Severity.Error } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../../helper\";\nimport { Severity } from \"../../../../helper\";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { \"no-undef\": Severity.Error } satisfies RulesRecord;",
 							"package.json": typeModule,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -6999,7 +6998,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (require and export default), "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (require and export default), \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -7009,13 +7008,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nconst { default: rules, Level } = require("./rules");\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nconst { default: rules, Level } = require(\"./rules\");\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../../helper";\nimport { Severity } from "../../../../helper";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { "no-undef": Severity.Error } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../../helper\";\nimport { Severity } from \"../../../../helper\";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { \"no-undef\": Severity.Error } satisfies RulesRecord;",
 							"package.json": typeCommonJS,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -7044,7 +7043,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (import assignment and export default), "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (import assignment and export default), \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -7054,13 +7053,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nimport rulesModule = require("./rules");\nconst { default: rules, Level } = rulesModule;\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nimport rulesModule = require(\"./rules\");\nconst { default: rules, Level } = rulesModule;\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../../helper";\nimport { Severity } from "../../../../helper";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { "no-undef": Severity.Error } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../../helper\";\nimport { Severity } from \"../../../../helper\";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { \"no-undef\": Severity.Error } satisfies RulesRecord;",
 							"package.json": typeModule,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -7089,7 +7088,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (import assignment and export default), "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (import assignment and export default), \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -7099,13 +7098,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import type { FlatConfig } from "../../../../helper";\nimport rulesModule = require("./rules");\nconst { default: rules, Level } = rulesModule;\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];';
+						"import type { FlatConfig } from \"../../../../helper\";\nimport rulesModule = require(\"./rules\");\nconst { default: rules, Level } = rulesModule;\nexport default [{ rules: { ...rules, semi: Level.Error } }] satisfies FlatConfig[];";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import type { RulesRecord } from "../../../../helper";\nimport { Severity } from "../../../../helper";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { "no-undef": Severity.Error } satisfies RulesRecord;',
+								"import type { RulesRecord } from \"../../../../helper\";\nimport { Severity } from \"../../../../helper\";\nexport const enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nexport default { \"no-undef\": Severity.Error } satisfies RulesRecord;",
 							"package.json": typeCommonJS,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -7134,7 +7133,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (import and export assignment), "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (import and export assignment), \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -7144,13 +7143,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import helpers = require("../../../../helper");\nimport rulesModule = require("./rules");\nconst { default: rules, Level } = rulesModule;\nconst allExports = [{ rules: { ...rules, semi: Level.Error } }] satisfies helpers.FlatConfig[];\nexport = allExports;';
+						"import helpers = require(\"../../../../helper\");\nimport rulesModule = require(\"./rules\");\nconst { default: rules, Level } = rulesModule;\nconst allExports = [{ rules: { ...rules, semi: Level.Error } }] satisfies helpers.FlatConfig[];\nexport = allExports;";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import helpers = require("../../../../helper");\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nconst rules = { "no-undef": helpers.Severity.Error } satisfies helpers.RulesRecord;\nconst allExports = { default: rules, Level };\nexport = allExports;',
+								"import helpers = require(\"../../../../helper\");\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nconst rules = { \"no-undef\": helpers.Severity.Error } satisfies helpers.RulesRecord;\nconst allExports = { default: rules, Level };\nexport = allExports;",
 							"package.json": typeModule,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -7179,7 +7178,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.ts with CJS-ESM mixed syntax (import and export assignment), "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.ts with CJS-ESM mixed syntax (import and export assignment), \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"ts",
@@ -7189,13 +7188,13 @@ describe("ESLint", () => {
 					);
 
 					const configFileContent =
-						'import helpers = require("../../../../helper");\nimport rulesModule = require("./rules");\nconst { default: rules, Level } = rulesModule;\nconst allExports = [{ rules: { ...rules, semi: Level.Error } }] satisfies helpers.FlatConfig[];\nexport = allExports;';
+						"import helpers = require(\"../../../../helper\");\nimport rulesModule = require(\"./rules\");\nconst { default: rules, Level } = rulesModule;\nconst allExports = [{ rules: { ...rules, semi: Level.Error } }] satisfies helpers.FlatConfig[];\nexport = allExports;";
 
 					const teardown = createCustomTeardown({
 						cwd,
 						files: {
 							"rules.ts":
-								'import helpers = require("../../../../helper");\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nconst rules = { "no-undef": helpers.Severity.Error } satisfies helpers.RulesRecord;\nconst allExports = { default: rules, Level };\nexport = allExports;',
+								"import helpers = require(\"../../../../helper\");\nconst enum Level {\nError = 2,\nWarn = 1,\nOff = 0,\n};\nconst rules = { \"no-undef\": helpers.Severity.Error } satisfies helpers.RulesRecord;\nconst allExports = { default: rules, Level };\nexport = allExports;",
 							"package.json": typeCommonJS,
 							"eslint.config.ts": configFileContent,
 							"foo.js": "foo",
@@ -7331,7 +7330,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.mts when we have "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.mts when we have \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"mts",
@@ -7357,7 +7356,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.mts config file when we have "type": "module" in nearest `package.json`', async () => {
+				it("should load eslint.config.mts config file when we have \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"mts",
@@ -7405,7 +7404,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load eslint.config.cts config file when we have "type": "commonjs" in nearest `package.json`', async () => {
+				it("should load eslint.config.cts config file when we have \"type\": \"commonjs\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"cts",
@@ -7431,7 +7430,7 @@ describe("ESLint", () => {
 					);
 				});
 
-				it('should load .cts config file when we have "type": "module" in nearest `package.json`', async () => {
+				it("should load .cts config file when we have \"type\": \"module\" in nearest `package.json`", async () => {
 					const cwd = getFixturePath(
 						"ts-config-files",
 						"cts",
@@ -7637,7 +7636,7 @@ describe("ESLint", () => {
 					});
 
 					describe("should load a TS config file when --experimental-strip-types is enabled", () => {
-						it('with "type": "commonjs" in `package.json` and CJS syntax', async () => {
+						it("with \"type\": \"commonjs\" in `package.json` and CJS syntax", async () => {
 							const cwd = getFixturePath(
 								"ts-config-files",
 								"ts",
@@ -7647,7 +7646,7 @@ describe("ESLint", () => {
 							);
 
 							const configFileContent =
-								'import type { FlatConfig, Severity } from "./helper.ts";\n\nconst eslintConfig = [\n  { rules: { "no-undef": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nmodule.exports = eslintConfig;\n';
+								"import type { FlatConfig, Severity } from \"./helper.ts\";\n\nconst eslintConfig = [\n  { rules: { \"no-undef\": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nmodule.exports = eslintConfig;\n";
 
 							const teardown = createCustomTeardown({
 								cwd,
@@ -7656,7 +7655,7 @@ describe("ESLint", () => {
 									[eslintConfigFiles.ts]: configFileContent,
 									"foo.js": "foo;",
 									"helper.ts":
-										'export type * from "../../../../helper.ts";\n',
+										"export type * from \"../../../../helper.ts\";\n",
 								},
 							});
 
@@ -7690,7 +7689,7 @@ describe("ESLint", () => {
 							);
 						});
 
-						it('with "type": "commonjs" in `package.json` and ESM syntax', async () => {
+						it("with \"type\": \"commonjs\" in `package.json` and ESM syntax", async () => {
 							const cwd = getFixturePath(
 								"ts-config-files",
 								"mts",
@@ -7700,7 +7699,7 @@ describe("ESLint", () => {
 							);
 
 							const configFileContent =
-								'import type { FlatConfig, Severity } from "./helper.ts";\n\nconst eslintConfig = [\n  { rules: { "no-undef": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nexport default eslintConfig;\n';
+								"import type { FlatConfig, Severity } from \"./helper.ts\";\n\nconst eslintConfig = [\n  { rules: { \"no-undef\": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nexport default eslintConfig;\n";
 
 							const teardown = createCustomTeardown({
 								cwd,
@@ -7709,7 +7708,7 @@ describe("ESLint", () => {
 									[eslintConfigFiles.mts]: configFileContent,
 									"foo.js": "foo;",
 									"helper.ts":
-										'export type * from "../../../../helper.ts";\n',
+										"export type * from \"../../../../helper.ts\";\n",
 								},
 							});
 
@@ -7743,7 +7742,7 @@ describe("ESLint", () => {
 							);
 						});
 
-						it('with "type": "module" in `package.json` and CJS syntax', async () => {
+						it("with \"type\": \"module\" in `package.json` and CJS syntax", async () => {
 							const cwd = getFixturePath(
 								"ts-config-files",
 								"cts",
@@ -7753,7 +7752,7 @@ describe("ESLint", () => {
 							);
 
 							const configFileContent =
-								'import type { FlatConfig, Severity } from "./helper.cts";\n\nconst eslintConfig = [\n  { rules: { "no-undef": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nmodule.exports = eslintConfig;\n';
+								"import type { FlatConfig, Severity } from \"./helper.cts\";\n\nconst eslintConfig = [\n  { rules: { \"no-undef\": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nmodule.exports = eslintConfig;\n";
 
 							const teardown = createCustomTeardown({
 								cwd,
@@ -7762,7 +7761,7 @@ describe("ESLint", () => {
 									[eslintConfigFiles.cts]: configFileContent,
 									"foo.js": "foo;",
 									"helper.cts":
-										'export type * from "../../../../helper.ts";\n',
+										"export type * from \"../../../../helper.ts\";\n",
 								},
 							});
 
@@ -7796,7 +7795,7 @@ describe("ESLint", () => {
 							);
 						});
 
-						it('with "type": "module" in `package.json` and ESM syntax', async () => {
+						it("with \"type\": \"module\" in `package.json` and ESM syntax", async () => {
 							const cwd = getFixturePath(
 								"ts-config-files",
 								"ts",
@@ -7806,7 +7805,7 @@ describe("ESLint", () => {
 							);
 
 							const configFileContent =
-								'import type { FlatConfig, Severity } from "./helper.cts";\n\nconst eslintConfig = [\n  { rules: { "no-undef": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nexport default eslintConfig;\n';
+								"import type { FlatConfig, Severity } from \"./helper.cts\";\n\nconst eslintConfig = [\n  { rules: { \"no-undef\": 2 satisfies Severity.Error } },\n] satisfies FlatConfig[];\n\nexport default eslintConfig;\n";
 
 							const teardown = createCustomTeardown({
 								cwd,
@@ -7815,7 +7814,7 @@ describe("ESLint", () => {
 									[eslintConfigFiles.ts]: configFileContent,
 									"foo.js": "foo;",
 									"helper.ts":
-										'export type * from "../../../../helper.ts";\n',
+										"export type * from \"../../../../helper.ts\";\n",
 								},
 							});
 
@@ -7856,7 +7855,7 @@ describe("ESLint", () => {
 						: describe.skip)(
 						"should load a TS config file when --experimental-transform-types is enabled",
 						() => {
-							it('with "type": "commonjs" in `package.json` and CJS syntax', async () => {
+							it("with \"type\": \"commonjs\" in `package.json` and CJS syntax", async () => {
 								const cwd = getFixturePath(
 									"ts-config-files",
 									"ts",
@@ -7866,7 +7865,7 @@ describe("ESLint", () => {
 								);
 
 								const configFileContent =
-									'import ESLintNameSpace = require("./helper.ts");\n\nconst eslintConfig = [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }]\n\nexport = eslintConfig;\n';
+									"import ESLintNameSpace = require(\"./helper.ts\");\n\nconst eslintConfig = [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }]\n\nexport = eslintConfig;\n";
 
 								const teardown = createCustomTeardown({
 									cwd,
@@ -7876,7 +7875,7 @@ describe("ESLint", () => {
 											configFileContent,
 										"foo.js": "foo;",
 										"helper.ts":
-											'namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n\nexport = ESLintNameSpace\n',
+											"namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n\nexport = ESLintNameSpace\n",
 									},
 								});
 
@@ -7915,7 +7914,7 @@ describe("ESLint", () => {
 								);
 							});
 
-							it('with "type": "commonjs" in `package.json` and ESM syntax', async () => {
+							it("with \"type\": \"commonjs\" in `package.json` and ESM syntax", async () => {
 								const cwd = getFixturePath(
 									"ts-config-files",
 									"ts",
@@ -7925,7 +7924,7 @@ describe("ESLint", () => {
 								);
 
 								const configFileContent =
-									'import ESLintNameSpace from "./helper.ts";\n\nconst eslintConfig = [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n';
+									"import ESLintNameSpace from \"./helper.ts\";\n\nconst eslintConfig = [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n";
 
 								const teardown = createCustomTeardown({
 									cwd,
@@ -7935,7 +7934,7 @@ describe("ESLint", () => {
 											configFileContent,
 										"foo.js": "foo;",
 										"helper.ts":
-											'namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n\nexport = ESLintNameSpace\n',
+											"namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n\nexport = ESLintNameSpace\n",
 									},
 								});
 
@@ -7974,7 +7973,7 @@ describe("ESLint", () => {
 								);
 							});
 
-							it('with "type": "module" in `package.json` and CJS syntax', async () => {
+							it("with \"type\": \"module\" in `package.json` and CJS syntax", async () => {
 								const cwd = getFixturePath(
 									"ts-config-files",
 									"cts",
@@ -7984,7 +7983,7 @@ describe("ESLint", () => {
 								);
 
 								const configFileContent =
-									'import ESLintNameSpace = require("./helper.cts");\n\nconst eslintConfig = [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }]\n\nexport = eslintConfig;\n';
+									"import ESLintNameSpace = require(\"./helper.cts\");\n\nconst eslintConfig = [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }]\n\nexport = eslintConfig;\n";
 
 								const teardown = createCustomTeardown({
 									cwd,
@@ -7994,7 +7993,7 @@ describe("ESLint", () => {
 											configFileContent,
 										"foo.js": "foo;",
 										"helper.cts":
-											'namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n\nexport = ESLintNameSpace\n',
+											"namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n\nexport = ESLintNameSpace\n",
 									},
 								});
 
@@ -8033,7 +8032,7 @@ describe("ESLint", () => {
 								);
 							});
 
-							it('with "type": "module" in `package.json` and ESM syntax', async () => {
+							it("with \"type\": \"module\" in `package.json` and ESM syntax", async () => {
 								const cwd = getFixturePath(
 									"ts-config-files",
 									"ts",
@@ -8043,7 +8042,7 @@ describe("ESLint", () => {
 								);
 
 								const configFileContent =
-									'import ESLintNameSpace from "./helper.ts";\n\nconst eslintConfig = [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n';
+									"import ESLintNameSpace from \"./helper.ts\";\n\nconst eslintConfig = [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n";
 
 								const teardown = createCustomTeardown({
 									cwd,
@@ -8053,7 +8052,7 @@ describe("ESLint", () => {
 											configFileContent,
 										"foo.js": "foo;",
 										"helper.ts":
-											'namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n\nexport default ESLintNameSpace\n',
+											"namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n\nexport default ESLintNameSpace\n",
 									},
 								});
 
@@ -8107,7 +8106,7 @@ describe("ESLint", () => {
 								);
 
 								const configFileContent =
-									'import ESLintNameSpace from "./helper.ts";\n\nconst eslintConfig = [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n';
+									"import ESLintNameSpace from \"./helper.ts\";\n\nconst eslintConfig = [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n";
 
 								const teardown = createCustomTeardown({
 									cwd,
@@ -8117,7 +8116,7 @@ describe("ESLint", () => {
 											configFileContent,
 										"foo.js": "foo;",
 										"helper.ts":
-											'namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n\nexport default ESLintNameSpace\n',
+											"namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n\nexport default ESLintNameSpace\n",
 									},
 								});
 
@@ -8157,7 +8156,7 @@ describe("ESLint", () => {
 								);
 
 								const configFileContent =
-									'import ESLintNameSpace from "./helper.ts";\n\nconst eslintConfig = [ { rules: { "no-undef": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n';
+									"import ESLintNameSpace from \"./helper.ts\";\n\nconst eslintConfig = [ { rules: { \"no-undef\": ESLintNameSpace.StringSeverity.Error } }]\n\nexport default eslintConfig;\n";
 
 								const teardown = createCustomTeardown({
 									cwd,
@@ -8167,7 +8166,7 @@ describe("ESLint", () => {
 											configFileContent,
 										"foo.js": "foo;",
 										"helper.ts":
-											'namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    "Off" = "off",\n    "Warn" = "warn",\n    "Error" = "error",\n  }\n}\n\nexport default ESLintNameSpace\n',
+											"namespace ESLintNameSpace {\n  export const enum StringSeverity {\n    \"Off\" = \"off\",\n    \"Warn\" = \"warn\",\n    \"Error\" = \"error\",\n  }\n}\n\nexport default ESLintNameSpace\n",
 									},
 								});
 
@@ -8216,7 +8215,7 @@ describe("ESLint", () => {
 							[eslintConfigFiles.ts]: configFileContent,
 							"foo.js": "foo;",
 							"helper.ts":
-								'import type { Linter } from "eslint";\nexport type FlatConfig = Linter.Config;\n',
+								"import type { Linter } from \"eslint\";\nexport type FlatConfig = Linter.Config;\n",
 						},
 					});
 
@@ -8258,7 +8257,7 @@ describe("ESLint", () => {
 							[eslintConfigFiles.ts]: configFileContent,
 							"foo.js": "foo;",
 							"helper.ts":
-								'import type { Linter } from "eslint";\nexport type FlatConfig = Linter.Config;\n',
+								"import type { Linter } from \"eslint\";\nexport type FlatConfig = Linter.Config;\n",
 						},
 					});
 
@@ -11948,7 +11947,7 @@ describe("ESLint", () => {
 								ruleId: null,
 								fatal: false,
 								message:
-									'File ignored by default because it is located under the node_modules directory. Use ignore pattern "!**/node_modules/" to disable file ignore settings or use "--no-warn-ignored" to suppress this warning.',
+									"File ignored by default because it is located under the node_modules directory. Use ignore pattern \"!**/node_modules/\" to disable file ignore settings or use \"--no-warn-ignored\" to suppress this warning.",
 								severity: 1,
 							},
 						],
@@ -12228,7 +12227,7 @@ describe("ESLint", () => {
 				},
 			});
 
-			const [{ messages }] = await eslint.lintText('const foo = "bar"');
+			const [{ messages }] = await eslint.lintText("const foo = \"bar\"");
 
 			/*
 			 * baseConfig: { quotes: ["error", "double"], semi: "error" }
@@ -12304,7 +12303,7 @@ describe("ESLint", () => {
 			const teardown = createCustomTeardown({
 				cwd,
 				files: {
-					"package.json": '{ "type": "module" }',
+					"package.json": "{ \"type\": \"module\" }",
 					"eslint.config.js": configFileContent,
 					"a.js": "foo\nbar;",
 				},
@@ -12605,7 +12604,7 @@ describe("ESLint", () => {
 		// Returns less than half the number of available cores if `concurrency` is "auto" and there are not enough files to lint
 		testCalculateWorkerCount("auto", AUTO_FILES_PER_WORKER * 3, 8, 3);
 
-		it('should not consider ignored files when `concurrency` is "auto"', async () => {
+		it("should not consider ignored files when `concurrency` is \"auto\"", async () => {
 			const cwd = getFixturePath("files");
 			const eslint = new ESLint({
 				concurrency: "auto",
@@ -12626,7 +12625,7 @@ describe("ESLint", () => {
 			assert.strictEqual(actualWorkerCount, 0);
 		});
 
-		describe('when `concurrency` is "auto" with caching enabled', () => {
+		describe("when `concurrency` is \"auto\" with caching enabled", () => {
 			let cacheLocation;
 
 			beforeEach(async () => {
@@ -12645,7 +12644,7 @@ describe("ESLint", () => {
 				}
 			});
 
-			it('should not consider unchanged cached files with cache strategy "metadata"', async () => {
+			it("should not consider unchanged cached files with cache strategy \"metadata\"", async () => {
 				const cwd = getFixturePath("files");
 				const eslint = new ESLint({
 					cache: true,
@@ -12668,7 +12667,7 @@ describe("ESLint", () => {
 				assert.strictEqual(actualWorkerCount, 0);
 			});
 
-			it('should consider unchanged cached files with cache strategy "content"', async () => {
+			it("should consider unchanged cached files with cache strategy \"content\"", async () => {
 				const cwd = getFixturePath("files");
 				const eslint = new ESLint({
 					cache: true,
@@ -12691,7 +12690,7 @@ describe("ESLint", () => {
 				assert.strictEqual(actualWorkerCount, 2);
 			});
 
-			it('should consider uncached files with cache strategy "metadata"', async () => {
+			it("should consider uncached files with cache strategy \"metadata\"", async () => {
 				const cwd = getFixturePath("files");
 				const eslint = new ESLint({
 					cache: true,
@@ -12715,7 +12714,7 @@ describe("ESLint", () => {
 				assert.strictEqual(actualWorkerCount, 2);
 			});
 
-			it('should consider unchanged cached files with violations with cache strategy "metadata" and autofix enabled', async () => {
+			it("should consider unchanged cached files with violations with cache strategy \"metadata\" and autofix enabled", async () => {
 				const cwd = getFixturePath();
 				const eslintOptions = {
 					baseConfig: { rules: { "unicode-bom": "error" } },
@@ -15064,7 +15063,7 @@ describe("ESLint", () => {
 
 		it("should throw an error with an unsupported URL scheme", async () => {
 			await assert.rejects(
-				 
+
 				() => ESLint.fromOptionsModule(new URL("javascript:({ })")),
 				{ code: "ERR_UNSUPPORTED_ESM_URL_SCHEME", constructor: Error },
 			);

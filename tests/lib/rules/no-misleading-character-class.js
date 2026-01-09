@@ -117,7 +117,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 			options: [{ allowEscape: true }],
 		},
 		{
-			code: '/[\ud83d\\udc4d]/u // U+D83D + Backslash + "udc4d"',
+			code: "/[\ud83d\\udc4d]/u // U+D83D + Backslash + \"udc4d\"",
 			options: [{ allowEscape: true }],
 		},
 		{
@@ -157,7 +157,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 			options: [{ allowEscape: true }],
 		},
 		{
-			code: 'RegExp(`[\\uD83D\\uDC4D]`) // Backslash + "uD83D" + Backslash + "uDC4D"',
+			code: "RegExp(`[\\uD83D\\uDC4D]`) // Backslash + \"uD83D\" + Backslash + \"uDC4D\"",
 			options: [{ allowEscape: true }],
 		},
 	],
@@ -1293,7 +1293,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 					suggestions: [
 						{
 							messageId: "suggestUnicodeFlag",
-							output: 'var r = RegExp(`\t\t\t👍[👍]`, "u")',
+							output: "var r = RegExp(`\t\t\t👍[👍]`, \"u\")",
 						},
 					],
 				},
@@ -1309,7 +1309,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 					suggestions: [
 						{
 							messageId: "suggestUnicodeFlag",
-							output: 'var r = RegExp(`\\t\\t\\t👍[👍]`, "u")',
+							output: "var r = RegExp(`\\t\\t\\t👍[👍]`, \"u\")",
 						},
 					],
 				},
@@ -1814,7 +1814,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 
 		// no granular reports on templates with expressions
 		{
-			code: 'new RegExp(`${"[👍🇯🇵]"}[😊]`);',
+			code: "new RegExp(`${\"[👍🇯🇵]\"}[😊]`);",
 			errors: [
 				{
 					column: 12,
@@ -1823,7 +1823,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 					suggestions: [
 						{
 							messageId: "suggestUnicodeFlag",
-							output: 'new RegExp(`${"[👍🇯🇵]"}[😊]`, "u");',
+							output: "new RegExp(`${\"[👍🇯🇵]\"}[😊]`, \"u\");",
 						},
 					],
 				},
@@ -1832,7 +1832,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 
 		// no granular reports on identifiers
 		{
-			code: 'const pattern = "[👍]"; new RegExp(pattern);',
+			code: "const pattern = \"[👍]\"; new RegExp(pattern);",
 			errors: [
 				{
 					column: 36,
@@ -1841,7 +1841,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 					suggestions: [
 						{
 							messageId: "suggestUnicodeFlag",
-							output: 'const pattern = "[👍]"; new RegExp(pattern, "u");',
+							output: "const pattern = \"[👍]\"; new RegExp(pattern, \"u\");",
 						},
 					],
 				},
@@ -2216,7 +2216,7 @@ ruleTester.run("no-misleading-character-class", rule, {
 					suggestions: [
 						{
 							messageId: "suggestUnicodeFlag",
-							output: 'RegExp(`[\\👍]`, "u") // Backslash + U+D83D + U+DC4D',
+							output: "RegExp(`[\\👍]`, \"u\") // Backslash + U+D83D + U+DC4D",
 						},
 					],
 				},

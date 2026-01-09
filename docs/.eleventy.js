@@ -303,7 +303,7 @@ module.exports = function (eleventyConfig) {
 	//------------------------------------------------------------------------------
 
 	eleventyConfig.addNunjucksShortcode("link", function (url) {
-		 
+
 		const urlData = this.ctx.further_reading_links[url];
 
 		if (!urlData) {
@@ -531,7 +531,7 @@ module.exports = function (eleventyConfig) {
 		const fullSrc = getSRC();
 
 		// generate images
-		Image(fullSrc, options);  
+		Image(fullSrc, options);
 
 		const imageAttributes = {
 			alt,

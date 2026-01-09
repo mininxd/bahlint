@@ -161,7 +161,7 @@ describe("formatter:html", () => {
 				"Check that there are two (1 header, 1 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				1,
 				"Check that is 1 header row (implying 1 content row)",
 			);
@@ -198,7 +198,7 @@ describe("formatter:html", () => {
 				"Check that there are two (1 header, 1 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				1,
 				"Check that is 1 header row (implying 1 content row)",
 			);
@@ -274,7 +274,7 @@ describe("formatter:html", () => {
 				"Check that there are two (1 header, 1 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				1,
 				"Check that is 1 header row (implying 1 content row)",
 			);
@@ -350,7 +350,7 @@ describe("formatter:html", () => {
 				"Check that there are two (1 header, 1 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				1,
 				"Check that is 1 header row (implying 1 content row)",
 			);
@@ -480,7 +480,7 @@ describe("formatter:html", () => {
 				"Check that there are two (1 header, 2 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				1,
 				"Check that is 1 header row (implying 2 content row)",
 			);
@@ -590,7 +590,7 @@ describe("formatter:html", () => {
 				"Check that there are two (2 header, 2 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				2,
 				"Check that is 2 header row (implying 2 content row)",
 			);
@@ -706,7 +706,7 @@ describe("formatter:html", () => {
 				"Check that there are two (2 header, 2 content)",
 			);
 			assert.strictEqual(
-				$('tr[data-group|="f"]').length,
+				$("tr[data-group|=\"f\"]").length,
 				2,
 				"Check that is 2 header row (implying 2 content row)",
 			);

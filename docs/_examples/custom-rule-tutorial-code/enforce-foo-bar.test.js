@@ -29,7 +29,7 @@ ruleTester.run(
 		invalid: [
 			{
 				code: "const foo = 'baz';",
-				output: 'const foo = "bar";',
+				output: "const foo = \"bar\";",
 				errors: 1,
 			},
 		],

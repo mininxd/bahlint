@@ -787,7 +787,7 @@ describe("Config", () => {
 
 			assert.throws(() => {
 				config.toJSON();
-			}, 'Cannot serialize key "syntax" in "languageOptions": Function values are not supported.');
+			}, "Cannot serialize key \"syntax\" in \"languageOptions\": Function values are not supported.");
 		});
 
 		it("should throw an error when languageOptions.toJSON() returns a function", () => {
@@ -815,7 +815,7 @@ describe("Config", () => {
 			});
 			assert.throws(() => {
 				config.toJSON();
-			}, 'Cannot serialize key "toJSON" in "languageOptions": Function values are not supported.');
+			}, "Cannot serialize key \"toJSON\" in \"languageOptions\": Function values are not supported.");
 		});
 
 		it("should throw when processor doesn't have meta information", () => {
@@ -960,7 +960,6 @@ describe("Config", () => {
 		it("should skip __proto__ in rules", () => {
 			const rules = { "test-rule": ["error"] };
 
-			 
 			rules.__proto__ = ["error"];
 
 			config.validateRulesConfig(rules);

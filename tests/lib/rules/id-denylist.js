@@ -29,15 +29,15 @@ const error = {
 ruleTester.run("id-denylist", rule, {
 	valid: [
 		{
-			code: 'foo = "bar"',
+			code: "foo = \"bar\"",
 			options: ["bar"],
 		},
 		{
-			code: 'bar = "bar"',
+			code: "bar = \"bar\"",
 			options: ["foo"],
 		},
 		{
-			code: 'foo = "bar"',
+			code: "foo = \"bar\"",
 			options: ["f", "fo", "fooo", "bar"],
 		},
 		{
@@ -269,17 +269,17 @@ ruleTester.run("id-denylist", rule, {
 	],
 	invalid: [
 		{
-			code: 'foo = "bar"',
+			code: "foo = \"bar\"",
 			options: ["foo"],
 			errors: [error],
 		},
 		{
-			code: 'bar = "bar"',
+			code: "bar = \"bar\"",
 			options: ["bar"],
 			errors: [error],
 		},
 		{
-			code: 'foo = "bar"',
+			code: "foo = \"bar\"",
 			options: ["f", "fo", "foo", "bar"],
 			errors: [error],
 		},

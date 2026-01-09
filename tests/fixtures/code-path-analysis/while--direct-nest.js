@@ -6,7 +6,7 @@ s1_7->final;
 */
 while (a)
     while (b)
-        foo
+        foo;
 
 /*DOT
 digraph {
@@ -24,5 +24,5 @@ digraph {
     s1_2->s1_7;
     s1_4->s1_6->s1_2;
     s1_7->final;
-} 
+}
 */

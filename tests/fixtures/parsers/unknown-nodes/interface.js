@@ -5,7 +5,6 @@
  * interface Foo { bar: string; baz: number; }
  */
 
-
 exports.parse = () => ({
     "type": "Program",
     "range": [

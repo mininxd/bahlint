@@ -2943,7 +2943,7 @@ describe("apply-disable-directives", () => {
 			);
 		});
 
-		it('Does not add problems when reportUnusedDisableDirectives: "off" is used', () => {
+		it("Does not add problems when reportUnusedDisableDirectives: \"off\" is used", () => {
 			assert.deepStrictEqual(
 				applyDisableDirectives({
 					language: jslang,

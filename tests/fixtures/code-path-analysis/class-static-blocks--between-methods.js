@@ -16,7 +16,7 @@ s4_3->s4_5->final;
 /*expected
 initial->s1_1->final;
 */
-class Foo { bar () { a || b } static { x || y || z } baz() { p || q || r || s } }
+class Foo { bar () { a || b; } static { x || y || z; } baz() { p || q || r || s; } }
 
 /*DOT
 digraph {

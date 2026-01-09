@@ -41,7 +41,7 @@ ruleTester.run("brace-style", rule, {
 		"while (foo) { \n bar();\n }",
 		"for (;;) { \n bar(); \n}",
 		"with (foo) { \n bar(); \n}",
-		'switch (foo) { \n case "bar": break;\n }',
+		"switch (foo) { \n case \"bar\": break;\n }",
 		"try { \n bar();\n } catch (e) {\n baz(); \n }",
 		"do { \n bar();\n } while (true)",
 		"for (foo in bar) { \n baz(); \n }",
@@ -110,7 +110,7 @@ ruleTester.run("brace-style", rule, {
 			options: ["1tbs", { allowSingleLine: true }],
 		},
 		{
-			code: 'switch (foo) {  case "bar": break; }',
+			code: "switch (foo) {  case \"bar\": break; }",
 			options: ["1tbs", { allowSingleLine: true }],
 		},
 		{
@@ -522,8 +522,8 @@ ruleTester.run("brace-style", rule, {
 			],
 		},
 		{
-			code: 'switch (foo) \n { \n case "bar": break; }',
-			output: 'switch (foo) { \n case "bar": break; \n}',
+			code: "switch (foo) \n { \n case \"bar\": break; }",
+			output: "switch (foo) { \n case \"bar\": break; \n}",
 			errors: [
 				{
 					messageId: "nextLineOpen",
@@ -883,8 +883,8 @@ ruleTester.run("brace-style", rule, {
 			],
 		},
 		{
-			code: 'switch (foo) \n { \n case "bar": break; }',
-			output: 'switch (foo) { \n case "bar": break; \n}',
+			code: "switch (foo) \n { \n case \"bar\": break; }",
+			output: "switch (foo) { \n case \"bar\": break; \n}",
 			options: ["1tbs", { allowSingleLine: true }],
 			errors: [
 				{

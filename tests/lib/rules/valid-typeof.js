@@ -50,7 +50,7 @@ ruleTester.run("valid-typeof", rule, {
 			options: [{ requireStringLiterals: true }],
 		},
 		{
-			code: 'typeof foo === "number"',
+			code: "typeof foo === \"number\"",
 			options: [{ requireStringLiterals: true }],
 		},
 		{
@@ -201,7 +201,7 @@ ruleTester.run("valid-typeof", rule, {
 						{
 							messageId: "suggestString",
 							data: { type: "undefined" },
-							output: 'if (typeof bar !== "undefined") {}',
+							output: "if (typeof bar !== \"undefined\") {}",
 						},
 					],
 				},
@@ -226,7 +226,7 @@ ruleTester.run("valid-typeof", rule, {
 						{
 							messageId: "suggestString",
 							data: { type: "undefined" },
-							output: 'typeof foo === "undefined"',
+							output: "typeof foo === \"undefined\"",
 						},
 					],
 				},
@@ -242,7 +242,7 @@ ruleTester.run("valid-typeof", rule, {
 						{
 							messageId: "suggestString",
 							data: { type: "undefined" },
-							output: '"undefined" === typeof foo',
+							output: "\"undefined\" === typeof foo",
 						},
 					],
 				},
@@ -258,7 +258,7 @@ ruleTester.run("valid-typeof", rule, {
 						{
 							messageId: "suggestString",
 							data: { type: "undefined" },
-							output: '"undefined" == typeof foo',
+							output: "\"undefined\" == typeof foo",
 						},
 					],
 				},

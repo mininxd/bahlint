@@ -4118,7 +4118,7 @@ ruleTester.run("no-extra-parens", rule, {
 		invalid("_ = () => { ('abc'); };", null),
 		invalid("'use strict';(\"foobar\");", null),
 		invalid("foo(); ('bar');", null),
-		invalid('foo = { bar() { ; ("baz"); } };', null),
+		invalid("foo = { bar() { ; (\"baz\"); } };", null),
 
 		// Directive lookalikes
 		invalid("(12345);", "12345;"),

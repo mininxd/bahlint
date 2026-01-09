@@ -91,7 +91,7 @@ ruleTester.run("dot-notation", rule, {
 	invalid: [
 		{
 			code: "a.true;",
-			output: 'a["true"];',
+			output: "a[\"true\"];",
 			options: [{ allowKeywords: false }],
 			errors: [{ messageId: "useBrackets", data: { key: "true" } }],
 		},
@@ -159,9 +159,9 @@ ruleTester.run("dot-notation", rule, {
 			code:
 				"getResource()\n" +
 				"    .then(function(){})\n" +
-				'    ["catch"](function(){})\n' +
+				"    [\"catch\"](function(){})\n" +
 				"    .then(function(){})\n" +
-				'    ["catch"](function(){});',
+				"    [\"catch\"](function(){});",
 			output:
 				"getResource()\n" +
 				"    .then(function(){})\n" +
@@ -185,7 +185,7 @@ ruleTester.run("dot-notation", rule, {
 		},
 		{
 			code: "foo\n" + "  .while;",
-			output: "foo\n" + '  ["while"];',
+			output: "foo\n" + "  [\"while\"];",
 			options: [{ allowKeywords: false }],
 			errors: [{ messageId: "useBrackets", data: { key: "while" } }],
 		},
@@ -316,14 +316,14 @@ ruleTester.run("dot-notation", rule, {
 		},
 		{
 			code: "obj?.true",
-			output: 'obj?.["true"]',
+			output: "obj?.[\"true\"]",
 			options: [{ allowKeywords: false }],
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [{ messageId: "useBrackets", data: { key: "true" } }],
 		},
 		{
 			code: "let?.true",
-			output: 'let?.["true"]',
+			output: "let?.[\"true\"]",
 			options: [{ allowKeywords: false }],
 			languageOptions: { ecmaVersion: 2020 },
 			errors: [{ messageId: "useBrackets", data: { key: "true" } }],

@@ -82,11 +82,11 @@ ruleTester.run("require-await", rule, {
 			languageOptions: { ecmaVersion: 9 },
 		},
 		{
-			code: 'const foo = async function *(){ console.log("bar") }',
+			code: "const foo = async function *(){ console.log(\"bar\") }",
 			languageOptions: { ecmaVersion: 9 },
 		},
 		{
-			code: 'async function* run() { console.log("bar") }',
+			code: "async function* run() { console.log(\"bar\") }",
 			languageOptions: { ecmaVersion: 9 },
 		},
 		{

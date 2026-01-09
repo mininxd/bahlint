@@ -23,7 +23,6 @@ function leftpad (str, len, ch) {
   ch || (ch = ' ');
   len = len - str.length;
 
-
   while (++i < len) {
     str = ch + str;
   }

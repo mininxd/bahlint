@@ -67,17 +67,17 @@ ruleTester.run("sort-vars", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'const {a, b, c} = {a: 1, b: true, c: "Moo"};',
+			code: "const {a, b, c} = {a: 1, b: true, c: \"Moo\"};",
 			options: ignoreCaseArgs,
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'const [a, b, c] = [1, true, "Moo"];',
+			code: "const [a, b, c] = [1, true, \"Moo\"];",
 			options: ignoreCaseArgs,
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'const [c, a, b] = [1, true, "Moo"];',
+			code: "const [c, a, b] = [1, true, \"Moo\"];",
 			options: ignoreCaseArgs,
 			languageOptions: { ecmaVersion: 6 },
 		},

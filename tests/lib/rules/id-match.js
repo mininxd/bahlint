@@ -24,7 +24,7 @@ const error = {
 ruleTester.run("id-match", rule, {
 	valid: [
 		{
-			code: '__foo = "Matthieu"',
+			code: "__foo = \"Matthieu\"",
 			options: [
 				"^[a-z]+$",
 				{
@@ -33,23 +33,23 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'firstname = "Matthieu"',
+			code: "firstname = \"Matthieu\"",
 			options: ["^[a-z]+$"],
 		},
 		{
-			code: 'first_name = "Matthieu"',
+			code: "first_name = \"Matthieu\"",
 			options: ["[a-z]+"],
 		},
 		{
-			code: 'firstname = "Matthieu"',
+			code: "firstname = \"Matthieu\"",
 			options: ["^f"],
 		},
 		{
-			code: 'last_Name = "Larcher"',
+			code: "last_Name = \"Larcher\"",
 			options: ["^[a-z]+(_[A-Z][a-z]+)*$"],
 		},
 		{
-			code: 'param = "none"',
+			code: "param = \"none\"",
 			options: ["^[a-z]+(_[A-Z][a-z])*$"],
 		},
 		{
@@ -408,7 +408,7 @@ ruleTester.run("id-match", rule, {
 	],
 	invalid: [
 		{
-			code: 'var __foo = "Matthieu"',
+			code: "var __foo = \"Matthieu\"",
 			options: [
 				"^[a-z]+$",
 				{
@@ -418,17 +418,17 @@ ruleTester.run("id-match", rule, {
 			errors: [error],
 		},
 		{
-			code: 'first_name = "Matthieu"',
+			code: "first_name = \"Matthieu\"",
 			options: ["^[a-z]+$"],
 			errors: [error],
 		},
 		{
-			code: 'first_name = "Matthieu"',
+			code: "first_name = \"Matthieu\"",
 			options: ["^z"],
 			errors: [error],
 		},
 		{
-			code: 'Last_Name = "Larcher"',
+			code: "Last_Name = \"Larcher\"",
 			options: ["^[a-z]+(_[A-Z][a-z])*$"],
 			errors: [error],
 		},
@@ -630,7 +630,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import no_camelcased from "external-module";',
+			code: "import no_camelcased from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -646,7 +646,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import * as no_camelcased from "external-module";',
+			code: "import * as no_camelcased from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -662,7 +662,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'export * as no_camelcased from "external-module";',
+			code: "export * as no_camelcased from \"external-module\";",
 			options: ["^[^_]+$"],
 			languageOptions: { ecmaVersion: 2020, sourceType: "module" },
 			errors: [
@@ -673,7 +673,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import { no_camelcased } from "external-module";',
+			code: "import { no_camelcased } from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -689,7 +689,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import { no_camelcased as no_camel_cased } from "external module";',
+			code: "import { no_camelcased as no_camel_cased } from \"external module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -705,7 +705,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import { camelCased as no_camel_cased } from "external module";',
+			code: "import { camelCased as no_camel_cased } from \"external module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -721,7 +721,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import { camelCased, no_camelcased } from "external-module";',
+			code: "import { camelCased, no_camelcased } from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -737,7 +737,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import { no_camelcased as camelCased, another_no_camelcased } from "external-module";',
+			code: "import { no_camelcased as camelCased, another_no_camelcased } from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -753,7 +753,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import camelCased, { no_camelcased } from "external-module";',
+			code: "import camelCased, { no_camelcased } from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{
@@ -769,7 +769,7 @@ ruleTester.run("id-match", rule, {
 			],
 		},
 		{
-			code: 'import no_camelcased, { another_no_camelcased as camelCased } from "external-module";',
+			code: "import no_camelcased, { another_no_camelcased as camelCased } from \"external-module\";",
 			options: [
 				"^[^_]+$",
 				{

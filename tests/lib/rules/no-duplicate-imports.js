@@ -22,59 +22,59 @@ const ruleTester = new RuleTester({
 
 ruleTester.run("no-duplicate-imports", rule, {
 	valid: [
-		'import os from "os";\nimport fs from "fs";',
-		'import { merge } from "lodash-es";',
-		'import _, { merge } from "lodash-es";',
-		'import * as Foobar from "async";',
-		'import "foo"',
-		'import os from "os";\nexport { something } from "os";',
-		'import * as bar from "os";\nimport { baz } from "os";',
-		'import foo, * as bar from "os";\nimport { baz } from "os";',
-		'import foo, { bar } from "os";\nimport * as baz from "os";',
+		"import os from \"os\";\nimport fs from \"fs\";",
+		"import { merge } from \"lodash-es\";",
+		"import _, { merge } from \"lodash-es\";",
+		"import * as Foobar from \"async\";",
+		"import \"foo\"",
+		"import os from \"os\";\nexport { something } from \"os\";",
+		"import * as bar from \"os\";\nimport { baz } from \"os\";",
+		"import foo, * as bar from \"os\";\nimport { baz } from \"os\";",
+		"import foo, { bar } from \"os\";\nimport * as baz from \"os\";",
 		{
-			code: 'import os from "os";\nexport { hello } from "hello";',
+			code: "import os from \"os\";\nexport { hello } from \"hello\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import os from "os";\nexport * from "hello";',
+			code: "import os from \"os\";\nexport * from \"hello\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import os from "os";\nexport { hello as hi } from "hello";',
+			code: "import os from \"os\";\nexport { hello as hi } from \"hello\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import os from "os";\nexport default function(){};',
+			code: "import os from \"os\";\nexport default function(){};",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import { merge } from "lodash-es";\nexport { merge as lodashMerge }',
+			code: "import { merge } from \"lodash-es\";\nexport { merge as lodashMerge }",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'export { something } from "os";\nexport * as os from "os";',
+			code: "export { something } from \"os\";\nexport * as os from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import { something } from "os";\nexport * as os from "os";',
+			code: "import { something } from \"os\";\nexport * as os from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import * as os from "os";\nexport { something } from "os";',
+			code: "import * as os from \"os\";\nexport { something } from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import os from "os";\nexport * from "os";',
+			code: "import os from \"os\";\nexport * from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'export { something } from "os";\nexport * from "os";',
+			code: "export { something } from \"os\";\nexport * from \"os\";",
 			options: [{ includeExports: true }],
 		},
 	],
 	invalid: [
 		{
-			code: 'import "fs";\nimport "fs"',
+			code: "import \"fs\";\nimport \"fs\"",
 			errors: [
 				{
 					messageId: "import",
@@ -83,7 +83,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { merge } from "lodash-es";\nimport { find } from "lodash-es";',
+			code: "import { merge } from \"lodash-es\";\nimport { find } from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -92,7 +92,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { merge } from "lodash-es";\nimport _ from "lodash-es";',
+			code: "import { merge } from \"lodash-es\";\nimport _ from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -101,7 +101,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import os from "os";\nimport { something } from "os";\nimport * as foobar from "os";',
+			code: "import os from \"os\";\nimport { something } from \"os\";\nimport * as foobar from \"os\";",
 			errors: [
 				{
 					messageId: "import",
@@ -114,7 +114,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as modns from "lodash-es";\nimport { merge } from "lodash-es";\nimport { baz } from "lodash-es";',
+			code: "import * as modns from \"lodash-es\";\nimport { merge } from \"lodash-es\";\nimport { baz } from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -123,7 +123,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export { os } from "os";\nexport { something } from "os";',
+			code: "export { os } from \"os\";\nexport { something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -133,7 +133,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import os from "os";\nexport { os as foobar } from "os";\nexport { something } from "os";',
+			code: "import os from \"os\";\nexport { os as foobar } from \"os\";\nexport { something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -151,7 +151,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import os from "os";\nexport { something } from "os";',
+			code: "import os from \"os\";\nexport { something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -161,7 +161,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import os from "os";\nexport * as os from "os";',
+			code: "import os from \"os\";\nexport * as os from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -171,7 +171,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export * as os from "os";\nimport os from "os";',
+			code: "export * as os from \"os\";\nimport os from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -181,7 +181,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import * as modns from "mod";\nexport * as  modns from "mod";',
+			code: "import * as modns from \"mod\";\nexport * as  modns from \"mod\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -191,7 +191,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export * from "os";\nexport * from "os";',
+			code: "export * from \"os\";\nexport * from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -201,7 +201,7 @@ ruleTester.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import "os";\nexport * from "os";',
+			code: "import \"os\";\nexport * from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -221,97 +221,97 @@ const ruleTesterTypeScript = new RuleTester({
 
 ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 	valid: [
-		'import type { Os } from "os";\nimport type { Fs } from "fs";',
-		'import { type Os } from "os";\nimport type { Fs } from "fs";',
-		'import type { Merge } from "lodash-es";',
-		'import _, { type Merge } from "lodash-es";',
-		'import type * as Foobar from "async";',
-		'import type Os from "os";\nexport type { Something } from "os";',
-		'import type Os from "os";\nexport { type Something } from "os";',
-		'import type * as Bar from "os";\nimport { type Baz } from "os";',
-		'import foo, * as bar from "os";\nimport { type Baz } from "os";',
-		'import foo, { type bar } from "os";\nimport type * as Baz from "os";',
-		'import type { Merge } from "lodash-es";\nimport type _ from "lodash-es";',
+		"import type { Os } from \"os\";\nimport type { Fs } from \"fs\";",
+		"import { type Os } from \"os\";\nimport type { Fs } from \"fs\";",
+		"import type { Merge } from \"lodash-es\";",
+		"import _, { type Merge } from \"lodash-es\";",
+		"import type * as Foobar from \"async\";",
+		"import type Os from \"os\";\nexport type { Something } from \"os\";",
+		"import type Os from \"os\";\nexport { type Something } from \"os\";",
+		"import type * as Bar from \"os\";\nimport { type Baz } from \"os\";",
+		"import foo, * as bar from \"os\";\nimport { type Baz } from \"os\";",
+		"import foo, { type bar } from \"os\";\nimport type * as Baz from \"os\";",
+		"import type { Merge } from \"lodash-es\";\nimport type _ from \"lodash-es\";",
 		{
-			code: 'import type Os from "os";\nexport { type Hello } from "hello";',
+			code: "import type Os from \"os\";\nexport { type Hello } from \"hello\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import type Os from "os";\nexport type * from "hello";',
+			code: "import type Os from \"os\";\nexport type * from \"hello\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import type Os from "os";\nexport { type Hello as Hi } from "hello";',
+			code: "import type Os from \"os\";\nexport { type Hello as Hi } from \"hello\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import type Os from "os";\nexport default function(){};',
+			code: "import type Os from \"os\";\nexport default function(){};",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import { type Merge } from "lodash-es";\nexport { Merge as lodashMerge }',
+			code: "import { type Merge } from \"lodash-es\";\nexport { Merge as lodashMerge }",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'export type { Something } from "os";\nexport * as os from "os";',
+			code: "export type { Something } from \"os\";\nexport * as os from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import { type Something } from "os";\nexport * as os from "os";',
+			code: "import { type Something } from \"os\";\nexport * as os from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import type * as Os from "os";\nexport { something } from "os";',
+			code: "import type * as Os from \"os\";\nexport { something } from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import type Os from "os";\nexport * from "os";',
+			code: "import type Os from \"os\";\nexport * from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import type Os from "os";\nexport type { Something } from "os";',
+			code: "import type Os from \"os\";\nexport type { Something } from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'export type { Something } from "os";\nexport * from "os";',
+			code: "export type { Something } from \"os\";\nexport * from \"os\";",
 			options: [{ includeExports: true }],
 		},
 		{
-			code: 'import { foo, type Bar } from "module";',
+			code: "import { foo, type Bar } from \"module\";",
 			options: [{ allowSeparateTypeImports: true }],
 		},
 		{
-			code: 'import { foo } from "module";\nimport type { Bar } from "module";',
+			code: "import { foo } from \"module\";\nimport type { Bar } from \"module\";",
 			options: [{ allowSeparateTypeImports: true }],
 		},
 		{
-			code: 'import { type Foo } from "module";\nimport type { Bar } from "module";',
+			code: "import { type Foo } from \"module\";\nimport type { Bar } from \"module\";",
 			options: [{ allowSeparateTypeImports: true }],
 		},
 		{
-			code: 'import { foo, type Bar } from "module";\nexport { type Baz } from "module2";',
+			code: "import { foo, type Bar } from \"module\";\nexport { type Baz } from \"module2\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 		},
 		{
-			code: 'import type { Foo } from "module";\nexport { bar, type Baz } from "module";',
+			code: "import type { Foo } from \"module\";\nexport { bar, type Baz } from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 		},
 		{
-			code: 'import { type Foo } from "module";\nexport type { Bar } from "module";',
+			code: "import { type Foo } from \"module\";\nexport type { Bar } from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 		},
 		{
-			code: 'import type * as Foo from "module";\nexport { type Bar } from "module";',
+			code: "import type * as Foo from \"module\";\nexport { type Bar } from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 		},
 		{
-			code: 'import { type Foo } from "module";\nexport type * as Bar from "module";',
+			code: "import { type Foo } from \"module\";\nexport type * as Bar from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 		},
 	],
 	invalid: [
 		{
-			code: 'import "fs";\nimport "fs"',
+			code: "import \"fs\";\nimport \"fs\"",
 			errors: [
 				{
 					messageId: "import",
@@ -320,7 +320,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { type Merge } from "lodash-es";\nimport { type Find } from "lodash-es";',
+			code: "import { type Merge } from \"lodash-es\";\nimport { type Find } from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -329,7 +329,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { type Merge } from "lodash-es";\nimport type { Find } from "lodash-es";',
+			code: "import { type Merge } from \"lodash-es\";\nimport type { Find } from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -338,7 +338,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type { Merge } from "lodash-es";\nimport type { Find } from "lodash-es";',
+			code: "import type { Merge } from \"lodash-es\";\nimport type { Find } from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -347,7 +347,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type Os from "os";\nimport type { Something } from "os";\nimport type * as Foobar from "os";',
+			code: "import type Os from \"os\";\nimport type { Something } from \"os\";\nimport type * as Foobar from \"os\";",
 			errors: [
 				{
 					messageId: "import",
@@ -356,7 +356,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type * as Modns from "lodash-es";\nimport type { Merge } from "lodash-es";\nimport type { Baz } from "lodash-es";',
+			code: "import type * as Modns from \"lodash-es\";\nimport type { Merge } from \"lodash-es\";\nimport type { Baz } from \"lodash-es\";",
 			errors: [
 				{
 					messageId: "import",
@@ -365,7 +365,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { type Foo } from "module";\nexport type { Bar } from "module";',
+			code: "import { type Foo } from \"module\";\nexport type { Bar } from \"module\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -375,7 +375,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export { os } from "os";\nexport type { Something } from "os";',
+			code: "export { os } from \"os\";\nexport type { Something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -385,7 +385,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export type { Os } from "os";\nexport type { Something } from "os";',
+			code: "export type { Os } from \"os\";\nexport type { Something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -395,7 +395,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type { Os } from "os";\nexport type { Os as Foobar } from "os";\nexport type { Something } from "os";',
+			code: "import type { Os } from \"os\";\nexport type { Os as Foobar } from \"os\";\nexport type { Something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -413,7 +413,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type { Os } from "os";\nexport type { Something } from "os";',
+			code: "import type { Os } from \"os\";\nexport type { Something } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -423,7 +423,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type Os from "os";\nexport type * as Os from "os";',
+			code: "import type Os from \"os\";\nexport type * as Os from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -433,7 +433,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type * as Modns from "mod";\nexport type * as Modns from "mod";',
+			code: "import type * as Modns from \"mod\";\nexport type * as Modns from \"mod\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -443,7 +443,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export type * from "os";\nexport type * from "os";',
+			code: "export type * from \"os\";\nexport type * from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -453,7 +453,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import "os";\nexport type { Os } from "os";',
+			code: "import \"os\";\nexport type { Os } from \"os\";",
 			options: [{ includeExports: true }],
 			errors: [
 				{
@@ -473,7 +473,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import type { Merge } from "lodash-es";\nimport type { Find } from "lodash-es";',
+			code: "import type { Merge } from \"lodash-es\";\nimport type { Find } from \"lodash-es\";",
 			options: [{ allowSeparateTypeImports: true }],
 			errors: [
 				{
@@ -503,7 +503,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'export type { Foo } from "module";\nexport type { Bar } from "module";',
+			code: "export type { Foo } from \"module\";\nexport type { Bar } from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 			errors: [
 				{
@@ -513,25 +513,7 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { type Foo } from "module";\nexport { type Bar } from "module";\nexport { type Baz } from "module";',
-			options: [{ allowSeparateTypeImports: true, includeExports: true }],
-			errors: [
-				{
-					messageId: "exportAs",
-					data: { module: "module" },
-				},
-				{
-					messageId: "export",
-					data: { module: "module" },
-				},
-				{
-					messageId: "exportAs",
-					data: { module: "module" },
-				},
-			],
-		},
-		{
-			code: 'import { type Foo } from "module";\nexport { type Bar } from "module";\nexport { regular } from "module";',
+			code: "import { type Foo } from \"module\";\nexport { type Bar } from \"module\";\nexport { type Baz } from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 			errors: [
 				{
@@ -549,7 +531,25 @@ ruleTesterTypeScript.run("no-duplicate-imports", rule, {
 			],
 		},
 		{
-			code: 'import { type Foo } from "module";\nimport { regular } from "module";\nexport { type Bar } from "module";\nexport { regular as other } from "module";',
+			code: "import { type Foo } from \"module\";\nexport { type Bar } from \"module\";\nexport { regular } from \"module\";",
+			options: [{ allowSeparateTypeImports: true, includeExports: true }],
+			errors: [
+				{
+					messageId: "exportAs",
+					data: { module: "module" },
+				},
+				{
+					messageId: "export",
+					data: { module: "module" },
+				},
+				{
+					messageId: "exportAs",
+					data: { module: "module" },
+				},
+			],
+		},
+		{
+			code: "import { type Foo } from \"module\";\nimport { regular } from \"module\";\nexport { type Bar } from \"module\";\nexport { regular as other } from \"module\";",
 			options: [{ allowSeparateTypeImports: true, includeExports: true }],
 			errors: [
 				{

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * Parsed on astexplorer.net using @typescript-eslint/parser@1.13.0
@@ -32,16 +32,16 @@ const test = {
  */
 
 exports.parse = () => ({
-    type: 'Program',
+    type: "Program",
     body: [
         {
-            type: 'VariableDeclaration',
+            type: "VariableDeclaration",
             declarations: [
                 {
-                    type: 'VariableDeclarator',
+                    type: "VariableDeclarator",
                     id: {
-                        type: 'Identifier',
-                        name: 'test',
+                        type: "Identifier",
+                        name: "test",
                         range: [6, 10],
                         loc: {
                             start: {
@@ -55,13 +55,13 @@ exports.parse = () => ({
                         },
                     },
                     init: {
-                        type: 'ObjectExpression',
+                        type: "ObjectExpression",
                         properties: [
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [19, 22],
                                     loc: {
                                         start: {
@@ -75,20 +75,20 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [37, 38],
                                                         loc: {
                                                             start: {
@@ -153,7 +153,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 2,
@@ -166,7 +166,7 @@ exports.parse = () => ({
                                         },
                                         range: [26, 32],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [28, 32],
                                             loc: {
                                                 start: {
@@ -184,7 +184,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [19, 41],
                                 loc: {
                                     start: {
@@ -198,10 +198,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [47, 50],
                                     loc: {
                                         start: {
@@ -215,20 +215,20 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [67, 68],
                                                         loc: {
                                                             start: {
@@ -293,7 +293,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 3,
@@ -306,7 +306,7 @@ exports.parse = () => ({
                                         },
                                         range: [56, 62],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [58, 62],
                                             loc: {
                                                 start: {
@@ -324,7 +324,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [47, 73],
                                 loc: {
                                     start: {
@@ -338,10 +338,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [79, 82],
                                     loc: {
                                         start: {
@@ -355,20 +355,20 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [101, 102],
                                                         loc: {
                                                             start: {
@@ -433,7 +433,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 4,
@@ -446,9 +446,9 @@ exports.parse = () => ({
                                         },
                                         range: [88, 96],
                                         typeAnnotation: {
-                                            type: 'TSParenthesizedType',
+                                            type: "TSParenthesizedType",
                                             typeAnnotation: {
-                                                type: 'TSVoidKeyword',
+                                                type: "TSVoidKeyword",
                                                 range: [91, 95],
                                                 loc: {
                                                     start: {
@@ -478,7 +478,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [79, 107],
                                 loc: {
                                     start: {
@@ -492,10 +492,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [114, 117],
                                     loc: {
                                         start: {
@@ -509,13 +509,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [120, 126],
                                             loc: {
                                                 start: {
@@ -528,7 +528,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 6,
@@ -541,10 +541,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [123, 126],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [125, 126],
                                                         loc: {
                                                             start: {
@@ -573,15 +573,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [138, 139],
                                                         loc: {
                                                             start: {
@@ -646,7 +646,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 6,
@@ -659,7 +659,7 @@ exports.parse = () => ({
                                         },
                                         range: [127, 133],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [129, 133],
                                             loc: {
                                                 start: {
@@ -677,7 +677,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [114, 142],
                                 loc: {
                                     start: {
@@ -691,10 +691,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [148, 151],
                                     loc: {
                                         start: {
@@ -708,13 +708,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [156, 162],
                                             loc: {
                                                 start: {
@@ -727,7 +727,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 7,
@@ -740,10 +740,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [159, 162],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [161, 162],
                                                         loc: {
                                                             start: {
@@ -772,15 +772,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [174, 175],
                                                         loc: {
                                                             start: {
@@ -845,7 +845,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 7,
@@ -858,7 +858,7 @@ exports.parse = () => ({
                                         },
                                         range: [163, 169],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [165, 169],
                                             loc: {
                                                 start: {
@@ -876,7 +876,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [148, 180],
                                 loc: {
                                     start: {
@@ -890,10 +890,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [186, 189],
                                     loc: {
                                         start: {
@@ -907,13 +907,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [194, 200],
                                             loc: {
                                                 start: {
@@ -926,7 +926,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 8,
@@ -939,10 +939,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [197, 200],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [199, 200],
                                                         loc: {
                                                             start: {
@@ -971,15 +971,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [214, 215],
                                                         loc: {
                                                             start: {
@@ -1044,7 +1044,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 8,
@@ -1057,9 +1057,9 @@ exports.parse = () => ({
                                         },
                                         range: [201, 209],
                                         typeAnnotation: {
-                                            type: 'TSParenthesizedType',
+                                            type: "TSParenthesizedType",
                                             typeAnnotation: {
-                                                type: 'TSVoidKeyword',
+                                                type: "TSVoidKeyword",
                                                 range: [204, 208],
                                                 loc: {
                                                     start: {
@@ -1089,7 +1089,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [186, 220],
                                 loc: {
                                     start: {
@@ -1103,10 +1103,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [227, 230],
                                     loc: {
                                         start: {
@@ -1120,13 +1120,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [233, 239],
                                             loc: {
                                                 start: {
@@ -1139,7 +1139,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 10,
@@ -1152,10 +1152,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [236, 239],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [238, 239],
                                                         loc: {
                                                             start: {
@@ -1183,8 +1183,8 @@ exports.parse = () => ({
                                             },
                                         },
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg2',
+                                            type: "Identifier",
+                                            name: "arg2",
                                             range: [241, 248],
                                             loc: {
                                                 start: {
@@ -1197,7 +1197,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 10,
@@ -1210,10 +1210,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [245, 248],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [247, 248],
                                                         loc: {
                                                             start: {
@@ -1242,15 +1242,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [260, 261],
                                                         loc: {
                                                             start: {
@@ -1315,7 +1315,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 10,
@@ -1328,7 +1328,7 @@ exports.parse = () => ({
                                         },
                                         range: [249, 255],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [251, 255],
                                             loc: {
                                                 start: {
@@ -1346,7 +1346,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [227, 264],
                                 loc: {
                                     start: {
@@ -1360,10 +1360,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [270, 273],
                                     loc: {
                                         start: {
@@ -1377,13 +1377,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [278, 284],
                                             loc: {
                                                 start: {
@@ -1396,7 +1396,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 11,
@@ -1409,10 +1409,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [281, 284],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [283, 284],
                                                         loc: {
                                                             start: {
@@ -1440,8 +1440,8 @@ exports.parse = () => ({
                                             },
                                         },
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg2',
+                                            type: "Identifier",
+                                            name: "arg2",
                                             range: [286, 293],
                                             loc: {
                                                 start: {
@@ -1454,7 +1454,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 11,
@@ -1467,10 +1467,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [290, 293],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [292, 293],
                                                         loc: {
                                                             start: {
@@ -1499,15 +1499,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [305, 306],
                                                         loc: {
                                                             start: {
@@ -1572,7 +1572,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 11,
@@ -1585,7 +1585,7 @@ exports.parse = () => ({
                                         },
                                         range: [294, 300],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [296, 300],
                                             loc: {
                                                 start: {
@@ -1603,7 +1603,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [270, 311],
                                 loc: {
                                     start: {
@@ -1617,10 +1617,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [317, 320],
                                     loc: {
                                         start: {
@@ -1634,13 +1634,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [325, 331],
                                             loc: {
                                                 start: {
@@ -1653,7 +1653,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 12,
@@ -1666,10 +1666,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [328, 331],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [330, 331],
                                                         loc: {
                                                             start: {
@@ -1697,8 +1697,8 @@ exports.parse = () => ({
                                             },
                                         },
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg2',
+                                            type: "Identifier",
+                                            name: "arg2",
                                             range: [333, 340],
                                             loc: {
                                                 start: {
@@ -1711,7 +1711,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 12,
@@ -1724,10 +1724,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [337, 340],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [339, 340],
                                                         loc: {
                                                             start: {
@@ -1756,15 +1756,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [354, 355],
                                                         loc: {
                                                             start: {
@@ -1829,7 +1829,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 12,
@@ -1842,9 +1842,9 @@ exports.parse = () => ({
                                         },
                                         range: [341, 349],
                                         typeAnnotation: {
-                                            type: 'TSParenthesizedType',
+                                            type: "TSParenthesizedType",
                                             typeAnnotation: {
-                                                type: 'TSVoidKeyword',
+                                                type: "TSVoidKeyword",
                                                 range: [344, 348],
                                                 loc: {
                                                     start: {
@@ -1874,7 +1874,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [317, 360],
                                 loc: {
                                     start: {
@@ -1888,10 +1888,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [367, 370],
                                     loc: {
                                         start: {
@@ -1905,20 +1905,20 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [391, 392],
                                                         loc: {
                                                             start: {
@@ -1983,7 +1983,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 14,
@@ -1996,7 +1996,7 @@ exports.parse = () => ({
                                         },
                                         range: [380, 386],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [382, 386],
                                             loc: {
                                                 start: {
@@ -2014,7 +2014,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [367, 395],
                                 loc: {
                                     start: {
@@ -2028,10 +2028,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [401, 404],
                                     loc: {
                                         start: {
@@ -2045,20 +2045,20 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [427, 428],
                                                         loc: {
                                                             start: {
@@ -2123,7 +2123,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 15,
@@ -2136,7 +2136,7 @@ exports.parse = () => ({
                                         },
                                         range: [416, 422],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [418, 422],
                                             loc: {
                                                 start: {
@@ -2154,7 +2154,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [401, 433],
                                 loc: {
                                     start: {
@@ -2168,10 +2168,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [439, 442],
                                     loc: {
                                         start: {
@@ -2185,20 +2185,20 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [467, 468],
                                                         loc: {
                                                             start: {
@@ -2263,7 +2263,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 16,
@@ -2276,9 +2276,9 @@ exports.parse = () => ({
                                         },
                                         range: [454, 462],
                                         typeAnnotation: {
-                                            type: 'TSParenthesizedType',
+                                            type: "TSParenthesizedType",
                                             typeAnnotation: {
-                                                type: 'TSVoidKeyword',
+                                                type: "TSVoidKeyword",
                                                 range: [457, 461],
                                                 loc: {
                                                     start: {
@@ -2308,7 +2308,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [439, 473],
                                 loc: {
                                     start: {
@@ -2322,10 +2322,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [480, 483],
                                     loc: {
                                         start: {
@@ -2339,13 +2339,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [492, 498],
                                             loc: {
                                                 start: {
@@ -2358,7 +2358,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 18,
@@ -2371,10 +2371,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [495, 498],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [497, 498],
                                                         loc: {
                                                             start: {
@@ -2403,15 +2403,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [510, 511],
                                                         loc: {
                                                             start: {
@@ -2476,7 +2476,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 18,
@@ -2489,7 +2489,7 @@ exports.parse = () => ({
                                         },
                                         range: [499, 505],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [501, 505],
                                             loc: {
                                                 start: {
@@ -2507,7 +2507,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [480, 514],
                                 loc: {
                                     start: {
@@ -2521,10 +2521,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [520, 523],
                                     loc: {
                                         start: {
@@ -2538,13 +2538,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [534, 540],
                                             loc: {
                                                 start: {
@@ -2557,7 +2557,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 19,
@@ -2570,10 +2570,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [537, 540],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [539, 540],
                                                         loc: {
                                                             start: {
@@ -2602,15 +2602,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [552, 553],
                                                         loc: {
                                                             start: {
@@ -2675,7 +2675,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 19,
@@ -2688,7 +2688,7 @@ exports.parse = () => ({
                                         },
                                         range: [541, 547],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [543, 547],
                                             loc: {
                                                 start: {
@@ -2706,7 +2706,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [520, 558],
                                 loc: {
                                     start: {
@@ -2720,10 +2720,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [564, 567],
                                     loc: {
                                         start: {
@@ -2737,13 +2737,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [578, 584],
                                             loc: {
                                                 start: {
@@ -2756,7 +2756,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 20,
@@ -2769,10 +2769,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [581, 584],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [583, 584],
                                                         loc: {
                                                             start: {
@@ -2801,15 +2801,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [598, 599],
                                                         loc: {
                                                             start: {
@@ -2874,7 +2874,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 20,
@@ -2887,9 +2887,9 @@ exports.parse = () => ({
                                         },
                                         range: [585, 593],
                                         typeAnnotation: {
-                                            type: 'TSParenthesizedType',
+                                            type: "TSParenthesizedType",
                                             typeAnnotation: {
-                                                type: 'TSVoidKeyword',
+                                                type: "TSVoidKeyword",
                                                 range: [588, 592],
                                                 loc: {
                                                     start: {
@@ -2919,7 +2919,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [564, 604],
                                 loc: {
                                     start: {
@@ -2933,10 +2933,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [611, 614],
                                     loc: {
                                         start: {
@@ -2950,13 +2950,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [623, 629],
                                             loc: {
                                                 start: {
@@ -2969,7 +2969,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 22,
@@ -2982,10 +2982,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [626, 629],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [628, 629],
                                                         loc: {
                                                             start: {
@@ -3013,8 +3013,8 @@ exports.parse = () => ({
                                             },
                                         },
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg2',
+                                            type: "Identifier",
+                                            name: "arg2",
                                             range: [631, 638],
                                             loc: {
                                                 start: {
@@ -3027,7 +3027,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 22,
@@ -3040,10 +3040,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [635, 638],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [637, 638],
                                                         loc: {
                                                             start: {
@@ -3072,15 +3072,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [650, 651],
                                                         loc: {
                                                             start: {
@@ -3145,7 +3145,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 22,
@@ -3158,7 +3158,7 @@ exports.parse = () => ({
                                         },
                                         range: [639, 645],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [641, 645],
                                             loc: {
                                                 start: {
@@ -3176,7 +3176,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [611, 654],
                                 loc: {
                                     start: {
@@ -3190,10 +3190,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [660, 663],
                                     loc: {
                                         start: {
@@ -3207,13 +3207,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [674, 680],
                                             loc: {
                                                 start: {
@@ -3226,7 +3226,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 23,
@@ -3239,10 +3239,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [677, 680],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [679, 680],
                                                         loc: {
                                                             start: {
@@ -3270,8 +3270,8 @@ exports.parse = () => ({
                                             },
                                         },
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg2',
+                                            type: "Identifier",
+                                            name: "arg2",
                                             range: [682, 689],
                                             loc: {
                                                 start: {
@@ -3284,7 +3284,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 23,
@@ -3297,10 +3297,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [686, 689],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [688, 689],
                                                         loc: {
                                                             start: {
@@ -3329,15 +3329,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [701, 702],
                                                         loc: {
                                                             start: {
@@ -3402,7 +3402,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 23,
@@ -3415,7 +3415,7 @@ exports.parse = () => ({
                                         },
                                         range: [690, 696],
                                         typeAnnotation: {
-                                            type: 'TSVoidKeyword',
+                                            type: "TSVoidKeyword",
                                             range: [692, 696],
                                             loc: {
                                                 start: {
@@ -3433,7 +3433,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [660, 707],
                                 loc: {
                                     start: {
@@ -3447,10 +3447,10 @@ exports.parse = () => ({
                                 },
                             },
                             {
-                                type: 'Property',
+                                type: "Property",
                                 key: {
-                                    type: 'Identifier',
-                                    name: 'key',
+                                    type: "Identifier",
+                                    name: "key",
                                     range: [713, 716],
                                     loc: {
                                         start: {
@@ -3464,13 +3464,13 @@ exports.parse = () => ({
                                     },
                                 },
                                 value: {
-                                    type: 'ArrowFunctionExpression',
+                                    type: "ArrowFunctionExpression",
                                     generator: false,
                                     id: null,
                                     params: [
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg',
+                                            type: "Identifier",
+                                            name: "arg",
                                             range: [727, 733],
                                             loc: {
                                                 start: {
@@ -3483,7 +3483,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 24,
@@ -3496,10 +3496,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [730, 733],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [732, 733],
                                                         loc: {
                                                             start: {
@@ -3527,8 +3527,8 @@ exports.parse = () => ({
                                             },
                                         },
                                         {
-                                            type: 'Identifier',
-                                            name: 'arg2',
+                                            type: "Identifier",
+                                            name: "arg2",
                                             range: [735, 742],
                                             loc: {
                                                 start: {
@@ -3541,7 +3541,7 @@ exports.parse = () => ({
                                                 },
                                             },
                                             typeAnnotation: {
-                                                type: 'TSTypeAnnotation',
+                                                type: "TSTypeAnnotation",
                                                 loc: {
                                                     start: {
                                                         line: 24,
@@ -3554,10 +3554,10 @@ exports.parse = () => ({
                                                 },
                                                 range: [739, 742],
                                                 typeAnnotation: {
-                                                    type: 'TSTypeReference',
+                                                    type: "TSTypeReference",
                                                     typeName: {
-                                                        type: 'Identifier',
-                                                        name: 't',
+                                                        type: "Identifier",
+                                                        name: "t",
                                                         range: [741, 742],
                                                         loc: {
                                                             start: {
@@ -3586,15 +3586,15 @@ exports.parse = () => ({
                                         },
                                     ],
                                     body: {
-                                        type: 'BlockStatement',
+                                        type: "BlockStatement",
                                         body: [
                                             {
-                                                type: 'ExpressionStatement',
+                                                type: "ExpressionStatement",
                                                 expression: {
-                                                    type: 'CallExpression',
+                                                    type: "CallExpression",
                                                     callee: {
-                                                        type: 'Identifier',
-                                                        name: 'x',
+                                                        type: "Identifier",
+                                                        name: "x",
                                                         range: [756, 757],
                                                         loc: {
                                                             start: {
@@ -3659,7 +3659,7 @@ exports.parse = () => ({
                                         },
                                     },
                                     returnType: {
-                                        type: 'TSTypeAnnotation',
+                                        type: "TSTypeAnnotation",
                                         loc: {
                                             start: {
                                                 line: 24,
@@ -3672,9 +3672,9 @@ exports.parse = () => ({
                                         },
                                         range: [743, 751],
                                         typeAnnotation: {
-                                            type: 'TSParenthesizedType',
+                                            type: "TSParenthesizedType",
                                             typeAnnotation: {
-                                                type: 'TSVoidKeyword',
+                                                type: "TSVoidKeyword",
                                                 range: [746, 750],
                                                 loc: {
                                                     start: {
@@ -3704,7 +3704,7 @@ exports.parse = () => ({
                                 computed: false,
                                 method: false,
                                 shorthand: false,
-                                kind: 'init',
+                                kind: "init",
                                 range: [713, 762],
                                 loc: {
                                     start: {
@@ -3743,7 +3743,7 @@ exports.parse = () => ({
                     },
                 },
             ],
-            kind: 'const',
+            kind: "const",
             range: [0, 765],
             loc: {
                 start: {
@@ -3757,7 +3757,7 @@ exports.parse = () => ({
             },
         },
     ],
-    sourceType: 'module',
+    sourceType: "module",
     range: [0, 765],
     loc: {
         start: {
@@ -3771,8 +3771,8 @@ exports.parse = () => ({
     },
     tokens: [
         {
-            type: 'Keyword',
-            value: 'const',
+            type: "Keyword",
+            value: "const",
             range: [0, 5],
             loc: {
                 start: {
@@ -3786,8 +3786,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'test',
+            type: "Identifier",
+            value: "test",
             range: [6, 10],
             loc: {
                 start: {
@@ -3801,8 +3801,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=',
+            type: "Punctuator",
+            value: "=",
             range: [11, 12],
             loc: {
                 start: {
@@ -3816,8 +3816,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [13, 14],
             loc: {
                 start: {
@@ -3831,8 +3831,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [19, 22],
             loc: {
                 start: {
@@ -3846,8 +3846,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [22, 23],
             loc: {
                 start: {
@@ -3861,8 +3861,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [24, 25],
             loc: {
                 start: {
@@ -3876,8 +3876,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [25, 26],
             loc: {
                 start: {
@@ -3891,8 +3891,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [26, 27],
             loc: {
                 start: {
@@ -3906,8 +3906,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [28, 32],
             loc: {
                 start: {
@@ -3921,8 +3921,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [33, 35],
             loc: {
                 start: {
@@ -3936,8 +3936,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [36, 37],
             loc: {
                 start: {
@@ -3951,8 +3951,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [37, 38],
             loc: {
                 start: {
@@ -3966,8 +3966,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [38, 39],
             loc: {
                 start: {
@@ -3981,8 +3981,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [39, 40],
             loc: {
                 start: {
@@ -3996,8 +3996,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [40, 41],
             loc: {
                 start: {
@@ -4011,8 +4011,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [41, 42],
             loc: {
                 start: {
@@ -4026,8 +4026,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [47, 50],
             loc: {
                 start: {
@@ -4041,8 +4041,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [50, 51],
             loc: {
                 start: {
@@ -4056,8 +4056,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [52, 53],
             loc: {
                 start: {
@@ -4071,8 +4071,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [54, 55],
             loc: {
                 start: {
@@ -4086,8 +4086,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [55, 56],
             loc: {
                 start: {
@@ -4101,8 +4101,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [56, 57],
             loc: {
                 start: {
@@ -4116,8 +4116,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [58, 62],
             loc: {
                 start: {
@@ -4131,8 +4131,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [63, 65],
             loc: {
                 start: {
@@ -4146,8 +4146,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [66, 67],
             loc: {
                 start: {
@@ -4161,8 +4161,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [67, 68],
             loc: {
                 start: {
@@ -4176,8 +4176,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [68, 69],
             loc: {
                 start: {
@@ -4191,8 +4191,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [69, 70],
             loc: {
                 start: {
@@ -4206,8 +4206,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [70, 71],
             loc: {
                 start: {
@@ -4221,8 +4221,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [72, 73],
             loc: {
                 start: {
@@ -4236,8 +4236,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [73, 74],
             loc: {
                 start: {
@@ -4251,8 +4251,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [79, 82],
             loc: {
                 start: {
@@ -4266,8 +4266,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [82, 83],
             loc: {
                 start: {
@@ -4281,8 +4281,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [84, 85],
             loc: {
                 start: {
@@ -4296,8 +4296,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [86, 87],
             loc: {
                 start: {
@@ -4311,8 +4311,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [87, 88],
             loc: {
                 start: {
@@ -4326,8 +4326,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [88, 89],
             loc: {
                 start: {
@@ -4341,8 +4341,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [90, 91],
             loc: {
                 start: {
@@ -4356,8 +4356,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [91, 95],
             loc: {
                 start: {
@@ -4371,8 +4371,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [95, 96],
             loc: {
                 start: {
@@ -4386,8 +4386,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [97, 99],
             loc: {
                 start: {
@@ -4401,8 +4401,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [100, 101],
             loc: {
                 start: {
@@ -4416,8 +4416,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [101, 102],
             loc: {
                 start: {
@@ -4431,8 +4431,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [102, 103],
             loc: {
                 start: {
@@ -4446,8 +4446,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [103, 104],
             loc: {
                 start: {
@@ -4461,8 +4461,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [104, 105],
             loc: {
                 start: {
@@ -4476,8 +4476,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [106, 107],
             loc: {
                 start: {
@@ -4491,8 +4491,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [107, 108],
             loc: {
                 start: {
@@ -4506,8 +4506,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [114, 117],
             loc: {
                 start: {
@@ -4521,8 +4521,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [117, 118],
             loc: {
                 start: {
@@ -4536,8 +4536,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [119, 120],
             loc: {
                 start: {
@@ -4551,8 +4551,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [120, 123],
             loc: {
                 start: {
@@ -4566,8 +4566,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [123, 124],
             loc: {
                 start: {
@@ -4581,8 +4581,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [125, 126],
             loc: {
                 start: {
@@ -4596,8 +4596,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [126, 127],
             loc: {
                 start: {
@@ -4611,8 +4611,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [127, 128],
             loc: {
                 start: {
@@ -4626,8 +4626,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [129, 133],
             loc: {
                 start: {
@@ -4641,8 +4641,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [134, 136],
             loc: {
                 start: {
@@ -4656,8 +4656,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [137, 138],
             loc: {
                 start: {
@@ -4671,8 +4671,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [138, 139],
             loc: {
                 start: {
@@ -4686,8 +4686,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [139, 140],
             loc: {
                 start: {
@@ -4701,8 +4701,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [140, 141],
             loc: {
                 start: {
@@ -4716,8 +4716,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [141, 142],
             loc: {
                 start: {
@@ -4731,8 +4731,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [142, 143],
             loc: {
                 start: {
@@ -4746,8 +4746,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [148, 151],
             loc: {
                 start: {
@@ -4761,8 +4761,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [151, 152],
             loc: {
                 start: {
@@ -4776,8 +4776,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [153, 154],
             loc: {
                 start: {
@@ -4791,8 +4791,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [155, 156],
             loc: {
                 start: {
@@ -4806,8 +4806,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [156, 159],
             loc: {
                 start: {
@@ -4821,8 +4821,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [159, 160],
             loc: {
                 start: {
@@ -4836,8 +4836,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [161, 162],
             loc: {
                 start: {
@@ -4851,8 +4851,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [162, 163],
             loc: {
                 start: {
@@ -4866,8 +4866,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [163, 164],
             loc: {
                 start: {
@@ -4881,8 +4881,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [165, 169],
             loc: {
                 start: {
@@ -4896,8 +4896,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [170, 172],
             loc: {
                 start: {
@@ -4911,8 +4911,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [173, 174],
             loc: {
                 start: {
@@ -4926,8 +4926,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [174, 175],
             loc: {
                 start: {
@@ -4941,8 +4941,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [175, 176],
             loc: {
                 start: {
@@ -4956,8 +4956,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [176, 177],
             loc: {
                 start: {
@@ -4971,8 +4971,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [177, 178],
             loc: {
                 start: {
@@ -4986,8 +4986,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [179, 180],
             loc: {
                 start: {
@@ -5001,8 +5001,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [180, 181],
             loc: {
                 start: {
@@ -5016,8 +5016,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [186, 189],
             loc: {
                 start: {
@@ -5031,8 +5031,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [189, 190],
             loc: {
                 start: {
@@ -5046,8 +5046,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [191, 192],
             loc: {
                 start: {
@@ -5061,8 +5061,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [193, 194],
             loc: {
                 start: {
@@ -5076,8 +5076,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [194, 197],
             loc: {
                 start: {
@@ -5091,8 +5091,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [197, 198],
             loc: {
                 start: {
@@ -5106,8 +5106,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [199, 200],
             loc: {
                 start: {
@@ -5121,8 +5121,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [200, 201],
             loc: {
                 start: {
@@ -5136,8 +5136,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [201, 202],
             loc: {
                 start: {
@@ -5151,8 +5151,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [203, 204],
             loc: {
                 start: {
@@ -5166,8 +5166,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [204, 208],
             loc: {
                 start: {
@@ -5181,8 +5181,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [208, 209],
             loc: {
                 start: {
@@ -5196,8 +5196,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [210, 212],
             loc: {
                 start: {
@@ -5211,8 +5211,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [213, 214],
             loc: {
                 start: {
@@ -5226,8 +5226,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [214, 215],
             loc: {
                 start: {
@@ -5241,8 +5241,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [215, 216],
             loc: {
                 start: {
@@ -5256,8 +5256,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [216, 217],
             loc: {
                 start: {
@@ -5271,8 +5271,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [217, 218],
             loc: {
                 start: {
@@ -5286,8 +5286,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [219, 220],
             loc: {
                 start: {
@@ -5301,8 +5301,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [220, 221],
             loc: {
                 start: {
@@ -5316,8 +5316,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [227, 230],
             loc: {
                 start: {
@@ -5331,8 +5331,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [230, 231],
             loc: {
                 start: {
@@ -5346,8 +5346,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [232, 233],
             loc: {
                 start: {
@@ -5361,8 +5361,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [233, 236],
             loc: {
                 start: {
@@ -5376,8 +5376,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [236, 237],
             loc: {
                 start: {
@@ -5391,8 +5391,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [238, 239],
             loc: {
                 start: {
@@ -5406,8 +5406,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [239, 240],
             loc: {
                 start: {
@@ -5421,8 +5421,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg2',
+            type: "Identifier",
+            value: "arg2",
             range: [241, 245],
             loc: {
                 start: {
@@ -5436,8 +5436,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [245, 246],
             loc: {
                 start: {
@@ -5451,8 +5451,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [247, 248],
             loc: {
                 start: {
@@ -5466,8 +5466,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [248, 249],
             loc: {
                 start: {
@@ -5481,8 +5481,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [249, 250],
             loc: {
                 start: {
@@ -5496,8 +5496,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [251, 255],
             loc: {
                 start: {
@@ -5511,8 +5511,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [256, 258],
             loc: {
                 start: {
@@ -5526,8 +5526,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [259, 260],
             loc: {
                 start: {
@@ -5541,8 +5541,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [260, 261],
             loc: {
                 start: {
@@ -5556,8 +5556,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [261, 262],
             loc: {
                 start: {
@@ -5571,8 +5571,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [262, 263],
             loc: {
                 start: {
@@ -5586,8 +5586,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [263, 264],
             loc: {
                 start: {
@@ -5601,8 +5601,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [264, 265],
             loc: {
                 start: {
@@ -5616,8 +5616,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [270, 273],
             loc: {
                 start: {
@@ -5631,8 +5631,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [273, 274],
             loc: {
                 start: {
@@ -5646,8 +5646,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [275, 276],
             loc: {
                 start: {
@@ -5661,8 +5661,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [277, 278],
             loc: {
                 start: {
@@ -5676,8 +5676,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [278, 281],
             loc: {
                 start: {
@@ -5691,8 +5691,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [281, 282],
             loc: {
                 start: {
@@ -5706,8 +5706,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [283, 284],
             loc: {
                 start: {
@@ -5721,8 +5721,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [284, 285],
             loc: {
                 start: {
@@ -5736,8 +5736,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg2',
+            type: "Identifier",
+            value: "arg2",
             range: [286, 290],
             loc: {
                 start: {
@@ -5751,8 +5751,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [290, 291],
             loc: {
                 start: {
@@ -5766,8 +5766,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [292, 293],
             loc: {
                 start: {
@@ -5781,8 +5781,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [293, 294],
             loc: {
                 start: {
@@ -5796,8 +5796,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [294, 295],
             loc: {
                 start: {
@@ -5811,8 +5811,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [296, 300],
             loc: {
                 start: {
@@ -5826,8 +5826,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [301, 303],
             loc: {
                 start: {
@@ -5841,8 +5841,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [304, 305],
             loc: {
                 start: {
@@ -5856,8 +5856,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [305, 306],
             loc: {
                 start: {
@@ -5871,8 +5871,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [306, 307],
             loc: {
                 start: {
@@ -5886,8 +5886,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [307, 308],
             loc: {
                 start: {
@@ -5901,8 +5901,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [308, 309],
             loc: {
                 start: {
@@ -5916,8 +5916,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [310, 311],
             loc: {
                 start: {
@@ -5931,8 +5931,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [311, 312],
             loc: {
                 start: {
@@ -5946,8 +5946,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [317, 320],
             loc: {
                 start: {
@@ -5961,8 +5961,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [320, 321],
             loc: {
                 start: {
@@ -5976,8 +5976,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [322, 323],
             loc: {
                 start: {
@@ -5991,8 +5991,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [324, 325],
             loc: {
                 start: {
@@ -6006,8 +6006,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [325, 328],
             loc: {
                 start: {
@@ -6021,8 +6021,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [328, 329],
             loc: {
                 start: {
@@ -6036,8 +6036,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [330, 331],
             loc: {
                 start: {
@@ -6051,8 +6051,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [331, 332],
             loc: {
                 start: {
@@ -6066,8 +6066,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg2',
+            type: "Identifier",
+            value: "arg2",
             range: [333, 337],
             loc: {
                 start: {
@@ -6081,8 +6081,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [337, 338],
             loc: {
                 start: {
@@ -6096,8 +6096,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [339, 340],
             loc: {
                 start: {
@@ -6111,8 +6111,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [340, 341],
             loc: {
                 start: {
@@ -6126,8 +6126,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [341, 342],
             loc: {
                 start: {
@@ -6141,8 +6141,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [343, 344],
             loc: {
                 start: {
@@ -6156,8 +6156,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [344, 348],
             loc: {
                 start: {
@@ -6171,8 +6171,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [348, 349],
             loc: {
                 start: {
@@ -6186,8 +6186,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [350, 352],
             loc: {
                 start: {
@@ -6201,8 +6201,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [353, 354],
             loc: {
                 start: {
@@ -6216,8 +6216,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [354, 355],
             loc: {
                 start: {
@@ -6231,8 +6231,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [355, 356],
             loc: {
                 start: {
@@ -6246,8 +6246,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [356, 357],
             loc: {
                 start: {
@@ -6261,8 +6261,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [357, 358],
             loc: {
                 start: {
@@ -6276,8 +6276,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [359, 360],
             loc: {
                 start: {
@@ -6291,8 +6291,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [360, 361],
             loc: {
                 start: {
@@ -6306,8 +6306,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [367, 370],
             loc: {
                 start: {
@@ -6321,8 +6321,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [370, 371],
             loc: {
                 start: {
@@ -6336,8 +6336,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [372, 377],
             loc: {
                 start: {
@@ -6351,8 +6351,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [378, 379],
             loc: {
                 start: {
@@ -6366,8 +6366,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [379, 380],
             loc: {
                 start: {
@@ -6381,8 +6381,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [380, 381],
             loc: {
                 start: {
@@ -6396,8 +6396,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [382, 386],
             loc: {
                 start: {
@@ -6411,8 +6411,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [387, 389],
             loc: {
                 start: {
@@ -6426,8 +6426,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [390, 391],
             loc: {
                 start: {
@@ -6441,8 +6441,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [391, 392],
             loc: {
                 start: {
@@ -6456,8 +6456,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [392, 393],
             loc: {
                 start: {
@@ -6471,8 +6471,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [393, 394],
             loc: {
                 start: {
@@ -6486,8 +6486,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [394, 395],
             loc: {
                 start: {
@@ -6501,8 +6501,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [395, 396],
             loc: {
                 start: {
@@ -6516,8 +6516,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [401, 404],
             loc: {
                 start: {
@@ -6531,8 +6531,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [404, 405],
             loc: {
                 start: {
@@ -6546,8 +6546,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [406, 407],
             loc: {
                 start: {
@@ -6561,8 +6561,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [408, 413],
             loc: {
                 start: {
@@ -6576,8 +6576,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [414, 415],
             loc: {
                 start: {
@@ -6591,8 +6591,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [415, 416],
             loc: {
                 start: {
@@ -6606,8 +6606,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [416, 417],
             loc: {
                 start: {
@@ -6621,8 +6621,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [418, 422],
             loc: {
                 start: {
@@ -6636,8 +6636,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [423, 425],
             loc: {
                 start: {
@@ -6651,8 +6651,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [426, 427],
             loc: {
                 start: {
@@ -6666,8 +6666,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [427, 428],
             loc: {
                 start: {
@@ -6681,8 +6681,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [428, 429],
             loc: {
                 start: {
@@ -6696,8 +6696,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [429, 430],
             loc: {
                 start: {
@@ -6711,8 +6711,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [430, 431],
             loc: {
                 start: {
@@ -6726,8 +6726,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [432, 433],
             loc: {
                 start: {
@@ -6741,8 +6741,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [433, 434],
             loc: {
                 start: {
@@ -6756,8 +6756,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [439, 442],
             loc: {
                 start: {
@@ -6771,8 +6771,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [442, 443],
             loc: {
                 start: {
@@ -6786,8 +6786,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [444, 445],
             loc: {
                 start: {
@@ -6801,8 +6801,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [446, 451],
             loc: {
                 start: {
@@ -6816,8 +6816,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [452, 453],
             loc: {
                 start: {
@@ -6831,8 +6831,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [453, 454],
             loc: {
                 start: {
@@ -6846,8 +6846,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [454, 455],
             loc: {
                 start: {
@@ -6861,8 +6861,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [456, 457],
             loc: {
                 start: {
@@ -6876,8 +6876,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [457, 461],
             loc: {
                 start: {
@@ -6891,8 +6891,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [461, 462],
             loc: {
                 start: {
@@ -6906,8 +6906,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [463, 465],
             loc: {
                 start: {
@@ -6921,8 +6921,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [466, 467],
             loc: {
                 start: {
@@ -6936,8 +6936,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [467, 468],
             loc: {
                 start: {
@@ -6951,8 +6951,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [468, 469],
             loc: {
                 start: {
@@ -6966,8 +6966,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [469, 470],
             loc: {
                 start: {
@@ -6981,8 +6981,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [470, 471],
             loc: {
                 start: {
@@ -6996,8 +6996,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [472, 473],
             loc: {
                 start: {
@@ -7011,8 +7011,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [473, 474],
             loc: {
                 start: {
@@ -7026,8 +7026,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [480, 483],
             loc: {
                 start: {
@@ -7041,8 +7041,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [483, 484],
             loc: {
                 start: {
@@ -7056,8 +7056,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [485, 490],
             loc: {
                 start: {
@@ -7071,8 +7071,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [491, 492],
             loc: {
                 start: {
@@ -7086,8 +7086,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [492, 495],
             loc: {
                 start: {
@@ -7101,8 +7101,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [495, 496],
             loc: {
                 start: {
@@ -7116,8 +7116,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [497, 498],
             loc: {
                 start: {
@@ -7131,8 +7131,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [498, 499],
             loc: {
                 start: {
@@ -7146,8 +7146,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [499, 500],
             loc: {
                 start: {
@@ -7161,8 +7161,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [501, 505],
             loc: {
                 start: {
@@ -7176,8 +7176,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [506, 508],
             loc: {
                 start: {
@@ -7191,8 +7191,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [509, 510],
             loc: {
                 start: {
@@ -7206,8 +7206,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [510, 511],
             loc: {
                 start: {
@@ -7221,8 +7221,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [511, 512],
             loc: {
                 start: {
@@ -7236,8 +7236,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [512, 513],
             loc: {
                 start: {
@@ -7251,8 +7251,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [513, 514],
             loc: {
                 start: {
@@ -7266,8 +7266,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [514, 515],
             loc: {
                 start: {
@@ -7281,8 +7281,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [520, 523],
             loc: {
                 start: {
@@ -7296,8 +7296,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [523, 524],
             loc: {
                 start: {
@@ -7311,8 +7311,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [525, 526],
             loc: {
                 start: {
@@ -7326,8 +7326,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [527, 532],
             loc: {
                 start: {
@@ -7341,8 +7341,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [533, 534],
             loc: {
                 start: {
@@ -7356,8 +7356,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [534, 537],
             loc: {
                 start: {
@@ -7371,8 +7371,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [537, 538],
             loc: {
                 start: {
@@ -7386,8 +7386,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [539, 540],
             loc: {
                 start: {
@@ -7401,8 +7401,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [540, 541],
             loc: {
                 start: {
@@ -7416,8 +7416,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [541, 542],
             loc: {
                 start: {
@@ -7431,8 +7431,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [543, 547],
             loc: {
                 start: {
@@ -7446,8 +7446,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [548, 550],
             loc: {
                 start: {
@@ -7461,8 +7461,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [551, 552],
             loc: {
                 start: {
@@ -7476,8 +7476,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [552, 553],
             loc: {
                 start: {
@@ -7491,8 +7491,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [553, 554],
             loc: {
                 start: {
@@ -7506,8 +7506,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [554, 555],
             loc: {
                 start: {
@@ -7521,8 +7521,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [555, 556],
             loc: {
                 start: {
@@ -7536,8 +7536,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [557, 558],
             loc: {
                 start: {
@@ -7551,8 +7551,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [558, 559],
             loc: {
                 start: {
@@ -7566,8 +7566,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [564, 567],
             loc: {
                 start: {
@@ -7581,8 +7581,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [567, 568],
             loc: {
                 start: {
@@ -7596,8 +7596,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [569, 570],
             loc: {
                 start: {
@@ -7611,8 +7611,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [571, 576],
             loc: {
                 start: {
@@ -7626,8 +7626,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [577, 578],
             loc: {
                 start: {
@@ -7641,8 +7641,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [578, 581],
             loc: {
                 start: {
@@ -7656,8 +7656,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [581, 582],
             loc: {
                 start: {
@@ -7671,8 +7671,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [583, 584],
             loc: {
                 start: {
@@ -7686,8 +7686,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [584, 585],
             loc: {
                 start: {
@@ -7701,8 +7701,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [585, 586],
             loc: {
                 start: {
@@ -7716,8 +7716,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [587, 588],
             loc: {
                 start: {
@@ -7731,8 +7731,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [588, 592],
             loc: {
                 start: {
@@ -7746,8 +7746,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [592, 593],
             loc: {
                 start: {
@@ -7761,8 +7761,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [594, 596],
             loc: {
                 start: {
@@ -7776,8 +7776,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [597, 598],
             loc: {
                 start: {
@@ -7791,8 +7791,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [598, 599],
             loc: {
                 start: {
@@ -7806,8 +7806,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [599, 600],
             loc: {
                 start: {
@@ -7821,8 +7821,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [600, 601],
             loc: {
                 start: {
@@ -7836,8 +7836,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [601, 602],
             loc: {
                 start: {
@@ -7851,8 +7851,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [603, 604],
             loc: {
                 start: {
@@ -7866,8 +7866,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [604, 605],
             loc: {
                 start: {
@@ -7881,8 +7881,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [611, 614],
             loc: {
                 start: {
@@ -7896,8 +7896,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [614, 615],
             loc: {
                 start: {
@@ -7911,8 +7911,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [616, 621],
             loc: {
                 start: {
@@ -7926,8 +7926,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [622, 623],
             loc: {
                 start: {
@@ -7941,8 +7941,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [623, 626],
             loc: {
                 start: {
@@ -7956,8 +7956,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [626, 627],
             loc: {
                 start: {
@@ -7971,8 +7971,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [628, 629],
             loc: {
                 start: {
@@ -7986,8 +7986,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [629, 630],
             loc: {
                 start: {
@@ -8001,8 +8001,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg2',
+            type: "Identifier",
+            value: "arg2",
             range: [631, 635],
             loc: {
                 start: {
@@ -8016,8 +8016,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [635, 636],
             loc: {
                 start: {
@@ -8031,8 +8031,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [637, 638],
             loc: {
                 start: {
@@ -8046,8 +8046,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [638, 639],
             loc: {
                 start: {
@@ -8061,8 +8061,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [639, 640],
             loc: {
                 start: {
@@ -8076,8 +8076,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [641, 645],
             loc: {
                 start: {
@@ -8091,8 +8091,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [646, 648],
             loc: {
                 start: {
@@ -8106,8 +8106,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [649, 650],
             loc: {
                 start: {
@@ -8121,8 +8121,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [650, 651],
             loc: {
                 start: {
@@ -8136,8 +8136,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [651, 652],
             loc: {
                 start: {
@@ -8151,8 +8151,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [652, 653],
             loc: {
                 start: {
@@ -8166,8 +8166,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [653, 654],
             loc: {
                 start: {
@@ -8181,8 +8181,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [654, 655],
             loc: {
                 start: {
@@ -8196,8 +8196,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [660, 663],
             loc: {
                 start: {
@@ -8211,8 +8211,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [663, 664],
             loc: {
                 start: {
@@ -8226,8 +8226,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [665, 666],
             loc: {
                 start: {
@@ -8241,8 +8241,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [667, 672],
             loc: {
                 start: {
@@ -8256,8 +8256,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [673, 674],
             loc: {
                 start: {
@@ -8271,8 +8271,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [674, 677],
             loc: {
                 start: {
@@ -8286,8 +8286,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [677, 678],
             loc: {
                 start: {
@@ -8301,8 +8301,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [679, 680],
             loc: {
                 start: {
@@ -8316,8 +8316,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [680, 681],
             loc: {
                 start: {
@@ -8331,8 +8331,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg2',
+            type: "Identifier",
+            value: "arg2",
             range: [682, 686],
             loc: {
                 start: {
@@ -8346,8 +8346,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [686, 687],
             loc: {
                 start: {
@@ -8361,8 +8361,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [688, 689],
             loc: {
                 start: {
@@ -8376,8 +8376,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [689, 690],
             loc: {
                 start: {
@@ -8391,8 +8391,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [690, 691],
             loc: {
                 start: {
@@ -8406,8 +8406,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [692, 696],
             loc: {
                 start: {
@@ -8421,8 +8421,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [697, 699],
             loc: {
                 start: {
@@ -8436,8 +8436,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [700, 701],
             loc: {
                 start: {
@@ -8451,8 +8451,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [701, 702],
             loc: {
                 start: {
@@ -8466,8 +8466,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [702, 703],
             loc: {
                 start: {
@@ -8481,8 +8481,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [703, 704],
             loc: {
                 start: {
@@ -8496,8 +8496,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [704, 705],
             loc: {
                 start: {
@@ -8511,8 +8511,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [706, 707],
             loc: {
                 start: {
@@ -8526,8 +8526,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [707, 708],
             loc: {
                 start: {
@@ -8541,8 +8541,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'key',
+            type: "Identifier",
+            value: "key",
             range: [713, 716],
             loc: {
                 start: {
@@ -8556,8 +8556,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [716, 717],
             loc: {
                 start: {
@@ -8571,8 +8571,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [718, 719],
             loc: {
                 start: {
@@ -8586,8 +8586,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'async',
+            type: "Identifier",
+            value: "async",
             range: [720, 725],
             loc: {
                 start: {
@@ -8601,8 +8601,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [726, 727],
             loc: {
                 start: {
@@ -8616,8 +8616,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg',
+            type: "Identifier",
+            value: "arg",
             range: [727, 730],
             loc: {
                 start: {
@@ -8631,8 +8631,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [730, 731],
             loc: {
                 start: {
@@ -8646,8 +8646,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [732, 733],
             loc: {
                 start: {
@@ -8661,8 +8661,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [733, 734],
             loc: {
                 start: {
@@ -8676,8 +8676,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'arg2',
+            type: "Identifier",
+            value: "arg2",
             range: [735, 739],
             loc: {
                 start: {
@@ -8691,8 +8691,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [739, 740],
             loc: {
                 start: {
@@ -8706,8 +8706,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 't',
+            type: "Identifier",
+            value: "t",
             range: [741, 742],
             loc: {
                 start: {
@@ -8721,8 +8721,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [742, 743],
             loc: {
                 start: {
@@ -8736,8 +8736,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ':',
+            type: "Punctuator",
+            value: ":",
             range: [743, 744],
             loc: {
                 start: {
@@ -8751,8 +8751,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [745, 746],
             loc: {
                 start: {
@@ -8766,8 +8766,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Keyword',
-            value: 'void',
+            type: "Keyword",
+            value: "void",
             range: [746, 750],
             loc: {
                 start: {
@@ -8781,8 +8781,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [750, 751],
             loc: {
                 start: {
@@ -8796,8 +8796,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '=>',
+            type: "Punctuator",
+            value: "=>",
             range: [752, 754],
             loc: {
                 start: {
@@ -8811,8 +8811,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '{',
+            type: "Punctuator",
+            value: "{",
             range: [755, 756],
             loc: {
                 start: {
@@ -8826,8 +8826,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Identifier',
-            value: 'x',
+            type: "Identifier",
+            value: "x",
             range: [756, 757],
             loc: {
                 start: {
@@ -8841,8 +8841,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '(',
+            type: "Punctuator",
+            value: "(",
             range: [757, 758],
             loc: {
                 start: {
@@ -8856,8 +8856,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [758, 759],
             loc: {
                 start: {
@@ -8871,8 +8871,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [759, 760],
             loc: {
                 start: {
@@ -8886,8 +8886,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ')',
+            type: "Punctuator",
+            value: ")",
             range: [761, 762],
             loc: {
                 start: {
@@ -8901,8 +8901,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: ',',
+            type: "Punctuator",
+            value: ",",
             range: [762, 763],
             loc: {
                 start: {
@@ -8916,8 +8916,8 @@ exports.parse = () => ({
             },
         },
         {
-            type: 'Punctuator',
-            value: '}',
+            type: "Punctuator",
+            value: "}",
             range: [764, 765],
             loc: {
                 start: {

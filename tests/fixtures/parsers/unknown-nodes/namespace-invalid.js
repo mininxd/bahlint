@@ -12,7 +12,6 @@
  *  }
  */
 
-
 exports.parse = () => ({
     "type": "Program",
     "range": [

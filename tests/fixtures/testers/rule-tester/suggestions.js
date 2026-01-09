@@ -11,7 +11,7 @@ module.exports.basic = {
                         message: "Avoid using identifiers named 'foo'.",
                         suggest: [{
                             desc: "Rename identifier 'foo' to 'bar'",
-                            fix: fixer => fixer.replaceText(node, 'bar')
+                            fix: fixer => fixer.replaceText(node, "bar")
                         }]
                     });
                 }
@@ -158,7 +158,7 @@ module.exports.withoutHasSuggestionsProperty = {
                 context.report({
                     node,
                     message: "some message",
-                    suggest: [{ desc: "some suggestion", fix: fixer => fixer.replaceText(node, 'bar') }]
+                    suggest: [{ desc: "some suggestion", fix: fixer => fixer.replaceText(node, "bar") }]
                 });
             }
         };
@@ -176,7 +176,7 @@ module.exports.withFixerWithoutChanges = {
                         message: "Avoid using identifiers named 'foo'.",
                         suggest: [{
                             desc: "Rename identifier 'foo' to 'bar'",
-                            fix: fixer => fixer.replaceText(node, 'foo')
+                            fix: fixer => fixer.replaceText(node, "foo")
                         }]
                     });
                 }

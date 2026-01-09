@@ -6,7 +6,7 @@ s1_5->s1_6->s1_8->final;
 */
 
 try {
-    for (let x of obj.xs) {
+    for (const x of obj.xs) {
     }
 } catch (err) {
 }

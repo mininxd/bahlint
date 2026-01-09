@@ -4,7 +4,7 @@ s1_3->s1_9;
 s1_6->s1_8->s1_2;
 s1_7->s1_8->s1_9->final;
 */
-for (var a of []) 
+for (var a of [])
     for (var b of [])
         foo;
 

@@ -5,7 +5,7 @@ const vk = require("eslint-visitor-keys");
 const KEYS = vk.unionWith({
     ClassDeclaration: ["experimentalDecorators"],
     ClassExpression: ["experimentalDecorators"]
-})
+});
 
 exports.parseForESLint = (code, options) => {
     assert(code === "@foo class A {}");

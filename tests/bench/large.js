@@ -6790,7 +6790,7 @@ if (typeof window === "undefined") window = {};
 									throw er; // Unhandled 'error' event
 								} else {
 									throw TypeError(
-										'Uncaught, unspecified "error" event.',
+										"Uncaught, unspecified \"error\" event.",
 									);
 								}
 								return false;
@@ -7557,7 +7557,7 @@ if (typeof window === "undefined") window = {};
 								JSON.stringify(value)
 									.replace(/^"|"$/g, "")
 									.replace(/'/g, "\\'")
-									.replace(/\\"/g, '"') +
+									.replace(/\\"/g, "\"") +
 								"'";
 							return ctx.stylize(simple, "string");
 						}
@@ -7686,7 +7686,7 @@ if (typeof window === "undefined") window = {};
 							} else {
 								name = name
 									.replace(/'/g, "\\'")
-									.replace(/\\"/g, '"')
+									.replace(/\\"/g, "\"")
 									.replace(/(^"|"$)/g, "'");
 								name = ctx.stylize(name, "string");
 							}
@@ -9386,7 +9386,7 @@ if (typeof window === "undefined") window = {};
 								"&": "&amp;",
 								"<": "&lt;",
 								">": "&gt;",
-								'"': "&quot;",
+								"\"": "&quot;",
 								"'": "&#x27;",
 								"/": "&#x2F;",
 							},
@@ -10401,11 +10401,11 @@ if (typeof window === "undefined") window = {};
 
 									if (
 										ch1 === ch2 &&
-										(ch1 === '"' || ch1 === "'")
+										(ch1 === "\"" || ch1 === "'")
 									) {
 										m = m
 											.substr(1, m.length - 2)
-											.replace('\\"', '"');
+											.replace("\\\"", "\"");
 									}
 
 									membersOnly[m] = false;
@@ -12474,7 +12474,7 @@ if (typeof window === "undefined") window = {};
 						delim("}").reach = true;
 						delim(")");
 						delim("]");
-						delim('"').reach = true;
+						delim("\"").reach = true;
 						delim("'").reach = true;
 						delim(";");
 						delim(":").reach = true;
@@ -13545,7 +13545,7 @@ if (typeof window === "undefined") window = {};
 							scope = Object.create(scope);
 
 							funct = functor(
-								name || '"' + anonname + '"',
+								name || "\"" + anonname + "\"",
 								state.tokens.next,
 								scope,
 								{
@@ -17445,7 +17445,7 @@ if (typeof window === "undefined") window = {};
 							var quote = this.peek();
 
 							// String must start with a quote.
-							if (quote !== '"' && quote !== "'") {
+							if (quote !== "\"" && quote !== "'") {
 								return null;
 							}
 
@@ -17459,7 +17459,7 @@ if (typeof window === "undefined") window = {};
 								},
 								checks,
 								function () {
-									return state.jsonMode && quote !== '"';
+									return state.jsonMode && quote !== "\"";
 								},
 							);
 
@@ -17671,8 +17671,8 @@ if (typeof window === "undefined") window = {};
 										case "\\":
 											char = "\\\\";
 											break;
-										case '"':
-											char = '\\"';
+										case "\"":
+											char = "\\\"";
 											break;
 										case "/":
 											break;
@@ -18400,7 +18400,7 @@ if (typeof window === "undefined") window = {};
 						E006: "Unexpected early end of program.",
 
 						// Strict mode
-						E007: 'Missing "use strict" statement.',
+						E007: "Missing \"use strict\" statement.",
 						E008: "Strict violation.",
 						E009: "Option 'validthis' can't be used in a global scope.",
 						E010: "'with' is not allowed in strict mode.",
@@ -18488,7 +18488,7 @@ if (typeof window === "undefined") window = {};
 						W031: "Do not use 'new' for side effects.",
 						W032: "Unnecessary semicolon.",
 						W033: "Missing semicolon.",
-						W034: 'Unnecessary directive "{a}".',
+						W034: "Unnecessary directive \"{a}\".",
 						W035: "Empty block.",
 						W036: "Unexpected /*member '{a}'.",
 						W037: "'{a}' is a statement label.",
@@ -18558,7 +18558,7 @@ if (typeof window === "undefined") window = {};
 						W094: "Unexpected comma.",
 						W095: "Expected a string and instead saw {a}.",
 						W096: "The '{a}' key may produce unexpected results.",
-						W097: 'Use the function form of "use strict".',
+						W097: "Use the function form of \"use strict\".",
 						W098: "'{a}' is defined but never used.",
 						W099: "Mixed spaces and tabs.",
 						W100: "This character may get silently deleted by one or more browsers.",
@@ -18808,7 +18808,7 @@ if (typeof window === "undefined") window = {};
 
 							// If quotmark is set to 'double' warn about all single-quotes.
 
-							if (quotmark === "double" && data.quote !== '"') {
+							if (quotmark === "double" && data.quote !== "\"") {
 								code = "W108";
 							}
 

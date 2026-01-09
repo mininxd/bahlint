@@ -43,7 +43,7 @@ ruleTester.run("no-undef", rule, {
 			languageOptions: { globals: globals.browser },
 		},
 		{
-			code: 'require("a");',
+			code: "require(\"a\");",
 			languageOptions: { sourceType: "commonjs" },
 		},
 		"Object; isNaN();",
@@ -150,7 +150,7 @@ ruleTester.run("no-undef", rule, {
 
 		// export * as ns from "source"
 		{
-			code: 'export * as ns from "source"',
+			code: "export * as ns from \"source\"",
 			languageOptions: { ecmaVersion: 2020, sourceType: "module" },
 		},
 
@@ -319,7 +319,7 @@ ruleTester.run("no-undef", rule, {
 			],
 		},
 		{
-			code: 'require("a");',
+			code: "require(\"a\");",
 			errors: [
 				{
 					messageId: "undef",

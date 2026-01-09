@@ -27,7 +27,7 @@ ruleTester.run("no-useless-escape", rule, {
 	valid: [
 		"var foo = /\\./",
 		"var foo = /\\//g",
-		'var foo = /""/',
+		"var foo = /\"\"/",
 		"var foo = /''/",
 		"var foo = /([A-Z])\\t+/g",
 		"var foo = /([A-Z])\\n+/g",
@@ -40,14 +40,14 @@ ruleTester.run("no-useless-escape", rule, {
 		"var foo = /\\^\\+\\./",
 		"var foo = /\\|\\}\\{\\./",
 		"var foo = /]\\[\\(\\)\\//",
-		'var foo = "\\x123"',
-		'var foo = "\\u00a9"',
-		'var foo = "\\377"',
-		'var foo = "\\""',
-		'var foo = "xs\\u2111"',
-		'var foo = "foo \\\\ bar";',
-		'var foo = "\\t";',
-		'var foo = "foo \\b bar";',
+		"var foo = \"\\x123\"",
+		"var foo = \"\\u00a9\"",
+		"var foo = \"\\377\"",
+		"var foo = \"\\\"\"",
+		"var foo = \"xs\\u2111\"",
+		"var foo = \"foo \\\\ bar\";",
+		"var foo = \"\\t\";",
+		"var foo = \"foo \\b bar\";",
 		"var foo = '\\n';",
 		"var foo = 'foo \\r bar';",
 		"var foo = '\\v';",
@@ -55,7 +55,7 @@ ruleTester.run("no-useless-escape", rule, {
 		"var foo = '\\\n';",
 		"var foo = '\\\r\n';",
 		{
-			code: '<foo attr="\\d"/>',
+			code: "<foo attr=\"\\d\"/>",
 			languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
 		},
 		{
@@ -549,7 +549,7 @@ ruleTester.run("no-useless-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\\'";',
+			code: "var foo = \"\\'\";",
 			errors: [
 				{
 					line: 1,
@@ -559,18 +559,18 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "\'";',
+							output: "var foo = \"'\";",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "\\\\\'";',
+							output: "var foo = \"\\\\'\";",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'var foo = "\\#/";',
+			code: "var foo = \"\\#/\";",
 			errors: [
 				{
 					line: 1,
@@ -580,18 +580,18 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "#/";',
+							output: "var foo = \"#/\";",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "\\\\#/";',
+							output: "var foo = \"\\\\#/\";",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'var foo = "\\a"',
+			code: "var foo = \"\\a\"",
 			errors: [
 				{
 					line: 1,
@@ -601,18 +601,18 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "a"',
+							output: "var foo = \"a\"",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "\\\\a"',
+							output: "var foo = \"\\\\a\"",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'var foo = "\\B";',
+			code: "var foo = \"\\B\";",
 			errors: [
 				{
 					line: 1,
@@ -622,18 +622,18 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "B";',
+							output: "var foo = \"B\";",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "\\\\B";',
+							output: "var foo = \"\\\\B\";",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'var foo = "\\@";',
+			code: "var foo = \"\\@\";",
 			errors: [
 				{
 					line: 1,
@@ -643,18 +643,18 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "@";',
+							output: "var foo = \"@\";",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "\\\\@";',
+							output: "var foo = \"\\\\@\";",
 						},
 					],
 				},
 			],
 		},
 		{
-			code: 'var foo = "foo \\a bar";',
+			code: "var foo = \"foo \\a bar\";",
 			errors: [
 				{
 					line: 1,
@@ -664,11 +664,11 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "foo a bar";',
+							output: "var foo = \"foo a bar\";",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "foo \\\\a bar";',
+							output: "var foo = \"foo \\\\a bar\";",
 						},
 					],
 				},
@@ -681,7 +681,7 @@ ruleTester.run("no-useless-escape", rule, {
 					line: 1,
 					column: 12,
 					endColumn: 13,
-					message: 'Unnecessary escape character: \\".',
+					message: "Unnecessary escape character: \\\".",
 					suggestions: [
 						{
 							messageId: "removeEscape",
@@ -812,7 +812,7 @@ ruleTester.run("no-useless-escape", rule, {
 			],
 		},
 		{
-			code: '<foo attr={"\\d"}/>',
+			code: "<foo attr={\"\\d\"}/>",
 			languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
 			errors: [
 				{
@@ -823,11 +823,11 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: '<foo attr={"d"}/>',
+							output: "<foo attr={\"d\"}/>",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: '<foo attr={"\\\\d"}/>',
+							output: "<foo attr={\"\\\\d\"}/>",
 						},
 					],
 				},
@@ -855,22 +855,22 @@ ruleTester.run("no-useless-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = `\\"`;',
+			code: "var foo = `\\\"`;",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
 					line: 1,
 					column: 12,
 					endColumn: 13,
-					message: 'Unnecessary escape character: \\".',
+					message: "Unnecessary escape character: \\\".",
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = `"`;',
+							output: "var foo = `\"`;",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = `\\\\"`;',
+							output: "var foo = `\\\\\"`;",
 						},
 					],
 				},
@@ -958,22 +958,22 @@ ruleTester.run("no-useless-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = `\\"${foo}\\"`;',
+			code: "var foo = `\\\"${foo}\\\"`;",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{
 					line: 1,
 					column: 12,
 					endColumn: 13,
-					message: 'Unnecessary escape character: \\".',
+					message: "Unnecessary escape character: \\\".",
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = `"${foo}\\"`;',
+							output: "var foo = `\"${foo}\\\"`;",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = `\\\\"${foo}\\"`;',
+							output: "var foo = `\\\\\"${foo}\\\"`;",
 						},
 					],
 				},
@@ -981,15 +981,15 @@ ruleTester.run("no-useless-escape", rule, {
 					line: 1,
 					column: 20,
 					endColumn: 21,
-					message: 'Unnecessary escape character: \\".',
+					message: "Unnecessary escape character: \\\".",
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = `\\"${foo}"`;',
+							output: "var foo = `\\\"${foo}\"`;",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = `\\"${foo}\\\\"`;',
+							output: "var foo = `\\\"${foo}\\\\\"`;",
 						},
 					],
 				},
@@ -2385,7 +2385,7 @@ ruleTester.run("no-useless-escape", rule, {
 			],
 		},
 		{
-			code: 'var foo = "\\#/";',
+			code: "var foo = \"\\#/\";",
 			options: [{ allowRegexCharacters: ["#"] }],
 			errors: [
 				{
@@ -2396,11 +2396,11 @@ ruleTester.run("no-useless-escape", rule, {
 					suggestions: [
 						{
 							messageId: "removeEscape",
-							output: 'var foo = "#/";',
+							output: "var foo = \"#/\";",
 						},
 						{
 							messageId: "escapeBackslash",
-							output: 'var foo = "\\\\#/";',
+							output: "var foo = \"\\\\#/\";",
 						},
 					],
 				},

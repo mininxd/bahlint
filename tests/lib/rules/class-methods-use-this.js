@@ -63,7 +63,7 @@ ruleTester.run("class-methods-use-this", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'class A { "foo"() { } }',
+			code: "class A { \"foo\"() { } }",
 			options: [{ exceptMethods: ["foo"] }],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -456,7 +456,7 @@ ruleTesterTypeScript.run("class-methods-use-this", rule, {
 			options: [{ exceptMethods: ["bar"] }],
 		},
 		{
-			code: 'class A { "foo"() { } }',
+			code: "class A { \"foo\"() { } }",
 			options: [{ exceptMethods: ["foo"] }],
 		},
 		{ code: "class A { 42() { } }", options: [{ exceptMethods: ["42"] }] },

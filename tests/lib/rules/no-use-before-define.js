@@ -66,11 +66,11 @@ ruleTester.run("no-use-before-define", rule, {
 
 		// Block-level bindings
 		{
-			code: '"use strict"; a(); { function a() {} }',
+			code: "\"use strict\"; a(); { function a() {} }",
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: '"use strict"; { a(); function a() {} }',
+			code: "\"use strict\"; { a(); function a() {} }",
 			options: ["nofunc"],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -89,7 +89,7 @@ ruleTester.run("no-use-before-define", rule, {
 			options: [{ functions: false }],
 		},
 		{
-			code: '"use strict"; { a(); function a() {} }',
+			code: "\"use strict\"; { a(); function a() {} }",
 			options: [{ functions: false }],
 			languageOptions: { ecmaVersion: 6 },
 		},
@@ -546,7 +546,7 @@ ruleTester.run("no-use-before-define", rule, {
 			],
 		},
 		{
-			code: '"use strict"; a(); { function a() {} }',
+			code: "\"use strict\"; a(); { function a() {} }",
 			errors: [
 				{
 					messageId: "usedBeforeDefined",
@@ -626,7 +626,7 @@ ruleTester.run("no-use-before-define", rule, {
 			],
 		},
 		{
-			code: '"use strict"; { a(); function a() {} }',
+			code: "\"use strict\"; { a(); function a() {} }",
 			languageOptions: { ecmaVersion: 6 },
 			errors: [
 				{

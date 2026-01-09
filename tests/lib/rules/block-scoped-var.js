@@ -50,11 +50,11 @@ ruleTester.run("block-scoped-var", rule, {
 		"for (var i = 0; i < 10; i++) { i; }",
 		"var i; for(i; i; i) { i; }",
 		{
-			code: 'function myFunc(foo) {  "use strict";  var { bar } = foo;  bar.hello();}',
+			code: "function myFunc(foo) {  \"use strict\";  var { bar } = foo;  bar.hello();}",
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'function myFunc(foo) {  "use strict";  var [ bar ]  = foo;  bar.hello();}',
+			code: "function myFunc(foo) {  \"use strict\";  var [ bar ]  = foo;  bar.hello();}",
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
@@ -84,7 +84,7 @@ ruleTester.run("block-scoped-var", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		"function f(a) { return a.b; }",
-		'var a = { "foo": 3 };',
+		"var a = { \"foo\": 3 };",
 		"var a = { foo: 3 };",
 		"var a = { foo: 3, bar: 5 };",
 		"var a = { set foo(a){}, get bar(){} };",
@@ -99,7 +99,7 @@ ruleTester.run("block-scoped-var", rule, {
 		"foo: while (true) { bar: for (var i = 0; i < 13; ++i) {if (i === 7) break foo; } }",
 		"foo: while (true) { bar: for (var i = 0; i < 13; ++i) {if (i === 7) continue foo; } }",
 		{
-			code: 'const React = require("react/addons");const cx = React.addons.classSet;',
+			code: "const React = require(\"react/addons\");const cx = React.addons.classSet;",
 			languageOptions: {
 				ecmaVersion: 6,
 				sourceType: "module",
@@ -111,15 +111,15 @@ ruleTester.run("block-scoped-var", rule, {
 			languageOptions: { ecmaVersion: 6 },
 		},
 		{
-			code: 'import * as y from "./other.js"; y();',
+			code: "import * as y from \"./other.js\"; y();",
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 		},
 		{
-			code: 'import y from "./other.js"; y();',
+			code: "import y from \"./other.js\"; y();",
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 		},
 		{
-			code: 'import {x as y} from "./other.js"; y();',
+			code: "import {x as y} from \"./other.js\"; y();",
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 		},
 		{
@@ -131,11 +131,11 @@ ruleTester.run("block-scoped-var", rule, {
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 		},
 		{
-			code: 'export {x} from "./other.js";',
+			code: "export {x} from \"./other.js\";",
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 		},
 		{
-			code: 'export {x as v} from "./other.js";',
+			code: "export {x as v} from \"./other.js\";",
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
 		},
 		{
@@ -192,7 +192,7 @@ ruleTester.run("block-scoped-var", rule, {
 		},
 
 		// https://github.com/eslint/eslint/issues/2747
-		'function a(n) { return n > 0 ? b(n - 1) : "a"; } function b(n) { return n > 0 ? a(n - 1) : "b"; }',
+		"function a(n) { return n > 0 ? b(n - 1) : \"a\"; } function b(n) { return n > 0 ? a(n - 1) : \"b\"; }",
 
 		// https://github.com/eslint/eslint/issues/2967
 		"(function () { foo(); })(); function foo() {}",

@@ -3,7 +3,7 @@ initial->s1_1->s1_2->s1_4;
 s1_1->s1_3->s1_4->final;
 */
 
-x = { a: b ? c : d }
+x = { a: b ? c : d };
 
 /*DOT
 digraph {

@@ -1,1 +1,1 @@
-var msg = 'hi' + foo;
+var msg = "hi" + foo;

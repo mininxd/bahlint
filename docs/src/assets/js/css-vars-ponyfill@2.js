@@ -141,7 +141,7 @@
 			},
 			n = {
 				rootElement: e.rootElement || document,
-				include: e.include || 'style,link[rel="stylesheet"]',
+				include: e.include || "style,link[rel=\"stylesheet\"]",
 				exclude: e.exclude || null,
 				filter: e.filter || null,
 				useCSSOM: e.useCSSOM || !1,
@@ -788,9 +788,9 @@
 							return (
 								s ||
 									t.onWarning(
-										'variable "'.concat(
+										"variable \"".concat(
 											n,
-											'" is undefined',
+											"\" is undefined",
 										),
 									),
 								a && "undefined" !== a && a.length > 0
@@ -802,7 +802,7 @@
 				: n.pre + "(".concat(h(n.body, t), ")") + h(n.post, t)
 			: (-1 !== e.indexOf("var(") &&
 					t.onWarning(
-						'missing closing ")" in the value "'.concat(e, '"'),
+						"missing closing \")\" in the value \"".concat(e, "\""),
 					),
 				e);
 	}
@@ -946,9 +946,9 @@
 																	),
 																c =
 																	e.rootElement.querySelector(
-																		'[data-cssvars-group="'.concat(
+																		"[data-cssvars-group=\"".concat(
 																			a,
-																			'"]',
+																			"\"]",
 																		),
 																	);
 															o &&
@@ -995,8 +995,8 @@
 					((s.__benchmark = T()),
 					(s.exclude = [
 						O
-							? '[data-cssvars]:not([data-cssvars=""])'
-							: '[data-cssvars="out"]',
+							? "[data-cssvars]:not([data-cssvars=\"\"])"
+							: "[data-cssvars=\"out\"]",
 						s.exclude,
 					]
 						.filter(function (e) {
@@ -1026,15 +1026,15 @@
 						(Array.apply(
 							null,
 							s.rootElement.querySelectorAll(
-								'[data-cssvars="out"]',
+								"[data-cssvars=\"out\"]",
 							),
 						).forEach(function (e) {
 							var t = e.getAttribute("data-cssvars-group");
 							(t
 								? s.rootElement.querySelector(
-										'[data-cssvars="src"][data-cssvars-group="'.concat(
+										"[data-cssvars=\"src\"][data-cssvars-group=\"".concat(
 											t,
-											'"]',
+											"\"]",
 										),
 									)
 								: null) || e.parentNode.removeChild(e);
@@ -1042,7 +1042,7 @@
 						A)
 					) {
 						var i = s.rootElement.querySelectorAll(
-							'[data-cssvars]:not([data-cssvars="out"])',
+							"[data-cssvars]:not([data-cssvars=\"out\"])",
 						);
 						i.length < A && ((A = i.length), (w.dom = {}));
 					}
@@ -1247,9 +1247,9 @@
 																		),
 																	u =
 																		s.rootElement.querySelector(
-																			'[data-cssvars="out"][data-cssvars-group="'.concat(
+																			"[data-cssvars=\"out\"][data-cssvars-group=\"".concat(
 																				o,
-																				'"]',
+																				"\"]",
 																			),
 																		) ||
 																		document.createElement(
@@ -1341,7 +1341,7 @@
 														);
 											}),
 											(A = s.rootElement.querySelectorAll(
-												'[data-cssvars]:not([data-cssvars="out"])',
+												"[data-cssvars]:not([data-cssvars=\"out\"])",
 											).length),
 											s.shadowDOM)
 										)
@@ -1440,7 +1440,7 @@
 	function L(e) {
 		Array.apply(
 			null,
-			e.querySelectorAll('[data-cssvars="skip"],[data-cssvars="src"]'),
+			e.querySelectorAll("[data-cssvars=\"skip\"],[data-cssvars=\"src\"]"),
 		).forEach(function (e) {
 			return e.setAttribute("data-cssvars", "");
 		});

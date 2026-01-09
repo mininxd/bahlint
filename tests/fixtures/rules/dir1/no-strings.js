@@ -5,7 +5,7 @@ module.exports = {
         return {
 
             "Literal": function(node) {
-                if (typeof node.value === 'string') {
+                if (typeof node.value === "string") {
                     context.report(node, "String!");
                 }
 

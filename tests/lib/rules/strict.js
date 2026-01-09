@@ -67,7 +67,7 @@ ruleTester.run("strict", rule, {
 
 		// "global" mode
 		{ code: "// Intentionally empty", options: ["global"] },
-		{ code: '"use strict"; foo();', options: ["global"] },
+		{ code: "\"use strict\"; foo();", options: ["global"] },
 		{
 			code: "foo();",
 			options: ["global"],
@@ -288,7 +288,7 @@ ruleTester.run("strict", rule, {
 	invalid: [
 		// "never" mode
 		{
-			code: '"use strict"; foo();',
+			code: "\"use strict\"; foo();",
 			output: null,
 			options: ["never"],
 			errors: [
@@ -341,7 +341,7 @@ ruleTester.run("strict", rule, {
 			],
 		},
 		{
-			code: '"use strict"; foo();',
+			code: "\"use strict\"; foo();",
 			output: " foo();",
 			options: ["never"],
 			languageOptions: { ecmaVersion: 6, sourceType: "module" },
@@ -734,7 +734,7 @@ ruleTester.run("strict", rule, {
 
 		// Classes
 		{
-			code: 'class A { constructor() { "use strict"; } }',
+			code: "class A { constructor() { \"use strict\"; } }",
 			output: "class A { constructor() {  } }",
 			options: ["function"],
 			languageOptions: { ecmaVersion: 6 },
@@ -745,7 +745,7 @@ ruleTester.run("strict", rule, {
 			],
 		},
 		{
-			code: 'class A { foo() { "use strict"; } }',
+			code: "class A { foo() { \"use strict\"; } }",
 			output: "class A { foo() {  } }",
 			options: ["function"],
 			languageOptions: { ecmaVersion: 6 },
@@ -756,7 +756,7 @@ ruleTester.run("strict", rule, {
 			],
 		},
 		{
-			code: 'class A { foo() { function bar() { "use strict"; } } }',
+			code: "class A { foo() { function bar() { \"use strict\"; } } }",
 			output: "class A { foo() { function bar() {  } } }",
 			options: ["function"],
 			languageOptions: { ecmaVersion: 6 },
@@ -767,7 +767,7 @@ ruleTester.run("strict", rule, {
 			],
 		},
 		{
-			code: 'class A { field = () => { "use strict"; } }',
+			code: "class A { field = () => { \"use strict\"; } }",
 			output: "class A { field = () => {  } }",
 			options: ["function"],
 			languageOptions: { ecmaVersion: 2022 },
@@ -778,7 +778,7 @@ ruleTester.run("strict", rule, {
 			],
 		},
 		{
-			code: 'class A { field = function() { "use strict"; } }',
+			code: "class A { field = function() { \"use strict\"; } }",
 			output: "class A { field = function() {  } }",
 			options: ["function"],
 			languageOptions: { ecmaVersion: 2022 },

@@ -1,6 +1,6 @@
 {
   "name": "bahlint",
-  "version": "28.58.69340003",
+  "version": "28.58.6934-dev-003",
   "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
   "description": "An AST-based pattern checker for JavaScript.",
   "type": "commonjs",

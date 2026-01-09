@@ -53,9 +53,9 @@ ruleTester.run("no-warning-comments", rule, {
 			code: "// special regex characters don't cause a problem",
 			options: [{ terms: ["[aeiou]"], location: "anywhere" }],
 		},
-		'/*eslint no-warning-comments: [2, { "terms": ["todo", "fixme", "any other term"], "location": "anywhere" }]*/\n\nvar x = 10;\n',
+		"/*eslint no-warning-comments: [2, { \"terms\": [\"todo\", \"fixme\", \"any other term\"], \"location\": \"anywhere\" }]*/\n\nvar x = 10;\n",
 		{
-			code: '/*eslint no-warning-comments: [2, { "terms": ["todo", "fixme", "any other term"], "location": "anywhere" }]*/\n\nvar x = 10;\n',
+			code: "/*eslint no-warning-comments: [2, { \"terms\": [\"todo\", \"fixme\", \"any other term\"], \"location\": \"anywhere\" }]*/\n\nvar x = 10;\n",
 			options: [{ location: "anywhere" }],
 		},
 		{ code: "// foo", options: [{ terms: ["foo-bar"] }] },

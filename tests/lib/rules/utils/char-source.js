@@ -10,12 +10,12 @@ describe("parseStringLiteral", () => {
 	const TESTS = [
 		{
 			description: "works with an empty string",
-			source: '""',
+			source: "\"\"",
 			expectedCodeUnits: [],
 		},
 		{
 			description: "works with surrogate pairs",
-			source: '"a𝄞z"',
+			source: "\"a𝄞z\"",
 			expectedCodeUnits: [
 				{ start: 1, source: "a" },
 				{ start: 2, source: "\ud834" },
@@ -25,7 +25,7 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with escape sequences for single characters",
-			source: '"a\\x40\\u231Bz"',
+			source: "\"a\\x40\\u231Bz\"",
 			expectedCodeUnits: [
 				{ start: 1, source: "a" },
 				{ start: 2, source: "\\x40" },
@@ -35,7 +35,7 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with escape sequences for code points",
-			source: '"a\\u{ffff}\\u{10000}\\u{10ffff}z"',
+			source: "\"a\\u{ffff}\\u{10000}\\u{10ffff}z\"",
 			expectedCodeUnits: [
 				{ start: 1, source: "a" },
 				{ start: 2, source: "\\u{ffff}" },
@@ -48,7 +48,7 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with line continuations",
-			source: '"a\\\n\\\r\n\\\u2028\\\u2029z"',
+			source: "\"a\\\n\\\r\n\\\u2028\\\u2029z\"",
 			expectedCodeUnits: [
 				{ start: 1, source: "a" },
 				{ start: 11, source: "z" },
@@ -56,9 +56,9 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with simple escape sequences",
-			source: '"\\"\\0\\b\\f\\n\\r\\t\\v"',
+			source: "\"\\\"\\0\\b\\f\\n\\r\\t\\v\"",
 			expectedCodeUnits: [
-				'\\"',
+				"\\\"",
 				"\\0",
 				"\\b",
 				"\\f",
@@ -71,7 +71,7 @@ describe("parseStringLiteral", () => {
 		{
 			description:
 				"works with a <LS> character outside of a line continuation",
-			source: '"a\u2028z"',
+			source: "\"a\u2028z\"",
 			expectedCodeUnits: [
 				{ start: 1, source: "a" },
 				{ start: 2, source: "\u2028" },
@@ -81,7 +81,7 @@ describe("parseStringLiteral", () => {
 		{
 			description:
 				"works with a <PS> character outside of a line continuation",
-			source: '"a\u2029z"',
+			source: "\"a\u2029z\"",
 			expectedCodeUnits: [
 				{ start: 1, source: "a" },
 				{ start: 2, source: "\u2029" },
@@ -90,7 +90,7 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with octal escape sequences",
-			source: '"\\0123\\456"',
+			source: "\"\\0123\\456\"",
 			expectedCodeUnits: [
 				{ source: "\\012", start: 1 },
 				{ source: "3", start: 5 },
@@ -100,27 +100,27 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with an escaped 7",
-			source: '"\\7"',
+			source: "\"\\7\"",
 			expectedCodeUnits: [{ source: "\\7", start: 1 }],
 		},
 		{
 			description: "works with an escaped 8",
-			source: '"\\8"',
+			source: "\"\\8\"",
 			expectedCodeUnits: [{ source: "\\8", start: 1 }],
 		},
 		{
 			description: "works with an escaped 9",
-			source: '"\\9"',
+			source: "\"\\9\"",
 			expectedCodeUnits: [{ source: "\\9", start: 1 }],
 		},
 		{
-			description: 'works with the escaped sequence "00"',
-			source: '"\\00"',
+			description: "works with the escaped sequence \"00\"",
+			source: "\"\\00\"",
 			expectedCodeUnits: [{ source: "\\00", start: 1 }],
 		},
 		{
 			description: "works with an escaped 0 followed by 8",
-			source: '"\\08"',
+			source: "\"\\08\"",
 			expectedCodeUnits: [
 				{ source: "\\0", start: 1 },
 				{ source: "8", start: 3 },
@@ -128,7 +128,7 @@ describe("parseStringLiteral", () => {
 		},
 		{
 			description: "works with an escaped 0 followed by 9",
-			source: '"\\09"',
+			source: "\"\\09\"",
 			expectedCodeUnits: [
 				{ source: "\\0", start: 1 },
 				{ source: "9", start: 3 },

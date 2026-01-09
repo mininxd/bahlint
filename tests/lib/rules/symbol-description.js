@@ -25,8 +25,8 @@ const ruleTester = new RuleTester({
 
 ruleTester.run("symbol-description", rule, {
 	valid: [
-		'Symbol("Foo");',
-		'var foo = "foo"; Symbol(foo);',
+		"Symbol(\"Foo\");",
+		"var foo = \"foo\"; Symbol(foo);",
 
 		// Ignore if it's shadowed.
 		"var Symbol = function () {}; Symbol();",

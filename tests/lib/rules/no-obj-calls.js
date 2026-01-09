@@ -165,7 +165,7 @@ ruleTester.run("no-obj-calls", rule, {
 			languageOptions: { globals: { Atomics: false } },
 		},
 		{
-			code: 'var construct = typeof Reflect !== "undefined" ? Reflect.construct : undefined; construct();',
+			code: "var construct = typeof Reflect !== \"undefined\" ? Reflect.construct : undefined; construct();",
 			languageOptions: { globals: { Reflect: false } },
 		},
 		{

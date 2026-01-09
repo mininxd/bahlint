@@ -7,7 +7,7 @@ initial->s2_1->final;
 /*expected
 initial->s1_1->final;
 */
-class Foo { static { (p) => {} } }
+class Foo { static { (p) => {}; } }
 
 /*DOT
 digraph {

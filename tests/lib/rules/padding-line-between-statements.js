@@ -227,14 +227,14 @@ ruleTester.run("padding-line-between-statements", rule, {
 		//----------------------------------------------------------------------
 
 		{
-			code: 'foo=require("foo")\nfoo()',
+			code: "foo=require(\"foo\")\nfoo()",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "cjs-import", next: "*" },
 			],
 		},
 		{
-			code: 'const foo=a.require("foo")\nfoo()',
+			code: "const foo=a.require(\"foo\")\nfoo()",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "cjs-import", next: "*" },
@@ -246,28 +246,28 @@ ruleTester.run("padding-line-between-statements", rule, {
 		//----------------------------------------------------------------------
 
 		{
-			code: '"use strict"\n\nfoo()',
+			code: "\"use strict\"\n\nfoo()",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
 			],
 		},
 		{
-			code: 'function foo(){"use strict"\n\nfoo()}',
+			code: "function foo(){\"use strict\"\n\nfoo()}",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
 			],
 		},
 		{
-			code: '(function foo(){"use strict"\n\nfoo()})',
+			code: "(function foo(){\"use strict\"\n\nfoo()})",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
 			],
 		},
 		{
-			code: '(()=>{"use strict"\n\nfoo()})',
+			code: "(()=>{\"use strict\"\n\nfoo()})",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
@@ -281,7 +281,7 @@ ruleTester.run("padding-line-between-statements", rule, {
 			],
 		},
 		{
-			code: 'foo("use strict")\nfoo()',
+			code: "foo(\"use strict\")\nfoo()",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
@@ -295,7 +295,7 @@ ruleTester.run("padding-line-between-statements", rule, {
 			],
 		},
 		{
-			code: '("use strict")\nfoo()',
+			code: "(\"use strict\")\nfoo()",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
@@ -309,14 +309,14 @@ ruleTester.run("padding-line-between-statements", rule, {
 			],
 		},
 		{
-			code: 'foo()\n"use strict"\nfoo()',
+			code: "foo()\n\"use strict\"\nfoo()",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
 			],
 		},
 		{
-			code: '{"use strict"\nfoo()}',
+			code: "{\"use strict\"\nfoo()}",
 			options: [
 				{ blankLine: "never", prev: "*", next: "*" },
 				{ blankLine: "always", prev: "directive", next: "*" },
@@ -3485,26 +3485,26 @@ ruleTester.run("padding-line-between-statements", rule, {
 		//----------------------------------------------------------------------
 
 		{
-			code: 'const foo=require("foo")\n\nfoo()',
-			output: 'const foo=require("foo")\nfoo()',
+			code: "const foo=require(\"foo\")\n\nfoo()",
+			output: "const foo=require(\"foo\")\nfoo()",
 			options: [{ blankLine: "never", prev: "cjs-import", next: "*" }],
 			errors: [{ messageId: "unexpectedBlankLine" }],
 		},
 		{
-			code: 'const foo=require("foo")\nfoo()',
-			output: 'const foo=require("foo")\n\nfoo()',
+			code: "const foo=require(\"foo\")\nfoo()",
+			output: "const foo=require(\"foo\")\n\nfoo()",
 			options: [{ blankLine: "always", prev: "cjs-import", next: "*" }],
 			errors: [{ messageId: "expectedBlankLine" }],
 		},
 		{
-			code: 'const foo=require("foo").Foo\nfoo()',
-			output: 'const foo=require("foo").Foo\n\nfoo()',
+			code: "const foo=require(\"foo\").Foo\nfoo()",
+			output: "const foo=require(\"foo\").Foo\n\nfoo()",
 			options: [{ blankLine: "always", prev: "cjs-import", next: "*" }],
 			errors: [{ messageId: "expectedBlankLine" }],
 		},
 		{
-			code: 'const foo=require("foo")[a]\nfoo()',
-			output: 'const foo=require("foo")[a]\n\nfoo()',
+			code: "const foo=require(\"foo\")[a]\nfoo()",
+			output: "const foo=require(\"foo\")[a]\n\nfoo()",
 			options: [{ blankLine: "always", prev: "cjs-import", next: "*" }],
 			errors: [{ messageId: "expectedBlankLine" }],
 		},
@@ -3514,14 +3514,14 @@ ruleTester.run("padding-line-between-statements", rule, {
 		//----------------------------------------------------------------------
 
 		{
-			code: '"use strict"\n\nfoo()',
-			output: '"use strict"\nfoo()',
+			code: "\"use strict\"\n\nfoo()",
+			output: "\"use strict\"\nfoo()",
 			options: [{ blankLine: "never", prev: "directive", next: "*" }],
 			errors: [{ messageId: "unexpectedBlankLine" }],
 		},
 		{
-			code: '"use strict"\nfoo()',
-			output: '"use strict"\n\nfoo()',
+			code: "\"use strict\"\nfoo()",
+			output: "\"use strict\"\n\nfoo()",
 			options: [{ blankLine: "always", prev: "directive", next: "*" }],
 			errors: [{ messageId: "expectedBlankLine" }],
 		},
@@ -5411,8 +5411,8 @@ ruleTester.run("padding-line-between-statements", rule, {
 			errors: [{ messageId: "unexpectedBlankLine" }],
 		},
 		{
-			code: 'function x() { var y = true;\n\nswitch ("Oranges") { case "Oranges": y = !y;\n\nbreak;\n\ncase "Apples": y = !y;\n\nbreak; default: y = !y; } }',
-			output: 'function x() { var y = true;\nswitch ("Oranges") { case "Oranges": y = !y;\nbreak;\ncase "Apples": y = !y;\nbreak; default: y = !y; } }',
+			code: "function x() { var y = true;\n\nswitch (\"Oranges\") { case \"Oranges\": y = !y;\n\nbreak;\n\ncase \"Apples\": y = !y;\n\nbreak; default: y = !y; } }",
+			output: "function x() { var y = true;\nswitch (\"Oranges\") { case \"Oranges\": y = !y;\nbreak;\ncase \"Apples\": y = !y;\nbreak; default: y = !y; } }",
 			options: [
 				{
 					blankLine: "never",
@@ -5599,8 +5599,8 @@ ruleTester.run("padding-line-between-statements", rule, {
 			errors: [{ messageId: "expectedBlankLine" }],
 		},
 		{
-			code: 'function x() { var y = true; switch ("Oranges") { case "Oranges": y = !y; break; case "Apples": y = !y; break; default: y = !y; } }',
-			output: 'function x() { var y = true;\n\n switch ("Oranges") { case "Oranges": y = !y;\n\n break;\n\n case "Apples": y = !y;\n\n break;\n\n default: y = !y; } }',
+			code: "function x() { var y = true; switch (\"Oranges\") { case \"Oranges\": y = !y; break; case \"Apples\": y = !y; break; default: y = !y; } }",
+			output: "function x() { var y = true;\n\n switch (\"Oranges\") { case \"Oranges\": y = !y;\n\n break;\n\n case \"Apples\": y = !y;\n\n break;\n\n default: y = !y; } }",
 			options: [
 				{
 					blankLine: "always",

@@ -10,7 +10,7 @@ s3_1->s3_3->final;
 /*expected
 initial->s1_1->final;
 */
-class Foo { static { x || y || z } static { p || q } }
+class Foo { static { x || y || z; } static { p || q; } }
 
 /*DOT
 digraph {

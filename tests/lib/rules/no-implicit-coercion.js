@@ -78,8 +78,8 @@ ruleTester.run("no-implicit-coercion", rule, {
 		{ code: "-(-foo)", options: [{ number: false }] },
 		{ code: "foo - 0", options: [{ number: false }] },
 		{ code: "1*foo", options: [{ number: false }] },
-		{ code: '""+foo', options: [{ string: false }] },
-		{ code: 'foo += ""', options: [{ string: false }] },
+		{ code: "\"\"+foo", options: [{ string: false }] },
+		{ code: "foo += \"\"", options: [{ string: false }] },
 		{ code: "var a = !!foo", options: [{ boolean: true, allow: ["!!"] }] },
 		{
 			code: "var a = ~foo.indexOf(1)",
@@ -91,7 +91,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 		{ code: "foo - 0", options: [{ number: true, allow: ["-"] }] },
 		{ code: "var a = +foo", options: [{ boolean: true, allow: ["+"] }] },
 		{
-			code: 'var a = "" + foo',
+			code: "var a = \"\" + foo",
 			options: [{ boolean: true, string: true, allow: ["+"] }],
 		},
 
@@ -363,7 +363,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 			],
 		},
 		{
-			code: '""+foo',
+			code: "\"\"+foo",
 			output: null,
 			errors: [
 				{
@@ -398,7 +398,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 			],
 		},
 		{
-			code: 'foo+""',
+			code: "foo+\"\"",
 			output: null,
 			errors: [
 				{
@@ -433,7 +433,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 			],
 		},
 		{
-			code: '""+foo.bar',
+			code: "\"\"+foo.bar",
 			output: null,
 			errors: [
 				{
@@ -468,7 +468,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 			],
 		},
 		{
-			code: 'foo.bar+""',
+			code: "foo.bar+\"\"",
 			output: null,
 			errors: [
 				{
@@ -560,7 +560,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 			],
 		},
 		{
-			code: 'foo += ""',
+			code: "foo += \"\"",
 			output: null,
 			errors: [
 				{
@@ -653,7 +653,7 @@ ruleTester.run("no-implicit-coercion", rule, {
 			],
 		},
 		{
-			code: 'var a = "" + foo',
+			code: "var a = \"\" + foo",
 			output: null,
 			options: [{ boolean: true, allow: ["*"] }],
 			errors: [

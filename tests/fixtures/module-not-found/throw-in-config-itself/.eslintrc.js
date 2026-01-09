@@ -1,1 +1,1 @@
-require("eslint/lib/util/glob-utils")
+require("eslint/lib/util/glob-utils");

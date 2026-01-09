@@ -46,7 +46,7 @@ ruleTester.run("space-unary-ops", rule, {
 			options: [{ words: true }],
 		},
 		{
-			code: 'delete foo["bar"]',
+			code: "delete foo[\"bar\"]",
 			options: [{ words: true }],
 		},
 		{
@@ -270,8 +270,8 @@ ruleTester.run("space-unary-ops", rule, {
 			],
 		},
 		{
-			code: 'delete(foo["bar"]);',
-			output: 'delete (foo["bar"]);',
+			code: "delete(foo[\"bar\"]);",
+			output: "delete (foo[\"bar\"]);",
 			options: [{ words: true }],
 			errors: [
 				{

@@ -24,7 +24,7 @@ module.exports = {
 					const loc = {
 						column: 0,
 						line: 1,
-					}
+					};
 					context.report({ node, loc, messageId: "evalSucks" });
 				}
 			},

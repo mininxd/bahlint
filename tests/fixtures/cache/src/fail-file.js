@@ -1,2 +1,2 @@
-var abc = 'some value'
+var abc = "some value";
 console.log(foo);
