@@ -141,12 +141,33 @@ ${getErrorMessage(error)}`;
 	process.on("uncaughtException", onFatalError);
 	process.on("unhandledRejection", onFatalError);
 
+	// Import util for styleText
+	const util = require("node:util");
+
 	// Define ANSI color codes
 	const RED = "\x1b[31m";
 	const ORANGE = "\x1b[33m"; // or yellow
 	const GREEN = "\x1b[32m";
-	const GRAY = "\x1b[90m";
 	const RESET = "\x1b[0m"; // Reset to default color
+
+	// Helper function to create RGB color codes
+	function rgbColor(r, g, b) {
+		return `\x1b[38;2;${r};${g};${b}m`;
+	}
+
+	// Define gray colors using the exact hex values provided
+	// #959598 -> RGB(149, 149, 152)
+	// #9ca3af -> RGB(156, 163, 175)
+	const GRAY_HEX = "#959598";
+	const GRAY_ALT_HEX = "#9ca3af";
+
+	// Convert hex to RGB values
+	const GRAY_RGB = rgbColor(149, 149, 152);      // #959598
+	const GRAY_ALT_RGB = rgbColor(156, 163, 175);  // #9ca3af
+
+	// Define color functions that use the exact hex colors via RGB
+	const GRAY = text => `${GRAY_RGB}${text}${RESET}`;
+	const GRAY_ALT = text => `${GRAY_ALT_RGB}${text}${RESET}`;
 
 	// Show the custom startup message in red
 	const { version } = require("../package.json");
@@ -154,7 +175,8 @@ ${getErrorMessage(error)}`;
 
 	// Parse command line arguments to determine if we're running in fix mode
 	const args = process.argv.slice(2);
-	const isFixMode = args.includes("--fix") || args.some(arg => arg.startsWith("--fix="));
+	const isFixMode =
+		args.includes("--fix") || args.some(arg => arg.startsWith("--fix="));
 
 	/*
 	 * Create ESLint instance with the provided options
@@ -164,7 +186,7 @@ ${getErrorMessage(error)}`;
 	const configFilePath = "./bahlint.config.js";
 
 	const eslintOptions = {
-		fix: isFixMode
+		fix: isFixMode,
 	};
 
 	// Only use config file if it exists
@@ -180,8 +202,8 @@ ${getErrorMessage(error)}`;
 				sourceType: "module",
 				globals: {
 					console: "readonly",
-					process: "readonly"
-				}
+					process: "readonly",
+				},
 			},
 			rules: {
 				// Basic default rules, all fixable
@@ -191,10 +213,10 @@ ${getErrorMessage(error)}`;
 				"no-multiple-empty-lines": ["warn", { max: 1 }],
 				"eol-last": ["warn", "always"],
 				"no-trailing-spaces": "warn",
-				"semi": ["warn", "always"],
-				"quotes": ["warn", "double"],
-				"prefer-const": ["warn"]
-			}
+				semi: ["warn", "always"],
+				quotes: ["warn", "double"],
+				"prefer-const": ["warn"],
+			},
 		};
 	}
 
@@ -207,12 +229,20 @@ ${getErrorMessage(error)}`;
 	}
 
 	// Count errors and warnings
-	let errorCount, warningCount, fixableErrorCount, fixableWarningCount, totalProblems, totalFixable, filesWithIssues, fixedFiles, results;
+	let errorCount,
+		warningCount,
+		fixableErrorCount,
+		fixableWarningCount,
+		totalProblems,
+		totalFixable,
+		filesWithIssues,
+		fixedFiles,
+		results;
 
 	if (isFixMode) {
 		// First, run without fixing to count initial problems
 		const eslintOptionsNoFix = {
-			fix: false
+			fix: false,
 		};
 
 		// Only use config file if it exists
@@ -228,8 +258,8 @@ ${getErrorMessage(error)}`;
 					sourceType: "module",
 					globals: {
 						console: "readonly",
-						process: "readonly"
-					}
+						process: "readonly",
+					},
 				},
 				rules: {
 					// Basic default rules, all fixable
@@ -239,26 +269,42 @@ ${getErrorMessage(error)}`;
 					"no-multiple-empty-lines": ["warn", { max: 1 }],
 					"eol-last": ["warn", "always"],
 					"no-trailing-spaces": "warn",
-					"semi": ["warn", "always"],
-					"quotes": ["warn", "double"],
-					"prefer-const": ["warn"]
-				}
+					semi: ["warn", "always"],
+					quotes: ["warn", "double"],
+					"prefer-const": ["warn"],
+				},
 			};
 		}
 
 		const eslintNoFix = new ESLint(eslintOptionsNoFix);
 		const initialResults = await eslintNoFix.lintFiles(files);
-		errorCount = initialResults.reduce((sum, result) => sum + result.errorCount, 0);
-		warningCount = initialResults.reduce((sum, result) => sum + result.warningCount, 0);
-		fixableErrorCount = initialResults.reduce((sum, result) => sum + result.fixableErrorCount, 0);
-		fixableWarningCount = initialResults.reduce((sum, result) => sum + result.fixableWarningCount, 0);
+		errorCount = initialResults.reduce(
+			(sum, result) => sum + result.errorCount,
+			0,
+		);
+		warningCount = initialResults.reduce(
+			(sum, result) => sum + result.warningCount,
+			0,
+		);
+		fixableErrorCount = initialResults.reduce(
+			(sum, result) => sum + result.fixableErrorCount,
+			0,
+		);
+		fixableWarningCount = initialResults.reduce(
+			(sum, result) => sum + result.fixableWarningCount,
+			0,
+		);
 		totalProblems = errorCount + warningCount;
 		totalFixable = fixableErrorCount + fixableWarningCount;
-		filesWithIssues = initialResults.filter(result => result.messages.length > 0).length;
+		filesWithIssues = initialResults.filter(
+			result => result.messages.length > 0,
+		).length;
 
 		// Now run with fixing to apply fixes
 		results = await eslint.lintFiles(files);
-		fixedFiles = results.filter(result => typeof result.output === "string").length;
+		fixedFiles = results.filter(
+			result => typeof result.output === "string",
+		).length;
 
 		// Count actual fixes by running ESLint again on the fixed files
 		let actualFixedProblems = 0;
@@ -272,9 +318,16 @@ ${getErrorMessage(error)}`;
 					// If the file was fixed (has output property), count the difference in problems
 					if (typeof currentResult.output === "string") {
 						// Estimate the number of fixes by comparing initial vs final problems
-						const initialProblems = initialResult.errorCount + initialResult.warningCount;
-						const finalProblems = currentResult.errorCount + currentResult.warningCount;
-						actualFixedProblems += Math.max(0, initialProblems - finalProblems);
+						const initialProblems =
+							initialResult.errorCount +
+							initialResult.warningCount;
+						const finalProblems =
+							currentResult.errorCount +
+							currentResult.warningCount;
+						actualFixedProblems += Math.max(
+							0,
+							initialProblems - finalProblems,
+						);
 					}
 				}
 			}
@@ -288,29 +341,70 @@ ${getErrorMessage(error)}`;
 		// Output the results in the requested format with colors
 		if (totalProblems > 0) {
 			console.log(`${ORANGE}⚠ ${totalProblems} problems found${RESET}`);
-			if (actualFixedProblems > 0) {
-				console.log(`${GREEN}✓ Auto-fixed ${actualFixedProblems} problems in ${fixedFiles} file(s)${RESET}`);
-			} else if (fixedFiles > 0) {
-				// Fallback for suggestion-based fixes where fixable* counts stay 0
-				console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
+			if (actualFixedProblems > 0 || fixedFiles > 0) {
+				console.log(
+					`${GREEN}✓ Auto-fixed ${actualFixedProblems} problems in ${fixedFiles} file(s)${RESET}`,
+				);
+
+				// List the files that were fixed
+				if (fixedFiles > 0) {
+					const fixedFileNames = results
+						.filter(result => typeof result.output === "string")
+						.map(result => {
+							// Extract just the filename from the full path
+							const filePathParts = result.filePath.split('/');
+							return filePathParts[filePathParts.length - 1];
+						});
+
+					if (fixedFileNames.length > 0) {
+						console.log(GRAY_ALT(`   - ${fixedFileNames.join('\n- ')}`));
+					}
+				}
 			}
 		} else if (isFixMode && (actualFixedProblems > 0 || fixedFiles > 0)) {
-			if (actualFixedProblems > 0) {
-				console.log(`${GREEN}✓ Auto-fixed ${actualFixedProblems} problems in ${fixedFiles} file(s)${RESET}`);
-			} else {
-				console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
+			console.log(
+				`${GREEN}✓ Auto-fixed ${actualFixedProblems} problems in ${fixedFiles} file(s)${RESET}`,
+			);
+
+			// List the files that were fixed
+			if (fixedFiles > 0) {
+				const fixedFileNames = results
+					.filter(result => typeof result.output === "string")
+					.map(result => {
+						// Extract just the filename from the full path
+						const filePathParts = result.filePath.split('/');
+						return filePathParts[filePathParts.length - 1];
+					});
+
+				if (fixedFileNames.length > 0) {
+					console.log(`${GREEN}- ${fixedFileNames.join('\n- ')}${RESET}`);
+				}
 			}
 		}
 	} else {
 		// Regular mode without fixing
 		results = await eslint.lintFiles(files);
-		errorCount = results.reduce((sum, result) => sum + result.errorCount, 0);
-		warningCount = results.reduce((sum, result) => sum + result.warningCount, 0);
-		fixableErrorCount = results.reduce((sum, result) => sum + result.fixableErrorCount, 0);
-		fixableWarningCount = results.reduce((sum, result) => sum + result.fixableWarningCount, 0);
+		errorCount = results.reduce(
+			(sum, result) => sum + result.errorCount,
+			0,
+		);
+		warningCount = results.reduce(
+			(sum, result) => sum + result.warningCount,
+			0,
+		);
+		fixableErrorCount = results.reduce(
+			(sum, result) => sum + result.fixableErrorCount,
+			0,
+		);
+		fixableWarningCount = results.reduce(
+			(sum, result) => sum + result.fixableWarningCount,
+			0,
+		);
 		totalProblems = errorCount + warningCount;
 		totalFixable = fixableErrorCount + fixableWarningCount;
-		filesWithIssues = results.filter(result => result.messages.length > 0).length;
+		filesWithIssues = results.filter(
+			result => result.messages.length > 0,
+		).length;
 		fixedFiles = 0;
 
 		// Output the results in the requested format with colors
@@ -321,7 +415,9 @@ ${getErrorMessage(error)}`;
 
 	// Count files scanned (all files processed, not just those with issues)
 	const filesScanned = results.length;
-	console.log(`${GRAY}✓ ${filesScanned} file scanned in ${(Math.random() * 0.5 + 0.2).toFixed(2)}s${RESET}`);
+	console.log(
+		GRAY(`✓ ${filesScanned} file scanned in ${(Math.random() * 0.5 + 0.2).toFixed(2)}s`),
+	);
 
 	// Apply fixes if in fix mode
 	if (isFixMode) {
