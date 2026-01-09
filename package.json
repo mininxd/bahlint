@@ -1,11 +1,11 @@
 {
-  "name": "eslint",
-  "version": "10.0.0-beta.0",
+  "name": "bahlint",
+  "version": "28.58.6934",
   "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
   "description": "An AST-based pattern checker for JavaScript.",
   "type": "commonjs",
   "bin": {
-    "eslint": "./bin/eslint.js"
+    "bahlint": "./bin/eslint.js"
   },
   "main": "./lib/api.js",
   "types": "./lib/types/index.d.ts",
@@ -103,7 +103,7 @@
   ],
   "repository": "eslint/eslint",
   "funding": "https://eslint.org/donate",
-  "homepage": "https://eslint.org",
+  "homepage": "https://bahlint.vercel.app/",
   "bugs": "https://github.com/eslint/eslint/issues/",
   "dependencies": {
     "@eslint-community/eslint-utils": "^4.8.0",

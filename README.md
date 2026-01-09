@@ -1,13 +1,13 @@
-[![npm version](https://img.shields.io/npm/v/eslint.svg)](https://www.npmjs.com/package/eslint)
-[![Downloads](https://img.shields.io/npm/dm/eslint.svg)](https://www.npmjs.com/package/eslint)
-[![Build Status](https://github.com/eslint/eslint/workflows/CI/badge.svg)](https://github.com/eslint/eslint/actions)
+[![npm version](https://img.shields.io/npm/v/bahlint.svg)](https://www.npmjs.com/package/bahlint)
+[![Downloads](https://img.shields.io/npm/dm/bahlint.svg)](https://www.npmjs.com/package/bahlint)
+[![Build Status](https://github.com/bahlint/bahlint/workflows/CI/badge.svg)](https://github.com/bahlint/bahlint/actions)
 <br>
 [![Open Collective Backers](https://img.shields.io/opencollective/backers/eslint)](https://opencollective.com/eslint)
 [![Open Collective Sponsors](https://img.shields.io/opencollective/sponsors/eslint)](https://opencollective.com/eslint)
 
-# ESLint
+# Bahlint
 
-[Website](https://eslint.org) |
+[Website](https://bahlint.vercel.app/) |
 [Configure ESLint](https://eslint.org/docs/latest/use/configure) |
 [Rules](https://eslint.org/docs/rules/) |
 [Contribute to ESLint](https://eslint.org/docs/latest/contribute) |
@@ -18,11 +18,17 @@
 [Mastodon](https://fosstodon.org/@eslint) |
 [Bluesky](https://bsky.app/profile/eslint.org)
 
-ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. In many ways, it is similar to JSLint and JSHint with a few exceptions:
+Bahlint is a zero-config fork of ESLint for JavaScript/TypeScript projects. It reuses the ESLint engine but gives you:
 
-- ESLint uses [Espree](https://github.com/eslint/js/tree/main/packages/espree) for JavaScript parsing.
-- ESLint uses an AST to evaluate patterns in code.
-- ESLint is completely pluggable, every single rule is a plugin and you can add more at runtime.
+- A built-in flat config so you can just run `npx bahlint .` with no config file.
+- Support for `bahlint.config.*` (preferred) and `eslint.config.*` flat config files.
+- The same rules, parser, and plugin ecosystem as ESLint.
+
+Under the hood, Bahlint still behaves like ESLint:
+
+- It uses [Espree](https://github.com/eslint/js/tree/main/packages/espree) for JavaScript parsing.
+- It uses an AST to evaluate patterns in code.
+- It is completely pluggable, every single rule is a plugin and you can add more at runtime.
 
 ## Table of Contents
 
@@ -44,21 +50,31 @@ ESLint is a tool for identifying and reporting on patterns found in ECMAScript/J
 
 Prerequisites: [Node.js](https://nodejs.org/) (`^20.19.0`, `^22.13.0`, or `>=24`) built with SSL support. (If you are using an official Node.js distribution, SSL is always built in.)
 
-You can install and configure ESLint using this command:
+Install Bahlint into your project:
+
+```shell
+npm install --save-dev bahlint
+```
+
+Then run it from your project root:
+
+```shell
+npx bahlint .
+```
+
+Bahlint will lint your JavaScript/TypeScript files using its built-in flat config even if you don't have any config file.
+
+If you want to generate a custom flat config using the original ESLint wizard, you can still run:
 
 ```shell
 npm init @eslint/config@latest
 ```
 
-After that, you can run ESLint on any file or directory like this:
-
-```shell
-npx eslint yourfile.js
-```
+and then reuse the generated config with Bahlint.
 
 ### pnpm Installation
 
-To use ESLint with pnpm, we recommend setting up a `.npmrc` file with at least the following settings:
+To use Bahlint (and the underlying ESLint engine) with pnpm, we recommend setting up a `.npmrc` file with at least the following settings:
 
 ```text
 auto-install-peers=true
@@ -69,7 +85,7 @@ This ensures that pnpm installs dependencies in a way that is more compatible wi
 
 ## Configuration
 
-You can configure rules in your `eslint.config.js` files as in this example:
+You can configure rules in your `bahlint.config.js` (or `eslint.config.js`) file as in this example:
 
 ```js
 import { defineConfig } from "eslint/config";
@@ -85,7 +101,7 @@ export default defineConfig([
 ]);
 ```
 
-The names `"prefer-const"` and `"no-constant-binary-expression"` are the names of [rules](https://eslint.org/docs/rules) in ESLint. The first value is the error level of the rule and can be one of these values:
+The names `"prefer-const"` and `"no-constant-binary-expression"` are the names of [rules](https://eslint.org/docs/rules) in ESLint (and therefore in Bahlint). The first value is the error level of the rule and can be one of these values:
 
 - `"off"` or `0` - turn the rule off
 - `"warn"` or `1` - turn the rule on as a warning (doesn't affect exit code)
@@ -150,7 +166,7 @@ Refer to the [Quick Start Guide](https://eslint.org/docs/latest/use/getting-star
 
 ### Where to ask for help?
 
-Open a [discussion](https://github.com/eslint/eslint/discussions) or stop by our [Discord server](https://eslint.org/chat).
+Open a [discussion](https://github.com/bahlint/bahlint/discussions) or stop by our [Discord server](https://eslint.org/chat).
 
 ### Why doesn't ESLint lock dependency versions?
 
@@ -164,35 +180,35 @@ The Twilio blog has a [deeper dive](https://www.twilio.com/blog/lockfiles-nodejs
 
 ## Releases
 
-We have scheduled releases every two weeks on Friday or Saturday. You can follow a [release issue](https://github.com/eslint/eslint/issues?q=is%3Aopen+is%3Aissue+label%3Arelease) for updates about the scheduling of any particular release.
+We have scheduled releases every two weeks on Friday or Saturday. You can follow a [release issue](https://github.com/bahlint/bahlint/issues?q=is%3Aopen+is%3Aissue+label%3Arelease) for updates about the scheduling of any particular release.
 
 ## Security Policy
 
-ESLint takes security seriously. We work hard to ensure that ESLint is safe for everyone and that security issues are addressed quickly and responsibly. Read the full [security policy](https://github.com/eslint/.github/blob/master/SECURITY.md).
+Bahlint takes security seriously. We work hard to ensure that Bahlint is safe for everyone and that security issues are addressed quickly and responsibly. Read the full [security policy](https://github.com/bahlint/.github/blob/master/SECURITY.md).
 
 ## Semantic Versioning Policy
 
-ESLint follows [semantic versioning](https://semver.org). However, due to the nature of ESLint as a code quality tool, it's not always clear when a minor or major version bump occurs. To help clarify this for everyone, we've defined the following semantic versioning policy for ESLint:
+Bahlint follows [semantic versioning](https://semver.org). However, due to the nature of Bahlint as a code quality tool, it's not always clear when a minor or major version bump occurs. To help clarify this for everyone, we've defined the following semantic versioning policy for Bahlint:
 
 - Patch release (intended to not break your lint build)
-    - A bug fix in a rule that results in ESLint reporting fewer linting errors.
+    - A bug fix in a rule that results in Bahlint reporting fewer linting errors.
     - A bug fix to the CLI or core (including formatters).
     - Improvements to documentation.
     - Non-user-facing changes such as refactoring code, adding, deleting, or modifying tests, and increasing test coverage.
     - Re-releasing after a failed release (i.e., publishing a release that doesn't work for anyone).
 - Minor release (might break your lint build)
-    - A bug fix in a rule that results in ESLint reporting more linting errors.
+    - A bug fix in a rule that results in Bahlint reporting more linting errors.
     - A new rule is created.
-    - A new option to an existing rule that does not result in ESLint reporting more linting errors by default.
-    - A new addition to an existing rule to support a newly-added language feature (within the last 12 months) that will result in ESLint reporting more linting errors by default.
+    - A new option to an existing rule that does not result in Bahlint reporting more linting errors by default.
+    - A new addition to an existing rule to support a newly-added language feature (within the last 12 months) that will result in Bahlint reporting more linting errors by default.
     - An existing rule is deprecated.
     - A new CLI capability is created.
     - New capabilities to the public API are added (new classes, new methods, new arguments to existing methods, etc.).
     - A new formatter is created.
-    - `eslint:recommended` is updated and will result in strictly fewer linting errors (e.g., rule removals).
+    - `bahlint:recommended` is updated and will result in strictly fewer linting errors (e.g., rule removals).
 - Major release (likely to break your lint build)
-    - `eslint:recommended` is updated and may result in new linting errors (e.g., rule additions, most rule option updates).
-    - A new option to an existing rule that results in ESLint reporting more linting errors by default.
+    - `bahlint:recommended` is updated and may result in new linting errors (e.g., rule additions, most rule option updates).
+    - A new option to an existing rule that results in Bahlint reporting more linting errors by default.
     - An existing formatter is removed.
     - Part of the public API is removed or changed in an incompatible way. The public API includes:
         - Rule schemas
@@ -201,7 +217,7 @@ ESLint follows [semantic versioning](https://semver.org). However, due to the na
         - Node.js API
         - Rule, formatter, parser, plugin APIs
 
-According to our policy, any minor update may report more linting errors than the previous release (ex: from a bug fix). As such, we recommend using the tilde (`~`) in `package.json` e.g. `"eslint": "~3.1.0"` to guarantee the results of your builds.
+According to our policy, any minor update may report more linting errors than the previous release (ex: from a bug fix). As such, we recommend using the tilde (`~`) in `package.json` e.g. `"bahlint": "~3.1.0"` to guarantee the results of your builds.
 
 ## License
 
@@ -237,7 +253,7 @@ These folks keep the project moving and are resources for help.
 
 ### Technical Steering Committee (TSC)
 
-The people who manage releases, review feature requests, and meet regularly to ensure ESLint is properly maintained.
+The people who manage releases, review feature requests, and meet regularly to ensure Bahlint is properly maintained.
 
 <table><tbody><tr><td align="center" valign="top" width="11%">
 <a href="https://github.com/nzakas">
@@ -336,14 +352,14 @@ Percy Ma
 
 ## Sponsors
 
-The following companies, organizations, and individuals support ESLint's ongoing maintenance and development. [Become a Sponsor](https://eslint.org/donate)
+The following companies, organizations, and individuals support Bahlint's ongoing maintenance and development. [Become a Sponsor](https://eslint.org/donate)
 to get your logo on our READMEs and [website](https://eslint.org/sponsors).
 
 <h3>Platinum Sponsors</h3>
 <p><a href="https://automattic.com"><img src="https://images.opencollective.com/automattic/d0ef3e1/logo.png" alt="Automattic" height="128"></a></p><h3>Gold Sponsors</h3>
 <p><a href="https://qlty.sh/"><img src="https://images.opencollective.com/qltysh/33d157d/logo.png" alt="Qlty Software" height="96"></a> <a href="https://shopify.engineering/"><img src="https://avatars.githubusercontent.com/u/8085" alt="Shopify" height="96"></a></p><h3>Silver Sponsors</h3>
 <p><a href="https://vite.dev/"><img src="https://images.opencollective.com/vite/e6d15e1/logo.png" alt="Vite" height="64"></a> <a href="https://liftoff.io/"><img src="https://images.opencollective.com/liftoff/2d6c3b6/logo.png" alt="Liftoff" height="64"></a> <a href="https://americanexpress.io"><img src="https://avatars.githubusercontent.com/u/3853301" alt="American Express" height="64"></a> <a href="https://stackblitz.com"><img src="https://avatars.githubusercontent.com/u/28635252" alt="StackBlitz" height="64"></a></p><h3>Bronze Sponsors</h3>
-<p><a href="https://cybozu.co.jp/"><img src="https://images.opencollective.com/cybozu/933e46d/logo.png" alt="Cybozu" height="32"></a> <a href="https://www.crawljobs.com/"><img src="https://images.opencollective.com/crawljobs-poland/fa43a17/logo.png" alt="CrawlJobs" height="32"></a> <a href="https://syntax.fm"><img src="https://github.com/syntaxfm.png" alt="Syntax" height="32"></a> <a href="https://www.n-ix.com/"><img src="https://images.opencollective.com/n-ix-ltd/575a7a5/logo.png" alt="N-iX Ltd" height="32"></a> <a href="https://icons8.com/"><img src="https://images.opencollective.com/icons8/7fa1641/logo.png" alt="Icons8" height="32"></a> <a href="https://discord.com"><img src="https://images.opencollective.com/discordapp/f9645d9/logo.png" alt="Discord" height="32"></a> <a href="https://www.gitbook.com"><img src="https://avatars.githubusercontent.com/u/7111340" alt="GitBook" height="32"></a> <a href="https://nx.dev"><img src="https://avatars.githubusercontent.com/u/23692104" alt="Nx" height="32"></a> <a href="https://herocoders.com"><img src="https://avatars.githubusercontent.com/u/37549774" alt="HeroCoders" height="32"></a> <a href="https://www.lambdatest.com"><img src="https://avatars.githubusercontent.com/u/171592363" alt="LambdaTest" height="32"></a></p>
+<p><a href="https://cybozu.co.jp/"><img src="https://images.opencollective.com/cybozu/933e46d/logo.png" alt="Cybozu" height="32"></a> <a href="https://www.crawljobs.com/"><img src="https://images.opencollective.com/crawljobs-poland/fa43a17/logo.png" alt="CrawlJobs" height="32"></a> <a href="https://www.n-ix.com/"><img src="https://images.opencollective.com/n-ix-ltd/575a7a5/logo.png" alt="N-iX Ltd" height="32"></a> <a href="https://icons8.com/"><img src="https://images.opencollective.com/icons8/7fa1641/logo.png" alt="Icons8" height="32"></a> <a href="https://discord.com"><img src="https://images.opencollective.com/discordapp/f9645d9/logo.png" alt="Discord" height="32"></a> <a href="https://www.gitbook.com"><img src="https://avatars.githubusercontent.com/u/7111340" alt="GitBook" height="32"></a> <a href="https://nx.dev"><img src="https://avatars.githubusercontent.com/u/23692104" alt="Nx" height="32"></a> <a href="https://herocoders.com"><img src="https://avatars.githubusercontent.com/u/37549774" alt="HeroCoders" height="32"></a> <a href="https://www.lambdatest.com"><img src="https://avatars.githubusercontent.com/u/171592363" alt="LambdaTest" height="32"></a></p>
 <h3>Technology Sponsors</h3>
 Technology sponsors allow us to use their products and services for free as part of a contribution to the open source ecosystem and our work.
 <p><a href="https://netlify.com"><img src="https://raw.githubusercontent.com/eslint/eslint.org/main/src/assets/images/techsponsors/netlify-icon.svg" alt="Netlify" height="32"></a> <a href="https://algolia.com"><img src="https://raw.githubusercontent.com/eslint/eslint.org/main/src/assets/images/techsponsors/algolia-icon.svg" alt="Algolia" height="32"></a> <a href="https://1password.com"><img src="https://raw.githubusercontent.com/eslint/eslint.org/main/src/assets/images/techsponsors/1password-icon.svg" alt="1Password" height="32"></a></p>

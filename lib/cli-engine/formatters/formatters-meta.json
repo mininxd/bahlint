@@ -13,6 +13,10 @@
   },
   {
     "name": "stylish",
-    "description": "Human-readable output format. This is the default formatter."
+    "description": "Human-readable output format."
+  },
+  {
+    "name": "gasoline",
+    "description": "BAHLINT gasoline-themed human-readable"
   }
 ]

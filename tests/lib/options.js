@@ -62,20 +62,20 @@ describe("options", () => {
 	});
 
 	describe("--format", () => {
-		it("should return a string for .format when passed a string", () => {
-			const currentOptions = options.parse("--format json");
+			it("should return a string for .format when passed a string", () => {
+				const currentOptions = options.parse("--format json");
 
-			assert.isString(currentOptions.format);
-			assert.strictEqual(currentOptions.format, "json");
+				assert.isString(currentOptions.format);
+				assert.strictEqual(currentOptions.format, "json");
+			});
+
+			it("should return gasoline for .format when not passed", () => {
+				const currentOptions = options.parse("");
+
+				assert.isString(currentOptions.format);
+				assert.strictEqual(currentOptions.format, "gasoline");
+			});
 		});
-
-		it("should return stylish for .format when not passed", () => {
-			const currentOptions = options.parse("");
-
-			assert.isString(currentOptions.format);
-			assert.strictEqual(currentOptions.format, "stylish");
-		});
-	});
 
 	describe("-f", () => {
 		it("should return a string for .format when passed a string", () => {
