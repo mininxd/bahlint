@@ -62,7 +62,9 @@ const InstallSection: FC = () => {
 		}
 	};
 
-	const runCmd = "npx bahlint .";
+	const runCmd = [
+	  "npx bahlint . --fix"
+	  ]
 
 	// Raw text lines (what you want to display)
 	const configLines = [
@@ -155,16 +157,19 @@ const InstallSection: FC = () => {
 
 						<div className="relative">
 							<div className="mockup-code bg-base-100 border border-base-content/10">
-								<pre
-									data-prefix="$"
-									className="text-sm md:text-base"
-								>
-									<code>{runCmd}</code>
-								</pre>
+							{runCmd.map((line, i) => (
+									<pre key={i} data-prefix={String("$")}>
+										<code
+											dangerouslySetInnerHTML={{
+												__html: colorizeJS(line),
+											}}
+										/>
+									</pre>
+								))}
 							</div>
 
 							<button
-								onClick={() => copyToClipboard(runCmd, "run")}
+								onClick={() => copyToClipboard(runCmd.toString(), "run")}
 								className="btn btn-sm btn-ghost absolute top-3 right-3"
 								aria-label="Copy command"
 								type="button"
@@ -177,7 +182,7 @@ const InstallSection: FC = () => {
 						<div className="mt-4">
 							<div className="mockup-code bg-base-100 border border-base-content/10 text-xs md:text-sm">
 								<pre>
-									<code className="text-primary">
+									<code className="text-red-400">
 										🔥 Bahlint v28.58.6934 - Burning your
 										code...
 									</code>
