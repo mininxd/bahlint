@@ -206,44 +206,116 @@ ${getErrorMessage(error)}`;
 		files = ["."]; // Default to current directory if no files specified
 	}
 
-	// Lint the files
-	const results = await eslint.lintFiles(files);
-
 	// Count errors and warnings
-	const errorCount = results.reduce((sum, result) => sum + result.errorCount, 0);
-	const warningCount = results.reduce((sum, result) => sum + result.warningCount, 0);
-	const fixableErrorCount = results.reduce((sum, result) => sum + result.fixableErrorCount, 0);
-	const fixableWarningCount = results.reduce((sum, result) => sum + result.fixableWarningCount, 0);
+	let errorCount, warningCount, fixableErrorCount, fixableWarningCount, totalProblems, totalFixable, filesWithIssues, fixedFiles, results;
 
-	// Calculate total problems found
-	const totalProblems = errorCount + warningCount;
-	const totalFixable = fixableErrorCount + fixableWarningCount;
+	if (isFixMode) {
+		// First, run without fixing to count initial problems
+		const eslintOptionsNoFix = {
+			fix: false
+		};
 
-	// Count files with issues
-	const filesWithIssues = results.filter(result => result.messages.length > 0).length;
+		// Only use config file if it exists
+		if (fs.existsSync(configFilePath)) {
+			// Use the user's bahlint config file
+			eslintOptionsNoFix.overrideConfigFile = configFilePath;
+		} else {
+			// Don't look for any external config files; use our built-in defaults
+			eslintOptionsNoFix.overrideConfigFile = true;
+			eslintOptionsNoFix.overrideConfig = {
+				languageOptions: {
+					ecmaVersion: 2024,
+					sourceType: "module",
+					globals: {
+						console: "readonly",
+						process: "readonly"
+					}
+				},
+				rules: {
+					// Basic default rules, all fixable
+					"no-console": "off",
+					"no-unused-vars": "warn",
+					"no-undef": "warn",
+					"no-multiple-empty-lines": ["warn", { max: 1 }],
+					"eol-last": ["warn", "always"],
+					"no-trailing-spaces": "warn",
+					"semi": ["warn", "always"],
+					"quotes": ["warn", "double"],
+					"prefer-const": ["warn"]
+				}
+			};
+		}
 
-	// Detect files that were actually modified by --fix (covers suggestion-based fixes too)
-	const fixedFiles = isFixMode
-		? results.filter(result => typeof result.output === "string").length
-		: 0;
+		const eslintNoFix = new ESLint(eslintOptionsNoFix);
+		const initialResults = await eslintNoFix.lintFiles(files);
+		errorCount = initialResults.reduce((sum, result) => sum + result.errorCount, 0);
+		warningCount = initialResults.reduce((sum, result) => sum + result.warningCount, 0);
+		fixableErrorCount = initialResults.reduce((sum, result) => sum + result.fixableErrorCount, 0);
+		fixableWarningCount = initialResults.reduce((sum, result) => sum + result.fixableWarningCount, 0);
+		totalProblems = errorCount + warningCount;
+		totalFixable = fixableErrorCount + fixableWarningCount;
+		filesWithIssues = initialResults.filter(result => result.messages.length > 0).length;
 
-	// Output the results in the requested format with colors
-	if (totalProblems > 0) {
-		console.log(`${ORANGE}⚠ ${totalProblems} problems found${RESET}`);
-		if (isFixMode) {
-			if (totalFixable > 0) {
-				// Classic fixable problems (meta.fixable)
-				console.log(`${GREEN}✓ ${totalFixable} problems auto-fixed${RESET}`);
+		// Now run with fixing to apply fixes
+		results = await eslint.lintFiles(files);
+		fixedFiles = results.filter(result => typeof result.output === "string").length;
+
+		// Count actual fixes by running ESLint again on the fixed files
+		let actualFixedProblems = 0;
+		if (fixedFiles > 0) {
+			// Calculate the difference by looking at the messages before and after
+			for (let i = 0; i < results.length; i++) {
+				const initialResult = initialResults[i];
+				const currentResult = results[i];
+
+				if (initialResult && currentResult) {
+					// If the file was fixed (has output property), count the difference in problems
+					if (typeof currentResult.output === "string") {
+						// Estimate the number of fixes by comparing initial vs final problems
+						const initialProblems = initialResult.errorCount + initialResult.warningCount;
+						const finalProblems = currentResult.errorCount + currentResult.warningCount;
+						actualFixedProblems += Math.max(0, initialProblems - finalProblems);
+					}
+				}
+			}
+
+			// If our estimate is 0 but files were fixed, use the fixable count as fallback
+			if (actualFixedProblems === 0 && totalFixable > 0) {
+				actualFixedProblems = totalFixable;
+			}
+		}
+
+		// Output the results in the requested format with colors
+		if (totalProblems > 0) {
+			console.log(`${ORANGE}⚠ ${totalProblems} problems found${RESET}`);
+			if (actualFixedProblems > 0) {
+				console.log(`${GREEN}✓ Auto-fixed ${actualFixedProblems} problems in ${fixedFiles} file(s)${RESET}`);
 			} else if (fixedFiles > 0) {
 				// Fallback for suggestion-based fixes where fixable* counts stay 0
 				console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
 			}
+		} else if (isFixMode && (actualFixedProblems > 0 || fixedFiles > 0)) {
+			if (actualFixedProblems > 0) {
+				console.log(`${GREEN}✓ Auto-fixed ${actualFixedProblems} problems in ${fixedFiles} file(s)${RESET}`);
+			} else {
+				console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
+			}
 		}
-	} else if (isFixMode && (totalFixable > 0 || fixedFiles > 0)) {
-		if (totalFixable > 0) {
-			console.log(`${GREEN}✓ ${totalFixable} problems auto-fixed${RESET}`);
-		} else {
-			console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
+	} else {
+		// Regular mode without fixing
+		results = await eslint.lintFiles(files);
+		errorCount = results.reduce((sum, result) => sum + result.errorCount, 0);
+		warningCount = results.reduce((sum, result) => sum + result.warningCount, 0);
+		fixableErrorCount = results.reduce((sum, result) => sum + result.fixableErrorCount, 0);
+		fixableWarningCount = results.reduce((sum, result) => sum + result.fixableWarningCount, 0);
+		totalProblems = errorCount + warningCount;
+		totalFixable = fixableErrorCount + fixableWarningCount;
+		filesWithIssues = results.filter(result => result.messages.length > 0).length;
+		fixedFiles = 0;
+
+		// Output the results in the requested format with colors
+		if (totalProblems > 0) {
+			console.log(`${ORANGE}⚠ ${totalProblems} problems found${RESET}`);
 		}
 	}
 
