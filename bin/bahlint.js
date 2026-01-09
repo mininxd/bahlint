@@ -222,14 +222,29 @@ ${getErrorMessage(error)}`;
 	// Count files with issues
 	const filesWithIssues = results.filter(result => result.messages.length > 0).length;
 
+	// Detect files that were actually modified by --fix (covers suggestion-based fixes too)
+	const fixedFiles = isFixMode
+		? results.filter(result => typeof result.output === "string").length
+		: 0;
+
 	// Output the results in the requested format with colors
 	if (totalProblems > 0) {
 		console.log(`${ORANGE}⚠ ${totalProblems} problems found${RESET}`);
-		if (isFixMode && totalFixable > 0) {
-			console.log(`${GREEN}✓ ${totalFixable} problems auto-fixed${RESET}`);
+		if (isFixMode) {
+			if (totalFixable > 0) {
+				// Classic fixable problems (meta.fixable)
+				console.log(`${GREEN}✓ ${totalFixable} problems auto-fixed${RESET}`);
+			} else if (fixedFiles > 0) {
+				// Fallback for suggestion-based fixes where fixable* counts stay 0
+				console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
+			}
 		}
-	} else if (isFixMode && totalFixable > 0) {
-		console.log(`${GREEN}✓ ${totalFixable} problems auto-fixed${RESET}`);
+	} else if (isFixMode && (totalFixable > 0 || fixedFiles > 0)) {
+		if (totalFixable > 0) {
+			console.log(`${GREEN}✓ ${totalFixable} problems auto-fixed${RESET}`);
+		} else {
+			console.log(`${GREEN}✓ Auto-fixed problems in ${fixedFiles} file(s)${RESET}`);
+		}
 	}
 
 	// Count files scanned (all files processed, not just those with issues)
