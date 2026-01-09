@@ -172,7 +172,8 @@ ${getErrorMessage(error)}`;
 		// Use the user's bahlint config file
 		eslintOptions.overrideConfigFile = configFilePath;
 	} else {
-		// Use built-in defaults when no bahlint.config.js is present
+		// Don't look for any external config files; use our built-in defaults
+		eslintOptions.overrideConfigFile = true;
 		eslintOptions.overrideConfig = {
 			languageOptions: {
 				ecmaVersion: 2024,
